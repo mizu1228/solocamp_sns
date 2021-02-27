@@ -1,1 +1,11 @@
 <h1>UserPage</h1>
+
+<div class="user-name">
+  <%= "#{@user.name}'s ProfilePage" %>
+</div>
+
+<div class="visit-u-edit">
+<% if @user.id == current_user.id %>
+  <%= link_to "EDIT", edit_user_registration_path(current_user) %>
+<% end %>
+</div>

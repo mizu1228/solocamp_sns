@@ -8,5 +8,6 @@ class User < ApplicationRecord
     validates :name
     validates :phone_num, format: { with: /\A\d{10,11}\z/, message: "is valid(without - )"}
   end
-  validates :password, format: { with: /\A(?=.*?[a-z])(?=.*?[\d])[a-z\d]+\z/i, message: 'is valid'}
+  # validates :password, format: { with: /\A(?=.*?[a-z])(?=.*?[\d])[a-z\d]+\z/i, message: 'is valid'}
+  validates :introduce, length: { maximum: 400 }
 end
