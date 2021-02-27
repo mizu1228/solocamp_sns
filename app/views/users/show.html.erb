@@ -1,11 +1,39 @@
 <h1>UserPage</h1>
 
+<% if @user.image.attached? %>
+  <div class="user-img">
+    <%= image_tag @user.image, width:"200", height:"200" %>
+  </div>
+<% else %>
+  <div class="user-img">
+    <%# <%= image_tag @user.image, width:"200", height:"200" %>
+    Display Sample-image
+  </div>
+<% end %>
+
 <div class="user-name">
-  <%= "#{@user.name}'s ProfilePage" %>
+  UserName: <%= @user.name %>
+</div>
+
+<div class="user-introduce">
+  Introduce:
+  <span>
+  <%= @user.introduce %>
+  </span>
 </div>
 
 <div class="visit-u-edit">
 <% if @user.id == current_user.id %>
   <%= link_to "EDIT", edit_user_registration_path(current_user) %>
 <% end %>
+</div>
+
+<%if @user.id != current_user.id %>
+  <div class="user-follow">
+    <%= link_to "Follow", "#" %>
+  </div>
+<% end %>
+
+<div class="user-tweet-list">
+  <%= @user.name %>'s Tweet List
 </div>
