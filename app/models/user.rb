@@ -10,4 +10,6 @@ class User < ApplicationRecord
   end
   # validates :password, format: { with: /\A(?=.*?[a-z])(?=.*?[\d])[a-z\d]+\z/i, message: 'is valid'}
   validates :introduce, length: { maximum: 400 }
+
+  has_one_attached :image
 end
