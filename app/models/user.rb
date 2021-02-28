@@ -28,6 +28,21 @@ class User < ApplicationRecord
     self.without_soft_destroyed.where(conditions.to_h).first
   end
 
+  def follow(other_user)
+    if self != other_user
+      self.relationships.find_or_create_by(follow_id: other_user.id)
+    end
+  end
+
+  def unfollow(other_user)
+    relationship = self.relationships.find_by(follow_id: other_user.id)
+    relationship.destroy if relationship
+  end
+
+  def following?(other_user)
+    self.followings.include?(other_user)
+  end
+
   with_options presence: true do
     validates :name
     validates :phone_num, format: { with: /\A\d{10,11}\z/, message: "は半角数字10~11桁、ハイフンなしで入力してください"}
@@ -36,4 +51,9 @@ class User < ApplicationRecord
   validates :introduce, length: { maximum: 400 }
 
   has_one_attached :image
+
+  has_many :relationships
+  has_many :followings, through: :relationships, source: :follow
+  has_many :reverse_of_relationships, class_name: 'Relationship', foreign_key: 'follow_id'
+  has_many :followers, through: :reverse_of_relationships, source: :user
 end
