@@ -1,0 +1,6 @@
+ja:
+ activerecord:
+   attributes:
+     user:
+       name: ニックネーム
+       phone_num: 電話番号
