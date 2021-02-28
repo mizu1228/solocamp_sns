@@ -9,6 +9,7 @@ class User < ApplicationRecord
 
   soft_deletable  # <- kakurenbo-putiを使えるようにする
 
+  # Emailに対する検証を削除する
   _validators.delete(:email)
   _validate_callbacks.each do |callback|
     if callback.raw_filter.respond_to? :attributes

@@ -8,5 +8,7 @@ class RmoveEmailIndexFromUser < ActiveRecord::Migration[6.0]
     remove_index :users, [:email, :soft_destroyed_at]
     add_index :users, :email, unique: true
   end
-  
+
 end
+
+# 論理削除のためにメールアドレスのユニーク制約を外すメソッド
