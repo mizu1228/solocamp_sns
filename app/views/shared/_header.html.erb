@@ -1,0 +1,17 @@
+<div class="header">
+
+  <h1>
+    <%= link_to "Solo-Camp SNS", root_path %>
+  </h1>
+
+  <div class="header-right-contents">
+    <div class="current_user">
+      Hello,<%= link_to "#{current_user.name}", user_path(current_user) %>
+    </div>
+
+    <div class="sign_out_btn">
+      <%= link_to "Sign_out", destroy_user_session_path, method: :delete %>
+    </div>
+  </div>
+
+</div>
