@@ -3,12 +3,13 @@
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
 
-  <div class="prof-img-upload">
+  <div class="prof-img-upload" id="prof-img">
     <p>
       クリックしてアップロード
     </p>
     <%= f.file_field :image %>
   </div>
+  <div id="img-prv"></div>
   
   <div class="field">
     <%= f.label :name %><br />
