@@ -4,7 +4,6 @@ Rails.application.routes.draw do
     registrations:      'users/registrations',
 }
 
-
   resources :users, only: [:show]
   resources :relationships, only: [:create, :destroy]
 end
