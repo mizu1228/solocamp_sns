@@ -7,9 +7,8 @@
     <%= image_tag @user.image, width:"200", height:"200" %>
   </div>
 <% else %>
-  <div class="user-img">
-    <%# <%= image_tag @user.image, width:"200", height:"200" %>
-    Display Sample-image
+  <div class="default-img">
+    <%= image_tag 'default_tent.png', width:"200", height:"200" %>
   </div>
 <% end %>
 
@@ -30,19 +29,16 @@
 <% end %>
 </div>
 
-<% if current_user != @user %>
-  <% if current_user.following?(@user) %>
-    <%= form_for(current_user.relationships.find_by(follow_id: @user.id), url: relationships_path, html: { method: :delete }) do |f| %>
-      <%= hidden_field_tag :follow_id, @user.id %>
-      <%= f.submit 'Unfollow', class: 'btn btn-danger btn-block' %>
-    <% end %>
-  <% else %>
-    <%= form_for(current_user.relationships.build) do |f| %>
-      <%= hidden_field_tag :follow_id, @user.id %>
-      <%= f.submit 'Follow', class: 'btn btn-primary btn-block' %>
-    <% end %>
-  <% end %>
-<% end %>
+  <div id="follower">
+    <h5 style="color: black;">フォロワー<%= @user.followers.count %>人</h5>
+  </div>
+  <div id="follow">
+    <h5 style="color: black;">フォロー<%= @user.followings.count %>人</h5>
+  </div>
+  <div>
+      <%= render "follow_form" %>
+  </div>
+
 
 <div class="user-tweet-list">
   <%= @user.name %>'s Tweet List
