@@ -4,3 +4,7 @@ ja:
      user:
        name: ニックネーム
        phone_num: 電話番号
+     tweet:
+       text: 本文
+       image: 画像
+       user: ユーザー
