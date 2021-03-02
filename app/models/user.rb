@@ -55,6 +55,7 @@ class User < ApplicationRecord
 
   validates :introduce, length: { maximum: 400 }
 
+  has_many :tweets
   has_one_attached :image
 
   has_many :relationships
