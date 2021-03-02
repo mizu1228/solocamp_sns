@@ -47,7 +47,12 @@ class User < ApplicationRecord
     validates :name
     validates :phone_num, format: { with: /\A\d{10,11}\z/, message: "は半角数字10~11桁、ハイフンなしで入力してください"}
   end
-  # validates :password, format: { with: /\A(?=.*?[a-z])(?=.*?[\d])[a-z\d]+\z/i, message: 'is valid'}
+
+  with_options presence: true, on: :create do
+    validates :password, confirmation: true, length: { minimum: 8 }, format: { with: /\A(?=.*?[a-z])(?=.*?[\d])[a-z\d]+\z/i, message: 'は半角英数混在で入力してください'}
+    validates :password_confirmation
+  end
+
   validates :introduce, length: { maximum: 400 }
 
   has_one_attached :image
