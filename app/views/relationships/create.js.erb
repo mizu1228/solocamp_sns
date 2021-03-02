@@ -1,0 +1,2 @@
+document.getElementById('follow_form').innerHTML = '<%= j(render("users/unfollow")) %>'
+document.getElementById('follower').innerHTML = '<h5>フォロワー<%= @user.followers.count %>人</h5>'

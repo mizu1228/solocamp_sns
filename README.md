@@ -29,14 +29,14 @@
 - has_one  :season
 - has_one  :area
 ------Followに関する記述-----
-- has_many :user_relations
-- has_many :followings, through: :user_relations, source: :follow
-- has_many :reverse_of_user_relations, class_name: 'UserRelation',
+- has_many :relationships
+- has_many :followings, through: :relationships, source: :follow
+- has_many :reverse_of_relationships, class_name: 'Relationship',
             foreign_key: 'follow_id'
-- has_many :followers, through: :reverse_of_user_relations, source: :user
+- has_many :followers, through: :reverse_of_relationships, source: :user
 
 
-## user_relationsテーブル(follow機能用)
+## relationshipsテーブル(follow機能用)
 
 | Column             | Type       | Option                                        |
 | ------------------ | ---------- | --------------------------------------------- |
