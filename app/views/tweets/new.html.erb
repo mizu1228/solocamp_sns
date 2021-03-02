@@ -4,10 +4,11 @@
 <div class="tweet-form">
   <%= form_with model: @tweet, local: true do |f| %>
 
-  <div class="field">
+  <div class="field" id="img-select">
     <%= f.label :image %><br>
     <%= f.file_field :image %>
   </div>
+  <div id="img-prv"></div>
 
   <div class="field">
     <%= f.label :text %><br>
