@@ -1,0 +1,48 @@
+.main {
+  background-color: dimgray;
+}
+
+.tweet-list {
+  background-color: darkgray;
+  width: 100%;
+}
+
+.list {
+  background-color: darkolivegreen;
+  margin: 10px 0;
+  width: 100%;
+}
+
+.user-bar {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.tweet-user {
+  margin: 0 20px;
+  padding: 0 20px;
+  font-size: 24px;
+  font-weight: bold;
+  background-color: firebrick;
+}
+
+.user-icon {
+  height: 60px;
+  width: 60px;
+  object-fit: contain;
+  padding: 0 20px;
+  background-color: dodgerblue;
+}
+
+.tweet-image-content {
+  background-color: darkslategray;
+  width: 100%;
+}
+
+.tweet-image {
+  height: 50vh;
+  width: 70vw;
+  min-height: 500px;
+  object-fit: contain;
+}

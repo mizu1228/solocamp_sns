@@ -1,0 +1,6 @@
+.user-img {
+  width: 400px;
+  height: 400px;
+  background-color: rgb(182, 182, 182);
+  object-fit: contain;
+}

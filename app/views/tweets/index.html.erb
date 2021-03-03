@@ -1,9 +1,41 @@
 <%= render '/shared/header'%>
 
-<h1>MainPage</h1>
+<div class="main">
+  <h1>MainPage</h1>
 
-<h2>
-  <%= link_to 'New-Story', new_tweet_path %>
-</h2>
+  <h2>
+    <%= link_to 'New-Story', new_tweet_path %>
+  </h2>
 
-<h2>Display All Tweets in this page</h2> 
+  <h2>Display All Tweets in this page</h2> 
+
+  <ul class="tweet-list">
+    <% @tweets.each do |tweet| %>
+      <li class="list">
+      <div class="user-bar">
+        <div class="user-icon">
+          <%= link_to user_path(tweet.user) do%>
+            <%= image_tag tweet.user.image, class: 'user-icon' %>
+          <% end %>
+        </div>
+        <div class="tweet-user">
+          <%= link_to user_path(tweet.user) do%>
+            <%= tweet.user.name %>
+          <% end %>
+        </div>
+      </div>
+          <div class="tweet-image-content">
+            <%= link_to root_path do%>
+              <%= image_tag tweet.image, class:'tweet-image'%>
+          </div>
+        <% end %>
+
+        <p class="tweet-text-content">
+          TEXT : 
+          <%= tweet.text %>
+        </p>
+      </li>
+    <% end %>
+  </ul>
+
+</div>
