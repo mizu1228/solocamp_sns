@@ -1,5 +1,7 @@
 class TweetsController < ApplicationController
 before_action :authenticate_user!
+before_action :set_tweet, only: [:show, :edit, :update, :destroy]
+before_action :user_judge, only: [:edit, :update, :destroy]
 
   def index
     @tweets = Tweet.order(created_at: :desc)
@@ -20,17 +22,22 @@ before_action :authenticate_user!
   end
 
   def show
-    @tweet = Tweet.find(params[:id])
   end
 
   def edit
-    @tweet = Tweet.find(params[:id])
   end
 
   def update
-    @tweet = Tweet.find(params[:id])
     if @tweet.update(tweet_params)
       redirect_to tweet_path
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    if @tweet.destroy
+      redirect_to root_path
     else
       render :edit
     end
@@ -40,6 +47,16 @@ before_action :authenticate_user!
 
   def tweet_params
     params.require(:tweet).permit(:text, :image).merge(user_id: current_user.id)
+  end
+
+  def set_tweet
+    @tweet = Tweet.find(params[:id])
+  end
+
+  def user_judge
+    if current_user.id != @tweet.user_id
+      redirect_to root_path
+    end
   end
 
 end

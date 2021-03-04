@@ -23,7 +23,7 @@
 </div>
 
 <div class="delete-btn">
-  <%= link_to "DELETE", "#" %>
+  <%= link_to "DELETE", tweet_path(@tweet.id), method: :delete, data: { confirm: "Are you sure delete?"} %>
 </div>
 
 <div class="back-btn">
