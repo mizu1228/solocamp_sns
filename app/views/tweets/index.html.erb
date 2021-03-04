@@ -25,7 +25,7 @@
         </div>
       </div>
           <div class="tweet-image-content">
-            <%= link_to root_path do%>
+            <%= link_to tweet_path(tweet.id) do%>
               <%= image_tag tweet.image, class:'tweet-image'%>
           </div>
         <% end %>

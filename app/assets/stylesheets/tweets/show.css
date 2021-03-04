@@ -1,0 +1,47 @@
+.tweet-img-group {
+  width: 100vw;
+  background-color: rgb(194, 194, 182);
+}
+
+.tweet-img {
+  width: 500px;
+  height: 500px;
+  background-color: rgb(206, 206, 206);
+  object-fit: contain;
+}
+
+.user-bar {
+  display: flex;
+  width: 100vw;
+  background-color: lemonchiffon;
+}
+
+.user-name-group {
+  background-color: honeydew;
+  display: flex;
+  margin: 0 20px;
+}
+
+.name-left {
+  background-color: lavender;
+  margin: 0 10px;
+}
+
+.name-right {
+  background-color: lavenderblush;
+  margin: 0 10px;
+}
+
+.tweet-text {
+  background-color: rgb(117, 147, 231);
+  margin: 10px 0 ;
+}
+
+.tweet-comment {
+  background-color: lightskyblue;
+  margin: 10px 0;
+}
+
+.edit-btn {
+  background-color: mediumaquamarine;
+}

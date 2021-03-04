@@ -19,6 +19,10 @@ before_action :authenticate_user!
     end
   end
 
+  def show
+    @tweet = Tweet.find(params[:id])
+  end
+
   private
 
   def tweet_params
