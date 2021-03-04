@@ -38,7 +38,7 @@
 
   <% if current_user.id == @tweet.user.id %>
   <div class="edit-group">
-    <%= link_to "EDIT", "#", class:"edit-btn"%>
+    <%= link_to "EDIT", edit_tweet_path(@tweet.id), class:"edit-btn"%>
   </div>
   <% end %>
 </div>

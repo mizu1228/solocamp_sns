@@ -1,0 +1,31 @@
+<%= render 'shared/header' %>
+<%= render 'shared/error_messages', resource: @tweet %>
+
+<div class="tweet-form">
+  <%= form_with model: @tweet, local: true do |f| %>
+
+  <div class="field" id="img-select">
+    <%= f.label :image %><br>
+    <%= f.file_field :image %>
+  </div>
+  <div id="img-prv"></div>
+
+  <div class="field">
+    <%= f.label :text %><br>
+    <%= f.text_area :text, placeholder: '400字以内', maxlength: '400' %>
+  </div>
+
+  <div class="send-btn">
+    <%= f.submit "SEND" %>
+  </div>
+  
+  <% end %>
+</div>
+
+<div class="delete-btn">
+  <%= link_to "DELETE", "#" %>
+</div>
+
+<div class="back-btn">
+  <%= link_to 'BACK', root_path %>
+</div>
