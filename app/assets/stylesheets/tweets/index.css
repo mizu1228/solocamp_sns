@@ -22,18 +22,19 @@
 .tweet-user {
   margin: 0 20px;
   padding: 0 20px;
+  height: 100%;
   font-size: 24px;
   font-weight: bold;
   background-color: firebrick;
 }
 
-.user-icon {
+/* .user-icon {
   height: 60px;
   width: 60px;
   object-fit: contain;
   padding: 0 20px;
-  background-color: dodgerblue;
-}
+  background-color: rgb(74, 137, 201);
+} */
 
 .tweet-image-content {
   background-color: darkslategray;

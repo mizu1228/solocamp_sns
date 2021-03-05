@@ -12,28 +12,27 @@
   <ul class="tweet-list">
     <% @tweets.each do |tweet| %>
       <li class="list">
-      <div class="user-bar">
-        <div class="user-icon">
-          <%= link_to user_path(tweet.user) do%>
-            <%= image_tag tweet.user.image, class: 'user-icon' %>
-          <% end %>
-        </div>
-        <div class="tweet-user">
-          <%= link_to user_path(tweet.user) do%>
-            <%= tweet.user.name %>
-          <% end %>
-        </div>
-      </div>
-          <div class="tweet-image-content">
-            <%= link_to tweet_path(tweet.id) do%>
-              <%= image_tag tweet.image, class:'tweet-image'%>
+        <div class="user-bar">
+          <div class="user-icon-group">
+            <%= link_to user_path(tweet.user) do%>
+              <%= image_tag tweet.user.image, class:'user-icon' %>
+            <% end %>
           </div>
-        <% end %>
-
-        <p class="tweet-text-content">
-          TEXT : 
-          <%= tweet.text %>
-        </p>
+          <div class="tweet-user">
+            <%= link_to user_path(tweet.user) do%>
+              <%= tweet.user.name %>
+            <% end %>
+          </div>
+        </div>
+        <div class="tweet-image-content">
+          <%= link_to tweet_path(tweet.id) do%>
+            <%= image_tag tweet.image, class:'tweet-image'%>
+          <% end %>
+        </div>
+          <p class="tweet-text-content">
+            TEXT : 
+            <%= tweet.text %>
+          </p>
       </li>
     <% end %>
   </ul>

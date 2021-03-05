@@ -3,14 +3,15 @@
 <div class="tweet-show">
 
   <div class="user-bar">
-    <div class="user-icon">
+    <div class="user-icon-group">
       <%= link_to user_path(@tweet.user) do%>
         <%= image_tag @tweet.user.image, class: 'user-icon' %>
       <% end %>
     </div>
-    <div class="user-name-group">
-      <li class="name-left">UserName:</li>
-      <li class="name-right"><%= @tweet.user.name %></li>
+    <div class="tweet-user">
+      <%= link_to user_path(@tweet.user) do%>
+        <%= @tweet.user.name %>
+      <% end %>
     </div>
   </div>
 
