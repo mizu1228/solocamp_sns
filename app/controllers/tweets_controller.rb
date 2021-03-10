@@ -8,14 +8,15 @@ before_action :user_judge, only: [:edit, :update, :destroy]
   end
 
   def new
-    @tweet = Tweet.new
+    @tweet = TweetsTag.new
   end
 
   def create
-    @tweet = Tweet.new(tweet_params)
+    @tweet = TweetsTag.new(tweet_params)
+    tag_list = params[:tweets_tag][:name].split(",")
     if @tweet.valid?
-      @tweet.save
-      redirect_to root_path
+      @tweet.save(tag_list)
+      return  redirect_to root_path
     else
       render :new
     end
@@ -46,7 +47,7 @@ before_action :user_judge, only: [:edit, :update, :destroy]
   private
 
   def tweet_params
-    params.require(:tweet).permit(:text, :image).merge(user_id: current_user.id)
+    params.require(:tweets_tag).permit(:text, :image, :name).merge(user_id: current_user.id)
   end
 
   def set_tweet

@@ -29,10 +29,16 @@
             <%= image_tag tweet.image, class:'tweet-image'%>
           <% end %>
         </div>
-          <p class="tweet-text-content">
-            TEXT : 
+        <div class="tweet-text-content">
+          <p>TEXT : 
             <%= tweet.text %>
           </p>
+        </div>
+        <div class="tweet-tag-group">
+          <% tweet.tags.each do |tag|%>
+            <%= tag.name %>
+          <% end %>
+        </div>
       </li>
     <% end %>
   </ul>

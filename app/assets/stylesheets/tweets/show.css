@@ -58,6 +58,10 @@
   margin: 10px 0;
 }
 
+.tweet-tag-group {
+  background-color: cornsilk;
+}
+
 .edit-btn {
   background-color: mediumaquamarine;
 }

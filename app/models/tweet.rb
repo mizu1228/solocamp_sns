@@ -1,10 +1,8 @@
 class Tweet < ApplicationRecord
 
-  with_options presence: true do
-    validates :text, length: { maximum: 400 } 
-    validates :image
-  end
-
   belongs_to :user
   has_one_attached :image
+  has_many :tag_tweet_relations
+  has_many :tags, through: :tag_tweet_relations
+
 end
