@@ -15,7 +15,11 @@
         <div class="user-bar">
           <div class="user-icon-group">
             <%= link_to user_path(tweet.user) do%>
-              <%= image_tag tweet.user.image, class:'user-icon' %>
+              <% if tweet.user.image.attached? %>
+                <%= image_tag tweet.user.image, class:'user-icon' %>
+              <% else %>
+                <%= image_tag 'default_tent.png', class:'user-icon' %>
+              <% end %>
             <% end %>
           </div>
           <div class="tweet-user">
@@ -26,7 +30,11 @@
         </div>
         <div class="tweet-image-content">
           <%= link_to tweet_path(tweet.id) do%>
-            <%= image_tag tweet.image, class:'tweet-image'%>
+            <% if tweet.image.attached? %>
+              <%= image_tag tweet.image, class:'tweet-image' %>
+            <% else %>
+              <%= image_tag 'default_tent.png', class:'tweet-image' %>
+            <% end %>
           <% end %>
         </div>
         <div class="tweet-text-content">
@@ -35,9 +43,11 @@
           </p>
         </div>
         <div class="tweet-tag-group">
-          <% tweet.tags.each do |tag|%>
-            <%= tag.name %>
-          <% end %>
+          <p>TAG : 
+            <% tweet.tags.each do |tag|%>
+              <%= tag.tag_name %>
+            <% end %>
+          </p>
         </div>
       </li>
     <% end %>
