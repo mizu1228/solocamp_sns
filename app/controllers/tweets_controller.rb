@@ -22,6 +22,8 @@ before_action :user_judge, only: [:edit, :update, :destroy]
   end
 
   def show
+    @comment = Comment.new
+    @comments = @tweet.comments.order(created_at: :desc).includes(:user)
   end
 
   def edit

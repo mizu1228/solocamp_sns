@@ -4,6 +4,7 @@ class Tweet < ApplicationRecord
   has_one_attached :image
   has_many :tag_tweet_relations, dependent: :destroy
   has_many :tags, through: :tag_tweet_relations
+  has_many :comments
 
   after_create do
     tweet = Tweet.find_by(id: self.id)
