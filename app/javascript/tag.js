@@ -1,4 +1,4 @@
-if (location.pathname.match("tweets/new")){
+if (location.pathname.match("tweets/new")) {
   document.addEventListener("DOMContentLoaded", () => {
     const inputElement = document.getElementById("tag_name");
     inputElement.addEventListener("keyup", () => {
