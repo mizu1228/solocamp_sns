@@ -1,0 +1,14 @@
+<%= render '/shared/header' %>
+
+<h2>ハッシュタグ #<%= @tag.tag_name %></h2>
+  <ul>
+    <% @tweets.each do |tweet| %>
+      <li>
+        <% if tweet.image.attached? %>
+          <%= link_to tweet_path(tweet.id) do %>
+            <%= image_tag tweet.image.variant(gravity: :center, resize:"640x640^", crop:"640x640+0+0") %>
+          <% end %>
+        <% end %>
+      </li>
+    <% end %>
+  </ul>

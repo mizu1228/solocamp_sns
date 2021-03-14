@@ -39,14 +39,7 @@
         </div>
         <div class="tweet-text-content">
           <p>TEXT : 
-            <%= tweet.text %>
-          </p>
-        </div>
-        <div class="tweet-tag-group">
-          <p>TAG : 
-            <% tweet.tags.each do |tag|%>
-              <%= tag.tag_name %>
-            <% end %>
+            <%= render_with_tags(tweet.text) %>
           </p>
         </div>
       </li>

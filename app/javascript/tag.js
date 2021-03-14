@@ -1,3 +1,5 @@
+// 現状、ハッシュタグで保存するように改変したため、逐次検索機能もそれに合わせて変更が必要と思われる
+
 if (location.pathname.match("tweets/new")) {
   document.addEventListener("DOMContentLoaded", () => {
     const inputElement = document.getElementById("tag_name");

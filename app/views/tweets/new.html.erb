@@ -15,13 +15,6 @@
     <%= f.text_area :text, placeholder: '400字以内', maxlength: '400' %>
   </div>
 
-  <div class="field">
-    <%= f.label :tag %><br>
-    <%= f.text_field :tag_name, class:'tag_name', id:'tag_name', placeholder: "タグを入力。複数入力するには','で区切ってください", maxlength: '40' %>
-  </div>
-  <div id="search-result">
-  </div>
-
   <div class="send-btn">
     <%= f.submit "SEND" %>
   </div>

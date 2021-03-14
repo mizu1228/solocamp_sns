@@ -29,17 +29,12 @@
 
   <div class="tweet-text-group">
     <div class="tweet-text">
-      <%= @tweet.text%>
+      <%= render_with_tags(@tweet.text) %>
     </div>
   </div>
 
-  <div class="tweet-tag-group">
-    <p>TAG : 
-      <% @tweet.tags.each do |tag|%>
-        <%= tag.tag_name %>
-      <% end %>
-    </p>
-  </div>
+  
+
 
   <div class="tweet-comment-group">
     <div class="tweet-comment">
