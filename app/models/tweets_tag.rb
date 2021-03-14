@@ -6,6 +6,7 @@ class TweetsTag
   with_options presence: true do
     validates :text, length: { maximum: 400 } 
     validates :image
+    validates :user_id
   end
 
   validates :tag_name, length: { maximum: 99 }

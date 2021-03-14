@@ -4,7 +4,9 @@ ja:
      user:
        name: ニックネーム
        phone_num: 電話番号
-     tweet:
+ activemodel:
+   attributes:
+     tweets_tag:
        text: 本文
        image: 画像
-       user: ユーザー
+       user_id: ユーザー

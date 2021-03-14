@@ -1,7 +1,7 @@
 FactoryBot.define do
-  factory :tweet do
+  factory :tweets_tag do
     text           { 'test-tweet' }
-    association :user
+    tag_name       { 'test-tag' }
     
     after(:build) do |tweet|
       tweet.image.attach(io: File.open('public/images/test_image.png'), filename: 'test_image.png')
