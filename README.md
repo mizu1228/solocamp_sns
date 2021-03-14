@@ -72,7 +72,7 @@
 
 | Column             | Type       | Option                         |
 | ------------------ | ---------- | ------------------------------ |
-| tag                | string     | uniqueness: true               |
+| tag_name           | string     | uniqueness: true               |
 | user               | references | foreign_key: true, null: false |
 
 ### Association
