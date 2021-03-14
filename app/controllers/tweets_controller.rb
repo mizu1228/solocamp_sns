@@ -31,6 +31,9 @@ before_action :user_judge, only: [:edit, :update, :destroy]
 
   def update
     @tweets_tag = TweetsTag.new(tweet_params, tweet: @tweet)
+    if @tweets_tag.image == nil
+      @tweets_tag.image = @tweet.image.blob
+    end
     tag = params[:tweet][:tag_name].split(',')
     if @tweets_tag.valid?
       @tweets_tag.save(tag)
