@@ -1,0 +1,56 @@
+<%= render '/shared/header' %>
+
+<div class="tweet-show">
+
+  <div class="user-bar">
+    <div class="user-icon-group">
+      <%= link_to user_path(@tweet.user) do%>
+        <% if @tweet.user.image.attached? %>
+          <%= image_tag @tweet.user.image, class: 'user-icon' %>
+        <% else %>
+          <%= image_tag 'default_tent.png', class: 'user-icon' %>
+        <% end %>
+      <% end %>
+    </div>
+    <div class="tweet-user">
+      <%= link_to user_path(@tweet.user) do%>
+        <%= @tweet.user.name %>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="tweet-img-group">
+    <% if @tweet.image.attached? %>
+      <%= image_tag @tweet.image, class:"tweet-img" %>
+    <% else %>
+      <%= image_tag 'default_tent.png', class:'tweet-img' %>
+    <% end %>
+  </div>
+
+  <div class="tweet-text-group">
+    <div class="tweet-text">
+      <%= render_with_tags(@tweet.text) %>
+    </div>
+  </div>
+
+  
+
+
+  <div class="tweet-comment-group">
+    <div class="tweet-comment">
+      コメントを表示  :  ユーザー名とリンク  :コメントをしたユーザーだけに削除ボタン
+    </div>
+    <div class="comment-form">
+      <%# <%= form_with model: [@tweet, @comment], local :true do |f|%>
+      <%# <%= f.text_area :comment, class:"comment-area", placeholder: "140字まで" %>
+      <%# <%= f.submit "comment", class:"comment-btn" %>
+      <%# <% end %>
+    </div>
+  </div>
+
+  <% if current_user.id == @tweet.user.id %>
+  <div class="edit-group">
+    <%= link_to "EDIT", edit_tweet_path(@tweet.id), class:"edit-btn"%>
+  </div>
+  <% end %>
+</div>

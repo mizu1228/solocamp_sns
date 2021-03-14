@@ -3,8 +3,8 @@
 <h2>UserPage</h2>
 
 <% if @user.image.attached? %>
-  <div class="user-img">
-    <%= image_tag @user.image, width:"200", height:"200" %>
+  <div class="user-img-content">
+    <%= image_tag @user.image, class:"user-img" %>
   </div>
 <% else %>
   <div class="default-img">
@@ -12,8 +12,9 @@
   </div>
 <% end %>
 
-<div class="user-name">
-  UserName: <%= @user.name %>
+<div class="user-name-group">
+  <li class="name-left">UserName:</li>
+  <li class="name-right"><%= @user.name %></li>
 </div>
 
 <div class="user-introduce">

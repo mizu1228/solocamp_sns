@@ -5,6 +5,11 @@ Rails.application.routes.draw do
 }
 
   resources :users, only: [:show]
-  resources :tweets, only: [:new, :create]
+  resources :tweets, only: [:new, :create, :show, :edit, :update, :destroy] do
+    collection do
+      get 'search'
+    end
+  end
   resources :relationships, only: [:create, :destroy]
+  get '/tweet/tag/:name', to: "tweets#tag"
 end

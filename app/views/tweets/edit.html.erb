@@ -2,7 +2,7 @@
 <%= render 'shared/error_messages', resource: @tweets_tag %>
 
 <div class="tweet-form">
-  <%= form_with model: @tweets_tag, url: tweets_path, local: true do |f| %>
+  <%= form_with model: @tweets_tag, url: tweet_path, local: true do |f| %>
 
   <div class="field" id="img-select">
     <%= f.label :image %><br>
@@ -21,6 +21,11 @@
   
   <% end %>
 </div>
+
+<div class="delete-btn">
+  <%= link_to "DELETE", tweet_path(@tweet.id), method: :delete, data: { confirm: "Are you sure delete?"} %>
+</div>
+
 <div class="back-btn">
   <%= link_to 'BACK', root_path %>
 </div>

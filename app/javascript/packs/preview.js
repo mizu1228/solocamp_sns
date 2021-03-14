@@ -1,3 +1,5 @@
+// 各投稿でのプレビューに使いまわしている
+
 if (document.URL.match( /new/ ) || document.URL.match( /edit/ )){
   document.addEventListener('DOMContentLoaded', function(){
     const ImagePrv = document.getElementById('img-prv');
@@ -13,7 +15,7 @@ if (document.URL.match( /new/ ) || document.URL.match( /edit/ )){
       ImagePrv.appendChild(imageElement);
     };
 
-    document.getElementById('prof-img').addEventListener('change', function(e){
+    document.getElementById('img-select').addEventListener('change', function(e){
 
       const imageContent = document.querySelector('img');
       if (imageContent){

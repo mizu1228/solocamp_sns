@@ -14,6 +14,8 @@ module SolocampSns
     # 日本語に設定
     config.i18n.default_locale = :ja
 
+    # config.logger = Logger.new(STDOUT)
+
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration can go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded after loading
