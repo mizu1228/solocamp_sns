@@ -1,10 +1,15 @@
 class CommentsController < ApplicationController
+  def new
+    @comments = Comment.all
+    @comment = Comment.new
+  end
+
   def create
-    comment = Comment.new(comment_params)
-    if comment.save
-      redirect_to tweet_path(params[:tweet_id])
-    else
-      redirect_to tweet_path(params[:tweet_id])
+    # tweet = Tweet.find(params[:tweet_id])
+    @comment = Comment.new(comment_params) #(comment: params[:comment][:comment])
+    # binding.pry
+    if @comment.save
+      ActionCable.server.broadcast 'comment_channel', content: @comment
     end
   end
 

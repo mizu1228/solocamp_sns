@@ -4,7 +4,20 @@ before_action :set_tweet, only: [:show, :edit, :update, :destroy]
 before_action :user_judge, only: [:edit, :update, :destroy]
 
   def index
-    @tweets = Tweet.order(created_at: :desc)
+    @tweets = Tweet.order(created_at: :desc).includes(:user)
+    @tweets.each do |tweet|
+      @tweet = tweet
+      @comments = @tweet.comments.order(created_at: :desc).includes(:user)
+    end
+    def comment_create
+      @comment = Comment.new
+      if @comment.save
+        redirect_to root_path
+      else
+        render :index
+        return
+      end
+    end
   end
 
   def new
@@ -23,7 +36,7 @@ before_action :user_judge, only: [:edit, :update, :destroy]
 
   def show
     @comment = Comment.new
-    @comments = @tweet.comments.order(created_at: :desc).includes(:user)
+    @comments = @tweet.comments.all.includes(:user)
   end
 
   def edit
@@ -70,6 +83,7 @@ before_action :user_judge, only: [:edit, :update, :destroy]
   def tweet_params
     params.require(:tweet).permit(:text, :image, :tag_name).merge(user_id: current_user.id)
   end
+
 
   def set_tweet
     @tweet = Tweet.find(params[:id])
