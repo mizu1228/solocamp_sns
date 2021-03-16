@@ -2,54 +2,9 @@
 
 <div class="tweet-show">
 
-  <div class="user-bar">
-    <div class="user-icon-group">
-      <%= link_to user_path(@tweet.user) do%>
-        <% if @tweet.user.image.attached? %>
-          <%= image_tag @tweet.user.image, class: 'user-icon' %>
-        <% else %>
-          <%= image_tag 'default_tent.png', class: 'user-icon' %>
-        <% end %>
-      <% end %>
-    </div>
-    <div class="tweet-user">
-      <%= link_to user_path(@tweet.user) do%>
-        <%= @tweet.user.name %>
-      <% end %>
-    </div>
-  </div>
-
-  <div class="tweet-img-group">
-    <% if @tweet.image.attached? %>
-      <%= image_tag @tweet.image, class:"tweet-img" %>
-    <% else %>
-      <%= image_tag 'default_tent.png', class:'tweet-img' %>
-    <% end %>
-  </div>
-
-  <div class="tweet-text-group">
-    <div class="tweet-text">
-      <%= render_with_tags(@tweet.text) %>
-    </div>
-  </div>
-
-  
-
-
-<%= render "/comments/comments", comments: @comments%>
-
-<div class="like-container">
-  <% if current_user.liked_by?(@tweet.id) %>
-    <p id="tweet-like">
-      <%= link_to 'いいねを外す', destroy_like_path(@tweet), method: :delete, remote: true %><%= @tweet.likes.count %>
-    </p>
-  <% else %>
-    <p id="tweet-like">
-      <%= link_to 'いいね', create_like_path(@tweet), method: :post, remote: true %><%= @tweet.likes.count %>
-    </p>
-  <% end %>
+<div id="tweet-like">
+<%= render 'tweet', tweet: @tweet%>
 </div>
-
   <div class="comment-form">
     <%= form_with model: [@tweet, @comment] do |f|%>
       <%= f.text_area :comment, class:"comment-area", placeholder: "140字まで" %>

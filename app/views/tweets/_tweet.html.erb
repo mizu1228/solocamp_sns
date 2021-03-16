@@ -33,11 +33,11 @@
 
 <div class="like-container">
   <% if current_user.liked_by?(tweet.id) %>
-    <p>
+    <p id="tweet-like">
       <%= link_to 'いいねを外す', destroy_like_path(tweet), method: :delete, remote: true %><%= tweet.likes.count %>
     </p>
   <% else %>
-    <p>
+    <p id="tweet-like">
       <%= link_to 'いいね', create_like_path(tweet), method: :post, remote: true %><%= tweet.likes.count %>
     </p>
   <% end %>
