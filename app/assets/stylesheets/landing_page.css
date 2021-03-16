@@ -1,0 +1,45 @@
+.landing-page {
+  /* width: 100vw; */
+  height: 100vh;
+  background: url('campfire.jpeg') no-repeat ;
+  background-size: cover;
+  background-color: rgba(1, 0, 15, 0.952);
+  position: relative;
+}
+
+.sign-container {
+  border: 1px solid white;
+  border-radius: 10px;
+  /* width: 40%; */
+  width: 350px;
+  height: 400px;
+  padding: 30px;
+  position: absolute;
+  left: calc(100vw - 40%);
+  top: calc((100vh - 400px) / 2);
+  box-shadow: 0 0 10px rgba(41, 41, 41, 0.2);
+  background-color: rgba(36, 24, 24, 0.808);
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.login {
+  color: aliceblue;
+  margin-top: 0;
+}
+
+.field {
+  color: aliceblue;
+}
+
+.devise_links {
+  color: aliceblue;
+}
+
+.devise_links a {
+  color: aliceblue;
+}
+
+.login-flash-message {
+  color: aliceblue;
+}

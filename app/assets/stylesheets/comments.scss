@@ -1,0 +1,18 @@
+.comment-box {
+  display: flex;
+  // justify-content: space-between;
+}
+
+.comment-user {
+background-color: bisque;
+margin-right: 10px;
+}
+
+.comment-text {
+  background-color: burlywood;
+}
+
+.comment-delete-btn {
+background-color: brown;
+margin-left: 100px;
+}

@@ -42,6 +42,8 @@
             <%= render_with_tags(tweet.text) %>
           </p>
         </div>
+
+        <%= render "/comments/comments", comments: tweet.comments %>
       </li>
     <% end %>
   </ul>

@@ -36,16 +36,13 @@
   
 
 
-  <div class="tweet-comment-group">
-    <div class="tweet-comment">
-      コメントを表示  :  ユーザー名とリンク  :コメントをしたユーザーだけに削除ボタン
-    </div>
-    <div class="comment-form">
-      <%# <%= form_with model: [@tweet, @comment], local :true do |f|%>
-      <%# <%= f.text_area :comment, class:"comment-area", placeholder: "140字まで" %>
-      <%# <%= f.submit "comment", class:"comment-btn" %>
-      <%# <% end %>
-    </div>
+<%= render "/comments/comments", comments: @comments%>
+
+  <div class="comment-form">
+    <%= form_with model: [@tweet, @comment] do |f|%>
+      <%= f.text_area :comment, class:"comment-area", placeholder: "140字まで" %>
+      <%= f.submit "SEND", class:"comment-btn" %>
+    <% end %>
   </div>
 
   <% if current_user.id == @tweet.user.id %>
