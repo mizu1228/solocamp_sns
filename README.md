@@ -10,9 +10,9 @@
 | phone_num          | string  | null:   false               |
 | introduce          | text    |                             |
 | camp_style_id      | integer |                             |
-| trans_way_id       | integer |                             |
+| trans_style_id     | integer |                             |
 | season_id          | integer |                             |
-| area_id            | integer |                             |
+| prefecture_id      | integer |                             |
 
 ### imageをActiveStorageで管理(null: false)
 
@@ -23,12 +23,12 @@
 - has_many :comments
 - has_many :likes
 - has_many :items
------以下ActiveHash-------
+- -----以下ActiveHash-------
 - has_one  :camp_style
-- has_one  :trans_way
+- has_one  :trans_style
 - has_one  :season
-- has_one  :area
-------Followに関する記述-----
+- has_one  :prefecture
+- ------Followに関する記述-----
 - has_many :relationships
 - has_many :followings, through: :relationships, source: :follow
 - has_many :reverse_of_relationships, class_name: 'Relationship',
