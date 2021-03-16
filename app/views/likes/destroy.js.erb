@@ -1,1 +1,6 @@
-document.getElementById('tweet_<%= @tweet.id %>').innerHTML = '<%= j(render @tweet) %>'
+if (document.URL.match( /tweets/ )) {
+  document.getElementById('tweet-like').innerHTML = '<%= j(render @tweet) %>'
+}
+if (document.body.id === 'top' && document.URL.match( /tweets/ ) === false ) {
+  document.getElementById('tweet_<%= @tweet.id %>').innerHTML = '<%= j(render @tweet) %>'
+}
