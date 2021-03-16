@@ -24,10 +24,10 @@
 - has_many :likes
 - has_many :items
 - -----以下ActiveHash-------
-- has_one  :camp_style
-- has_one  :trans_style
-- has_one  :season
-- has_one  :prefecture
+- belongs_to  :camp_style
+- belongs_to  :trans_style
+- belongs_to  :season
+- belongs_to  :prefecture
 - ------Followに関する記述-----
 - has_many :relationships
 - has_many :followings, through: :relationships, source: :follow
