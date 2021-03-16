@@ -44,6 +44,12 @@
         </div>
 
         <%= render "/comments/comments", comments: tweet.comments %>
+        
+        <% if current_user.liked_by?(tweet.id) %>
+          <p>いいねを外す</p>
+        <% else %>
+          <p>いいね</p>
+        <% end %>
       </li>
     <% end %>
   </ul>
