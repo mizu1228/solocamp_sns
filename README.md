@@ -161,10 +161,10 @@
 | Column            | Type        | Option                          |
 | ----------------- | ----------- | ------------------------------- |
 | site              | string      | null: false                     |
-| prefecture_id     | references  | null: false                     |
+| prefecture_id     | integer     | null: false                     |
 | address           | string      | null: false                     |
 | site_tel          | string      | null: false                     |
-| site_type_id      | references  | null: false                     |
+| site_type_id      | integer     | null: false                     |
 
 ### Association
 
