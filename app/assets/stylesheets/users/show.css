@@ -4,3 +4,18 @@
   background-color: rgb(182, 182, 182);
   object-fit: contain;
 }
+
+.camp-style {
+  display: flex;
+}
+
+.style-title {
+  margin: 0 10px;
+  text-align: center;
+}
+
+.style-name {
+  margin: 0 10px;
+  text-align: center;
+}
+

@@ -28,6 +28,26 @@
     <%= f.email_field :email, autocomplete: "email" %>
   </div>
 
+  <div class="field">
+    <%= f.label :キャンプスタイル %><br />
+    <%= f.collection_select(:camp_style_id, CampStyle.all, :id, :name, {}, {class:"campstyle-select"}) %>
+  </div>
+
+  <div class="field">
+    <%= f.label :移動手段 %><br />
+    <%= f.collection_select(:trans_style_id, TransStyle.all, :id, :name, {}, {class:"transstyle-select"}) %>
+  </div>
+
+  <div class="field">
+    <%= f.label :活動時期 %><br />
+    <%= f.collection_select(:season_id, Season.all, :id, :name, {}, {class:"season-select"}) %>
+  </div>
+
+  <div class="field">
+    <%= f.label :活動エリア %><br />
+    <%= f.collection_select(:prefecture_id, Prefecture.all, :id, :name, {}, {class:"prefecture-select"}) %>
+  </div>
+
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
     <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
   <% end %>

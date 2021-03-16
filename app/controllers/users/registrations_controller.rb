@@ -51,7 +51,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   end
 
   def configure_account_update_params
-    devise_parameter_sanitizer.permit(:account_update, keys: [:name, :introduce, :image])
+    devise_parameter_sanitizer.permit(:account_update, keys: [:name, :introduce, :image, :camp_style_id, :trans_style_id, :season_id, :prefecture_id])
   end
 
   # If you have extra params to permit, append them to the sanitizer.

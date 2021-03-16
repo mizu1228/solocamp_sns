@@ -10,4 +10,7 @@ class Season < ActiveHash::Base
     { id: 7, name: '寒い時' }
   ]
 
+  include ActiveHash::Associations
+   has_many :users
+
 end

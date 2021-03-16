@@ -24,6 +24,53 @@
   </span>
 </div>
 
+<div class="style-lists">
+  <ul class="camp-style">
+    <li class="style-title">スタイル
+    </li>
+    <li class="style-name">
+      <% if @user.camp_style != nil %>
+        <%= @user.camp_style.name %>
+      <% else %>
+        --
+      <% end %>
+    </li>
+  </ul>
+  <ul class="camp-style">
+    <li class="style-title">移動手段
+    </li>
+    <li class="style-name">
+      <% if @user.trans_style != nil %>
+        <%= @user.trans_style.name %>
+      <% else %>
+        --
+      <% end %>
+    </li>
+  </ul>
+  <ul class="camp-style">
+    <li class="style-title">活動時期
+    </li>
+    <li class="style-name">
+      <% if @user.season != nil %>
+        <%= @user.season.name %>
+      <% else %>
+        --
+      <% end %>
+    </li>
+  </ul>
+  <ul class="camp-style">
+    <li class="style-title">活動場所
+    </li>
+    <li class="style-name">
+      <% if @user.prefecture != nil %>
+        <%= @user.prefecture.name %>
+      <% else %>
+        --
+      <% end %>
+    </li>
+  </ul>
+</div>
+
 <div class="visit-u-edit">
 <% if @user.id == current_user.id %>
   <%= link_to "EDIT", edit_user_registration_path(current_user) %>
