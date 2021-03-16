@@ -1,0 +1,6 @@
+if (document.URL.match( /tweets/ )) {
+  document.getElementById('tweet-like').innerHTML = '<%= j(render @tweet) %>'
+}
+if (document.body.id === 'top' ) {
+  document.getElementById('tweet_<%= @tweet.id %>').innerHTML = '<%= j(render @tweet) %>'
+}
