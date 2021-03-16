@@ -11,45 +11,8 @@
 
   <ul class="tweet-list">
     <% @tweets.each do |tweet| %>
-      <li class="list">
-        <div class="user-bar">
-          <div class="user-icon-group">
-            <%= link_to user_path(tweet.user) do%>
-              <% if tweet.user.image.attached? %>
-                <%= image_tag tweet.user.image, class:'user-icon' %>
-              <% else %>
-                <%= image_tag 'default_tent.png', class:'user-icon' %>
-              <% end %>
-            <% end %>
-          </div>
-          <div class="tweet-user">
-            <%= link_to user_path(tweet.user) do%>
-              <%= tweet.user.name %>
-            <% end %>
-          </div>
-        </div>
-        <div class="tweet-image-content">
-          <%= link_to tweet_path(tweet.id) do%>
-            <% if tweet.image.attached? %>
-              <%= image_tag tweet.image, class:'tweet-image' %>
-            <% else %>
-              <%= image_tag 'default_tent.png', class:'tweet-image' %>
-            <% end %>
-          <% end %>
-        </div>
-        <div class="tweet-text-content">
-          <p>TEXT : 
-            <%= render_with_tags(tweet.text) %>
-          </p>
-        </div>
-
-        <%= render "/comments/comments", comments: tweet.comments %>
-        
-        <% if current_user.liked_by?(tweet.id) %>
-          <p>いいねを外す</p>
-        <% else %>
-          <p>いいね</p>
-        <% end %>
+      <li class="list" id="tweet_<%= tweet.id %>">
+        <%= render 'tweet', tweet: tweet%>
       </li>
     <% end %>
   </ul>
