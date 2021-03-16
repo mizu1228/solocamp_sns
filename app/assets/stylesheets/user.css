@@ -4,3 +4,6 @@
    object-fit: contain;
 }
 
+.field {
+   margin-bottom: 15px;
+}

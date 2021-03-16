@@ -6,6 +6,10 @@ class DeviseCreateUsers < ActiveRecord::Migration[6.0]
       t.string :name,               null: false
       t.string :phone_num,          null: false
       t.text   :introduce
+      t.string :camp_style_id
+      t.string :trans_style_id
+      t.string :season_id
+      t.string :prefecture_id
       
       ## Database authenticatable
       t.string :email,              null: false, default: ""
