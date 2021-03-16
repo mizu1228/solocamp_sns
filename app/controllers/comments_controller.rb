@@ -13,6 +13,12 @@ class CommentsController < ApplicationController
     end
   end
 
+  def destroy
+    comment = Comment.find_by(id: params[:id], tweet_id: params[:tweet_id])
+    comment.destroy
+    redirect_to tweet_path(params[:tweet_id])
+  end
+
 private
 
 def comment_params

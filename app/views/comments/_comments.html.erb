@@ -1,19 +1,22 @@
 <div class="tweet-comment-group" id="tweet-comments">
     
-      <ul>
+      <ul class="tweet-comments">
         <% comments.each do |comment| %>
-          <li class="comment-main">
+        <div class="comment-box">
+          <li class="comment-user">
             <%= link_to user_path(comment.user.id) do %>
               <%= comment.user.name %>
             <% end %>
+          </li>
+          <li class="comment-text">
             <%= comment.comment %>
           </li>
           <% if comment.user.id == current_user.id %>
             <li class="comment-delete-btn">
-              <%# CSSで横並びにして表示させる%>
-              <%= link_to "delete", "#" %>
-            <li>
+              <%= link_to "delete", tweet_comment_path(comment.tweet.id, comment.id), method: :delete , id:"delete-btn" %>
+            </li>
           <% end %>
+          </div>
         <% end %>
       </ul>
     

@@ -1,3 +1,18 @@
-// Place all the styles related to the comments controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.comment-box {
+  display: flex;
+  // justify-content: space-between;
+}
+
+.comment-user {
+background-color: bisque;
+margin-right: 10px;
+}
+
+.comment-text {
+  background-color: burlywood;
+}
+
+.comment-delete-btn {
+background-color: brown;
+margin-left: 100px;
+}
