@@ -4,6 +4,8 @@ ja:
      user:
        name: ニックネーム
        phone_num: 電話番号
+     comment:
+       comment: コメント
  activemodel:
    attributes:
      tweets_tag:
