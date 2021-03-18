@@ -1,0 +1,9 @@
+<%= render 'shared/header' %>
+
+<div class="prefecture">
+  <% @prefectures.each do |prefecture| %>
+    <li>
+      <%= link_to prefecture.name, "#" %>
+    </li>
+  <% end %>
+</div>

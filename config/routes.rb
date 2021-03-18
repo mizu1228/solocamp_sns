@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   delete 'like/:id' => 'likes#destroy', as: 'destroy_like'
 
   resources :users, only: [:show]
+  resources :camp_sites, only: [:index, :show]
   resources :tweets, only: [:new, :create, :show, :edit, :update, :destroy] do
     resources :comments, only: [:new, :create, :destroy]
     collection do

@@ -1,7 +1,9 @@
 <%= render '/shared/header'%>
 
 <div class="main">
-  <h1>MainPage</h1>
+  <h1>
+    <%= link_to "Select-Campsite", camp_sites_path %>
+  </h1>
 
   <h2>
     <%= link_to 'New-Story', new_tweet_path %>
@@ -16,5 +18,4 @@
       </li>
     <% end %>
   </ul>
-
 </div>

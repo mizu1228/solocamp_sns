@@ -1,7 +1,11 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+CampSite.create(site:'宇樽部キャンプ場', address:'十和田市奥入瀬十和田湖畔宇樽部', site_tell:'0176752477', prefecture_id:'2', site_type_id:'2')
+CampSite.create(site:'薬研野営場', address:'むつ市大畑町葉色', prefecture_id:'2', site_type_id:'1')
+CampSite.create(site:'大間崎テントサイト', address:'下北郡大間町大間平17-1', prefecture_id:'2', site_type_id:'5')
+CampSite.create(site:'十三湖中の島ブリッジパークキャンプ場', address:'五所川原市十三土佐', site_tell:'0173622775', prefecture_id:'2', site_type_id:'2')
+CampSite.create(site:'相の沢キャンプ場', address:'滝沢市鵜飼安達114-7', site_tell:'019-691-6555', prefecture_id:'3', site_type_id:'0')
+CampSite.create(site:'細峯ベース', address:'大崎市岩出山細峯50-127', site_tell:'09083058615', prefecture_id:'4', site_type_id:'0')
+CampSite.create(site:'とことん山キャンプ場', address:'湯沢市皆瀬字新処106番地', site_tell:'0183475241', prefecture_id:'5', site_type_id:'0')
+CampSite.create(site:'羽鳥湖畔オートキャンプ場', address:'岩瀬郡天栄村羽鳥芝草2-4', site_tell:'0248852033', prefecture_id:'7', site_type_id:'2')
+CampSite.create(site:'古竜湖キャンプ場', address:'山形市蔵王山田813-1', site_tell:'023-641-1212', prefecture_id:'6', site_type_id:'2')
+CampSite.create(site:'酸ヶ湯キャンプ場', address:'青森市荒川南荒川山地内', site_tell:'0177386566', prefecture_id:'2', site_type_id:'8')
+# 追加するなら、今あるものを消さないと二重になるよ
