@@ -1,3 +1,9 @@
 <%= link_to camp_site_show_path(result.id) do %>
   <%= result.site %>
+
+  <% if current_user.visited_by?(result.id) %>
+    <%= link_to "visited", destroy_visited_site_path(result), method: :delete %>
+  <% else %>
+    <%= link_to "visit", create_visited_site_path(result), method: :post %>
+  <% end %>
 <% end %>

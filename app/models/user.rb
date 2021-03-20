@@ -76,4 +76,8 @@ class User < ApplicationRecord
     likes.where(tweet_id: tweet_id).exists?
   end
 
+  def visited_by?(camp_site_id)
+    visited_sites.where(camp_site_id: camp_site_id).exists?
+  end
+
 end

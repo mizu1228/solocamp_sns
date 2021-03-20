@@ -6,6 +6,9 @@ Rails.application.routes.draw do
   post 'like/:id' => 'likes#create', as: 'create_like'
   delete 'like/:id' => 'likes#destroy', as: 'destroy_like'
 
+  post 'visited_site/:id' => 'visited_sites#create', as: 'create_visited_site'
+  delete 'visited_site/:id' => 'visited_sites#destroy', as: 'destroy_visited_site'
+
   resources :users, only: [:show]
   get 'camp_sites/search'
   resources :camp_sites, only: :index do
