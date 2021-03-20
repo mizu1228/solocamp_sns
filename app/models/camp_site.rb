@@ -9,6 +9,8 @@ class CampSite < ApplicationRecord
     validates :site_type_id
   end
 
+  has_many :visited_sites
+
   belongs_to :site_type
   belongs_to :prefecture
 end

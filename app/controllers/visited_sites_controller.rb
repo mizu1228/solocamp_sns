@@ -1,0 +1,2 @@
+class VisitedSitesController < ApplicationController
+end
