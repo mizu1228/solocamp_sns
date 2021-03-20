@@ -1,9 +1,11 @@
 <%= render 'shared/header' %>
 
-<div class="prefecture">
-  <% @prefectures.each do |prefecture| %>
-    <li>
-      <%= link_to prefecture.name, "#" %>
-    </li>
-  <% end %>
-</div>
+<h1>
+キャンプ場検索
+</h1>
+<%= search_form_for @p, url: camp_sites_search_path do |f| %>
+  <%= f.label :site_eq, 'キャンプ場' %>
+  <%= f.collection_select :prefecture_id_eq, @prefectures, :id, :name, include_lank: '指定なし' %>
+  <br>
+  <%= f.submit '検索' %>
+<% end %>

@@ -1,5 +1,6 @@
 class CampSite < ApplicationRecord
   extend ActiveHash::Associations::ActiveRecordExtensions
+  include JpPrefecture
 
   with_options presence: true do
     validates :site

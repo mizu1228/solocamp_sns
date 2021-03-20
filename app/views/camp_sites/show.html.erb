@@ -1,2 +1,26 @@
-<h1>CampSites#show</h1>
-<p>Find me in app/views/camp_sites/show.html.erb</p>
+<%= render 'shared/header' %>
+
+<ul>
+<li>
+<h2><%= @result.site %></h2>
+</li>
+<li>
+<h3><%= @result.prefecture.name %> <%= @result.address %></h3>
+</li>
+<li>
+<h3>電話 
+<% if @result.site_tell != nil %>
+<%= @result.site_tell %>
+<% else %>
+----
+<% end %>
+</h3>
+</li>
+<li>
+<h3>サイトの種類 <%= @result.site_type.name %></h3>
+</li>
+</ul>
+
+<div class="back">
+  <%= link_to "back to camp site list", :back %>
+
