@@ -1,9 +1,13 @@
-<%= link_to camp_site_show_path(result.id) do %>
+<%= link_to camp_site_show_path(result) do %>
   <%= result.site %>
 
   <% if current_user.visited_by?(result.id) %>
-    <%= link_to "visited", destroy_visited_site_path(result), method: :delete %>
+    <%= link_to  destroy_visited_site_path(result), method: :delete, remote: true, id:'visited' do %>
+      novisit <%= image_tag 'default_tent.png', width:'20', height:'20'%>
+    <% end %>
   <% else %>
-    <%= link_to "visit", create_visited_site_path(result), method: :post %>
+    <%= link_to create_visited_site_path(result), method: :post, remote: true, id:'visit' do %>
+      visited <%= image_tag 'checked-tent.png', width:'20', height:'20'%>
+    <% end %>
   <% end %>
 <% end %>
