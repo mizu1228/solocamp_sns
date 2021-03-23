@@ -12,3 +12,6 @@ ja:
        text: 本文
        image: 画像
        user_id: ユーザー
+ time:
+   formats:
+     default: "%Y年%m月%d日 %H:%M"

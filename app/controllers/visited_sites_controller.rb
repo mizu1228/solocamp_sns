@@ -3,7 +3,6 @@ class VisitedSitesController < ApplicationController
 
   def create
     VisitedSite.create(user_id: current_user.id, camp_site_id: params[:id])
-    # binding.pry
     # redirect_back(fallback_location: root_path)
   end
 

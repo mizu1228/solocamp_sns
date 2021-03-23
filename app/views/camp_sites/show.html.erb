@@ -1,26 +1,36 @@
 <%= render 'shared/header' %>
 
 <ul>
-<li>
-<h2><%= @result.site %></h2><%= @result.created_at %>
-</li>
-<li>
-<h3><%= @result.prefecture.name %> <%= @result.address %></h3>
-</li>
-<li>
-<h3>電話 
-<% if @result.site_tell != nil %>
-<%= @result.site_tell %>
-<% else %>
-----
-<% end %>
-</h3>
-</li>
-<li>
-<h3>サイトの種類 <%= @result.site_type.name %></h3>
-</li>
+  <li>
+
+    <div class="site-show-head">
+      <h2><%= @result.site %></h2>
+      <% @result.visited_sites.each do |visit| %>
+        <% if current_user.id == visit.user_id%>
+          <%= l visit.created_at %> に訪れました。
+        <% end %>
+      <% end %>
+    </div>
+  </li>
+  <li>
+    <h3><%= @result.prefecture.name %> <%= @result.address %></h3>
+  </li>
+  <li>
+    <h3>電話 
+    <% if @result.site_tell != nil %>
+      <%= @result.site_tell %>
+    <% else %>
+      ----
+    <% end %>
+    </h3>
+  </li>
+  <li>
+    <h3>サイトの種類 <%= @result.site_type.name %></h3>
+  </li>
+
+  <li>
+    <div class="back">
+      <%= link_to "<< back to camp site list", :back %>
+    </div>
+  </li>
 </ul>
-
-<div class="back">
-  <%= link_to "back to camp site list", :back %>
-
