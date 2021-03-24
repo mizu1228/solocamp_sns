@@ -59,6 +59,7 @@ class User < ApplicationRecord
   has_many :tweets
   has_many :comments
   has_many :likes
+  has_many :interes
   has_many :visited_sites
   has_one_attached :image
 
@@ -78,6 +79,10 @@ class User < ApplicationRecord
 
   def visited_by?(camp_site_id)
     visited_sites.where(camp_site_id: camp_site_id).exists?
+  end
+
+  def intere_by?(camp_site_id)
+    interes.where(camp_site_id: camp_site_id).exists?
   end
 
 end

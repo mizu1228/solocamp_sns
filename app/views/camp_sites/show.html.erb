@@ -5,7 +5,13 @@
 
     <div class="site-show-head">
       <h2><%= @result.site %></h2>
-      <p>いってみたい</p>
+      <p>
+        <% if current_user.intere_by?(@result) %>
+          <%= link_to "お気に入りを外す", destroy_intere_path(@result), method: :delete %>
+        <% else %>
+          <%= link_to "お気に入りにする", create_intere_path(@result), method: :post %>
+        <% end %>
+      </p>
     </div>
     <p>
       <% @result.visited_sites.each do |visit| %>
