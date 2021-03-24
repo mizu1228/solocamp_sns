@@ -1,6 +1,10 @@
 class InteresController < ApplicationController
   before_action :camp_site_params
 
+  def index
+    @interes = Intere.all.includes(:user)
+  end
+
   def create
     Intere.create(user_id: current_user.id, camp_site_id: params[:id])
     redirect_back(fallback_location: root_path)

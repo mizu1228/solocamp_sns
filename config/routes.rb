@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   post 'visited_site/:id' => 'visited_sites#create', as: 'create_visited_site'
   delete 'visited_site/:id' => 'visited_sites#destroy', as: 'destroy_visited_site'
 
+  resources :interes, only: :index
   post 'intere/:id' => 'interes#create', as: 'create_intere'
   delete 'intere/:id' => 'interes#destroy', as: 'destroy_intere'
 
