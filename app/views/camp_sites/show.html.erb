@@ -5,12 +5,15 @@
 
     <div class="site-show-head">
       <h2><%= @result.site %></h2>
+      <p>いってみたい</p>
+    </div>
+    <p>
       <% @result.visited_sites.each do |visit| %>
         <% if current_user.id == visit.user_id%>
           <%= l visit.created_at %> に訪れました。
         <% end %>
       <% end %>
-    </div>
+    </p>
   </li>
   <li>
     <h3><%= @result.prefecture.name %> <%= @result.address %></h3>
