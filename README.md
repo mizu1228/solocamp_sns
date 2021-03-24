@@ -23,6 +23,7 @@
 - has_many :comments
 - has_many :likes
 - has_many :items
+- has_many :interes
 - -----以下ActiveHash-------
 - belongs_to  :camp_style
 - belongs_to  :trans_style
@@ -169,6 +170,7 @@
 ### Association
 
 - has_many   :visited_sites
+- has_many   :interes
 - belongs_to :prefecture
 
 
@@ -178,6 +180,19 @@
 | ----------------- | ----------- | ------------------------------- |
 | camp_site         | references  | foreign_key: true, null: false  |
 | user              | references  | foreign_key: true, null: false  |
+
+### Association
+
+- belongs_to :user
+- belongs_to :camp_site
+
+
+## intetreテーブル
+
+| Column             | Type       | Option                         |
+| ------------------ | ---------- | ------------------------------ |
+| user               | references | foreign_key: true, null: false |
+| camp_site          | references | foreign_key: true, null: false |
 
 ### Association
 

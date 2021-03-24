@@ -12,7 +12,12 @@
       <%= render "result", result: result %>
     </li>
   <% end %>
+  <li>
+    <%= link_to "<< Search another area", camp_sites_path %>
+  </li>
 <% else %>
-  <%= link_to "<< Search another area", camp_sites_path %>
+  <li>
+    <%= link_to "<< Search another area", camp_sites_path %>
+  </li>
 <% end %>
 <br>

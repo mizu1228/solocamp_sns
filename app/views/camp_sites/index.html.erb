@@ -1,8 +1,10 @@
 <%= render 'shared/header' %>
 
-<h1>
+
+
+<h2>
 キャンプ場検索
-</h1>
+</h2>
 <%= search_form_for @p, url: camp_sites_search_path do |f| %>
   <%= f.label :site_eq, 'キャンプ場' %>
   <%= f.collection_select :prefecture_id_eq, @prefectures, :id, :name, include_lank: '指定なし' %>

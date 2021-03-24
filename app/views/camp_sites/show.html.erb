@@ -28,6 +28,14 @@
     <h3>サイトの種類 <%= @result.site_type.name %></h3>
   </li>
 
+  <%# <li> %>
+    <%# <% @result.visited_sites.each do |visit| %>
+        <%# <% if current_user.id == visit.user_id%>
+          <%# <%= visit.tweet_id %>
+        <%# <% end %>
+      <%# <% end %>
+  <%# </li> %>
+
   <li>
     <div class="back">
       <%= link_to "<< back to camp site list", :back %>

@@ -15,8 +15,12 @@
     <%= f.text_area :text, placeholder: '400字以内', maxlength: '400' %>
   </div>
 
+  <div class="site-select-btn">
+    <%= link_to "キャンプ場を選ぶ >> ", camp_sites_path %>
+  </div>
+
   <div class="send-btn">
-    <%= f.submit "SEND" %>
+    <%= f.submit "SEND >> " %>
   </div>
   
   <% end %>

@@ -117,9 +117,11 @@ ActiveRecord::Schema.define(version: 2021_03_20_083003) do
   create_table "visited_sites", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "camp_site_id", null: false
     t.bigint "user_id", null: false
+    t.bigint "tweet_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["camp_site_id"], name: "index_visited_sites_on_camp_site_id"
+    t.index ["tweet_id"], name: "index_visited_sites_on_tweet_id"
     t.index ["user_id"], name: "index_visited_sites_on_user_id"
   end
 
@@ -132,5 +134,6 @@ ActiveRecord::Schema.define(version: 2021_03_20_083003) do
   add_foreign_key "tag_tweet_relations", "tweets"
   add_foreign_key "tweets", "users"
   add_foreign_key "visited_sites", "camp_sites"
+  add_foreign_key "visited_sites", "tweets"
   add_foreign_key "visited_sites", "users"
 end
