@@ -1,0 +1,2 @@
+class InteresController < ApplicationController
+end
