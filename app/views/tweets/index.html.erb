@@ -6,10 +6,12 @@
   </h1>
 
   <h2>
-    <%= link_to 'New-Story', new_tweet_path %>
+    <%= link_to 'Interested-Campsite', interes_path %>
   </h2>
 
-  <h2>Display All Tweets in this page</h2> 
+  <h2>
+    <%= link_to 'New-Diary', new_tweet_path %>
+  </h2>
 
   <ul class="tweet-list">
     <% @tweets.each do |tweet| %>

@@ -1,1 +1,17 @@
 <%= render 'shared/header' %>
+
+<h2>お気に入りのキャンプ場</h2>
+
+<% @interes.each do |intere| %>
+  <% if current_user.id == intere.user_id %>
+  <li id="site<%= intere.id %>">
+    <%= intere.camp_site.prefecture.name %>  
+    <%= link_to intere.camp_site.site, camp_site_show_path(intere.camp_site) %>  
+    <%= link_to 'リストから外す', destroy_intere_path(intere.camp_site), method: :delete %>
+  </li>
+  <% end %>
+<% end %>
+
+<li><%= link_to 'キャンプ場を探す >>', camp_sites_path %></li>
+
+<li><%= link_to '<< 戻る', root_path %></li>

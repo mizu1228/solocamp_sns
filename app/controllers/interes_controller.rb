@@ -1,5 +1,5 @@
 class InteresController < ApplicationController
-  before_action :camp_site_params
+  before_action :camp_site_params, only: [:create, :destroy]
 
   def index
     @interes = Intere.all.includes(:user)
