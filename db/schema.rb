@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_27_221806) do
+ActiveRecord::Schema.define(version: 2021_03_28_080841) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -53,6 +53,18 @@ ActiveRecord::Schema.define(version: 2021_03_27_221806) do
     t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
+  create_table "gears", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "gear_genre_id", null: false
+    t.string "gear_name", null: false
+    t.string "explanation"
+    t.bigint "user_id", null: false
+    t.bigint "tweet_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["tweet_id"], name: "index_gears_on_tweet_id"
+    t.index ["user_id"], name: "index_gears_on_user_id"
+  end
+
   create_table "interes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.bigint "camp_site_id", null: false
@@ -92,15 +104,6 @@ ActiveRecord::Schema.define(version: 2021_03_27_221806) do
     t.string "tag_name", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "tweet_visits", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.bigint "tweet_id"
-    t.bigint "visited_site_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["tweet_id"], name: "index_tweet_visits_on_tweet_id"
-    t.index ["visited_site_id"], name: "index_tweet_visits_on_visited_site_id"
   end
 
   create_table "tweets", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -146,6 +149,8 @@ ActiveRecord::Schema.define(version: 2021_03_27_221806) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "comments", "tweets"
   add_foreign_key "comments", "users"
+  add_foreign_key "gears", "tweets"
+  add_foreign_key "gears", "users"
   add_foreign_key "interes", "camp_sites"
   add_foreign_key "interes", "users"
   add_foreign_key "relationships", "users"
