@@ -1,0 +1,11 @@
+<p>
+  <% if current_user.intere_by?(result) %>
+    <%= link_to destroy_intere_path(result), method: :delete, data: { confirm: 'お気に入りを外しますか？' }, remote: :true do %>
+      <%= image_tag 'like-star.png', width:"20", heigth:"20" %>お気に入り登録中
+    <% end %>
+  <% else %>
+    <%= link_to create_intere_path(result), method: :post, remote: :true do %>
+      <%= image_tag 'unlike-star.png', width:"20", heigth:"20" %>お気に入りに登録
+    <% end %>
+  <% end %>
+</p>

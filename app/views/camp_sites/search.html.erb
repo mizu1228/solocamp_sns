@@ -1,0 +1,23 @@
+<%= render 'shared/header' %>
+
+<% if @result != nil %>
+  <h2><%= @result.prefecture.name %></h2>
+<% else %>
+  <h2>This area has any campsite</h2>
+<% end %>
+
+<% if @results.length != 0 %>
+  <% @results.each do |result| %>
+    <li id="camp_site_<%= result.id %>" class="camp-site">
+      <%= render "result", result: result %>
+    </li>
+  <% end %>
+  <li>
+    <%= link_to "<< Search another area", camp_sites_path %>
+  </li>
+<% else %>
+  <li>
+    <%= link_to "<< Search another area", camp_sites_path %>
+  </li>
+<% end %>
+<br>

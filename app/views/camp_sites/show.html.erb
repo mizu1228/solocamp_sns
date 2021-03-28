@@ -1,0 +1,52 @@
+<%= render 'shared/header' %>
+
+<ul>
+  <li>
+
+    <div class="site-show-head">
+      <h2><%= @result.site %></h2>
+        <div id="intere-site">
+          <%= render 'intere', result: @result%>
+        </div>
+    </div>
+    <p>
+      <% @result.visited_sites.each do |visit| %>
+        <% if current_user.id == visit.user_id%>
+          <%= l visit.created_at %> に訪れました。
+        <% end %>
+      <% end %>
+    </p>
+  </li>
+  <li>
+    <h3><%= @result.prefecture.name %> <%= @result.address %></h3>
+  </li>
+  <li>
+    <h3>電話 
+    <% if @result.site_tell != nil %>
+      <%= @result.site_tell %>
+    <% else %>
+      ----
+    <% end %>
+    </h3>
+  </li>
+  <li>
+    <h3>サイトの種類 <%= @result.site_type.name %></h3>
+  </li>
+
+<div class="camp-site-tweet">
+<% @result.tweets.each do |tweet| %>
+  <% if tweet.user.id == current_user.id %>
+    <%= link_to tweet_path(tweet) do %>
+      <%= image_tag tweet.image, class:"tweet-image" %>
+      <li><%= l tweet.created_at %></li>
+    <% end %>
+  <% end %>
+<% end %>
+</div>
+
+  <li>
+    <div class="back">
+      <%= link_to "<< back to camp site list", :back %>
+    </div>
+  </li>
+</ul>

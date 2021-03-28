@@ -81,7 +81,7 @@ before_action :user_judge, only: [:edit, :update, :destroy]
 
 
   def tweet_params
-    params.require(:tweet).permit(:text, :image, :tag_name).merge(user_id: current_user.id)
+    params.require(:tweet).permit(:text, :image, :tag_name, :camp_site_id).merge(user_id: current_user.id)
   end
 
 

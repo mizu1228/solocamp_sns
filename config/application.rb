@@ -11,8 +11,9 @@ module SolocampSns
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.0
 
-    # 日本語に設定
+    # 日本語,日本時刻に設定
     config.i18n.default_locale = :ja
+    config.time_zone = 'Tokyo'
 
     # config.logger = Logger.new(STDOUT)
 

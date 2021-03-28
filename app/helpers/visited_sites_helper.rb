@@ -1,0 +1,2 @@
+module VisitedSitesHelper
+end
