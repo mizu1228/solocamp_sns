@@ -26,4 +26,6 @@ Rails.application.routes.draw do
   end
   resources :relationships, only: [:create, :destroy]
   get '/tweet/tag/:name', to: "tweets#tag"
+
+  resources :gears, only: [:index, :new, :create]
 end
