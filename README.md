@@ -124,39 +124,24 @@
 - belongs_to :tweet
 
 
-## itemsテーブル(各道具はジャンルごとに作成する)
+## gearsテーブル(各道具はジャンルごとに作成する)
 
-| Column            | Type        | Option                          |
-| ----------------- | ----------- | ------------------------------- |
-| gear(item_name)   | string      | null: false                     |
-| user              | references  | foreign_key: true, null: false  |
-| tweet             | references  | foreign_key: true, null: false  |
+| Column            | Type        | Option                            |
+| ----------------- | ----------- | --------------------------------- |
+| gear_name         | string      | null: false                       |
+| explanation       | string      |                                   |
+| user              | references  | foreign_key: true, null: false    |
+| tweet             | references  | foreign_key: true                 |
+| gear_genre_id     | integer     | null: false                       |
+| image             |             | ActiveStorageで管理                |
 
-### 各ジャンルのテーブル名
-- chairs, tables, tents, tarps, bed_mats, burners, bonfires, lanterns, rucksacks, sleep_bags, 
-  outer_wears, inner_wears, pants, shoes, knifes, cookers, hat_caps, other_gears
 
 ### Association
 
 - belongs_to :user
-- belongs_to :tweet
+- belongs_to :tweet, optional: true
+- belongs_to :gear_genre (ActiveHash)
 
-
-### 各キャンプ道具のテーブルを作ってジャンルごと保存する
-
-
-## 各キャンプ道具のテーブル(共通)
-
-| Column            | Type        | Option                          |
-| ----------------- | ----------- | ------------------------------- |
-| gear              | string      | null:false                      |
-| item              | references  | foreign_key: true, null: false  |
-
-### has_oneでimageを管理(ActiveStorage)
-
-### Association
-
-- belongs_to :item
 
 
 ## camp_sitesテーブル
@@ -190,7 +175,7 @@
 - belongs_to :camp_site
 
 
-## intetreテーブル
+## intereテーブル
 
 | Column             | Type       | Option                         |
 | ------------------ | ---------- | ------------------------------ |
