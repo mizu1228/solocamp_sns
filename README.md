@@ -56,12 +56,14 @@
 | ------------------ | ---------- | ------------------------------ |
 | text               | text       | null: false                    |
 | user               | references | foreign_key: true, null: false |
+| camp_site          | references | foreign_key: true              |
 
 ### has_manyでimageをActiveStorage管理(null: false)
 
 ### Association
 
 - belongs_to :user
+- belongs_to :camp_site
 - has_many   :comments
 - has_many   :tags, through: :tag_tweet_relations
 - has_many   :tag_tweet_relations
@@ -170,6 +172,7 @@
 ### Association
 
 - has_many   :visited_sites
+- has_many   :tweets
 - has_many   :interes
 - belongs_to :prefecture
 

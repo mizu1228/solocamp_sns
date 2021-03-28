@@ -15,8 +15,8 @@
     <%= f.text_area :text, placeholder: '400字以内', maxlength: '400' %>
   </div>
 
-  <div class="site-select-btn">
-    <%= link_to "キャンプ場を選ぶ >> ", camp_sites_path %>
+  <div class="select-visit">
+    <%= f.collection_select(:camp_site_id, CampSite.all, :id, :site, {include_blank: "サイトを選択"}, {class:"site-select"}) %>
   </div>
 
   <div class="send-btn">

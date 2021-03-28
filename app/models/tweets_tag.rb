@@ -1,7 +1,7 @@
 class TweetsTag
 
   include ActiveModel::Model
-  attr_accessor :text, :image, :tag_name, :user_id
+  attr_accessor :text, :image, :tag_name, :user_id, :camp_site_id
 
   with_options presence: true do
     validates :text, length: { maximum: 400 } 
@@ -22,7 +22,7 @@ class TweetsTag
 
   def save
     ActiveRecord::Base.transaction do
-      @tweet.update(text: text, image: image, user_id: user_id)
+      @tweet.update(text: text, image: image, user_id: user_id, camp_site_id: camp_site_id)
     end
   end
 
@@ -38,7 +38,8 @@ class TweetsTag
     {
       text: tweet.text,
       image: tweet.image,
-      user_id: tweet.user_id
+      user_id: tweet.user_id,
+      camp_site_id: tweet.camp_site_id
     }
   end
 

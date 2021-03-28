@@ -5,13 +5,9 @@
 
     <div class="site-show-head">
       <h2><%= @result.site %></h2>
-      <p>
-        <% if current_user.intere_by?(@result) %>
-          <%= link_to "お気に入りを外す", destroy_intere_path(@result), method: :delete %>
-        <% else %>
-          <%= link_to "お気に入りにする", create_intere_path(@result), method: :post %>
-        <% end %>
-      </p>
+        <div id="intere-site">
+          <%= render 'intere', result: @result%>
+        </div>
     </div>
     <p>
       <% @result.visited_sites.each do |visit| %>
@@ -37,13 +33,16 @@
     <h3>サイトの種類 <%= @result.site_type.name %></h3>
   </li>
 
-  <%# <li> %>
-    <%# <% @result.visited_sites.each do |visit| %>
-        <%# <% if current_user.id == visit.user_id%>
-          <%# <%= visit.tweet_id %>
-        <%# <% end %>
-      <%# <% end %>
-  <%# </li> %>
+<div class="camp-site-tweet">
+<% @result.tweets.each do |tweet| %>
+  <% if tweet.user.id == current_user.id %>
+    <%= link_to tweet_path(tweet) do %>
+      <%= image_tag tweet.image, class:"tweet-image" %>
+      <li><%= l tweet.created_at %></li>
+    <% end %>
+  <% end %>
+<% end %>
+</div>
 
   <li>
     <div class="back">

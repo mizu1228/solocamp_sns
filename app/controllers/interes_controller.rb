@@ -7,12 +7,10 @@ class InteresController < ApplicationController
 
   def create
     Intere.create(user_id: current_user.id, camp_site_id: params[:id])
-    redirect_back(fallback_location: root_path)
   end
 
   def destroy
     Intere.find_by(user_id: current_user.id, camp_site_id: params[:id]).destroy
-    redirect_back(fallback_location: root_path)
   end
 
   private
