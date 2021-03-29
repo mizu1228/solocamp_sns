@@ -12,9 +12,9 @@ class GearsController < ApplicationController
     @gear = Gear.new(gear_params)
     if @gear.valid?
       @gear.save
-      redirect_to: gears_path
+      redirect_to gears_path
     else
-      render: new
+      render :new
     end
   end
 
