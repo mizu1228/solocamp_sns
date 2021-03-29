@@ -6,6 +6,9 @@ ja:
        phone_num: 電話番号
      comment:
        comment: コメント
+     gear:
+       gear_name: ギアの名前
+       gear_genre_id: ジャンル
  activemodel:
    attributes:
      tweets_tag:

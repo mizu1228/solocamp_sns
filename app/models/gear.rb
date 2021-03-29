@@ -5,7 +5,7 @@ class Gear < ApplicationRecord
     validates :user_id
     validates :gear_name
   end
-  validates :gear_genre_id, numericality: { other_than: 0 }
+  validates :gear_genre_id, numericality: { other_than: 0, message: 'を選択してください' }
 
   belongs_to :gear_genre
   belongs_to :user
