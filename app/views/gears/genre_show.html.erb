@@ -1,0 +1,37 @@
+<%= render 'shared/header' %>
+
+<div class="gear-content">
+
+  <div class="gear-genre-content">
+    ジャンル : <%= @genre.name %>
+  </div>
+
+  <% if @genre.gears.any?  %>
+    <% @genre.gears.each do |gear| %>
+      <% if gear.user_id == current_user.id %>
+
+        <div class="gear-name-content">
+          <%= gear.gear_name %>
+        </div>
+
+        <div class="gear-image-content">
+          <% if gear.image.attached?%>
+            <%= image_tag gear.image.variant(gravity: :center, resize:"300x300^", crop:"300x300+0+0")%>
+          <% else %>
+            <%= image_tag 'default_tent.png', width:'300', heigth:'300' %>
+          <% end %>
+        </div>
+
+      <% end %>
+    <% end %>
+  <% else %>
+    <div>
+      <p>登録なし</p>
+    </div>
+  <% end %>
+
+  <div class="back-gear-index">
+    <%= link_to '<< Back to Own Gears', gears_path %>
+  </div>
+  
+</div>

@@ -1,0 +1,10 @@
+<%= link_to gear_path(gear) do %>
+<ul id="gear-<%= gear.id %>">
+  <li><%= gear.gear_name %></li>
+  <% if gear.image.attached? %>
+    <li><%= image_tag gear.image.variant(gravity: :center, resize:"200x200^", crop:"200x200+0+0") %></li>
+  <% else %>
+    <li><%= image_tag 'default_tent.png' %>
+  <% end %>
+</ul>
+<% end %>

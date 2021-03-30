@@ -12,9 +12,15 @@
     </div>
 
     <div class="field">
+    <%= f.label 'メーカー' %><br />
+    <%= f.text_field :maker_name %>
+    </div>
+
+    <div class="field" id="img-select">
     <%= f.label '画像' %><br />
     <%= f.file_field :image %>
     </div>
+    <div id="img-prv"></div>
 
     <div class="field">
     <%= f.label 'ギア名' %><br />

@@ -27,5 +27,7 @@ Rails.application.routes.draw do
   resources :relationships, only: [:create, :destroy]
   get '/tweet/tag/:name', to: "tweets#tag"
 
-  resources :gears, only: [:index, :new, :create]
+  resources :gears, only: [:index, :new, :create, :show]
+  get '/gears/genre_show/:id' => 'gears#genre_show', as: 'genre_show'
+
 end

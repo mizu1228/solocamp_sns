@@ -1,0 +1,16 @@
+<%= render 'shared/header' %>
+
+<h2 class="gears-title">Own Gears</h2>
+
+<p><%= link_to "Add Gear >>", new_gear_path %></p>
+
+<% @genres.each do |genre| %>
+  <div class="genre">
+    <%= link_to genre.name, genre_show_path(genre) %>
+  </div>
+  <% @gears.each do |gear| %>
+    <% if gear.user_id == current_user.id && gear.gear_genre_id == genre.id %>
+      <%= render 'display', gear: gear %>
+    <% end %>
+  <% end %>
+<% end %>

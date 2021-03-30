@@ -1,14 +1,12 @@
 class Gear < ApplicationRecord
   extend ActiveHash::Associations::ActiveRecordExtensions
 
-  with_options presence: true do
-    validates :user_id
-    validates :gear_name
-  end
-  validates :gear_genre_id, numericality: { other_than: 0, message: 'を選択してください' }
+  
 
   belongs_to :gear_genre
   belongs_to :user
   belongs_to :tweet, optional: true
   has_one_attached :image
+  has_many :gear_maker_relations
+  has_many :makers, through: :gear_maker_relation
 end
