@@ -6,6 +6,14 @@
     ジャンル : <%= @gear.gear_genre.name %>
   </div>
 
+  <div class="gear-genre-content">
+    <% if @gear.maker != nil %>
+      メーカー : <%= @gear.maker.maker_name %>
+    <% else %>
+      メーカー : 登録なし
+    <% end %>
+  </div>
+
   <div class="gear-name-content">
     名前 : <%= @gear.gear_name %>
   </div>

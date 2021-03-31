@@ -4,7 +4,7 @@
   <% if gear.image.attached? %>
     <li><%= image_tag gear.image.variant(gravity: :center, resize:"200x200^", crop:"200x200+0+0") %></li>
   <% else %>
-    <li><%= image_tag 'default_tent.png' %>
+    <li><%= image_tag 'default_tent.png', width:'200', heigth:'200' %>
   <% end %>
 </ul>
 <% end %>

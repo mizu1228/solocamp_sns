@@ -18,7 +18,7 @@ Rails.application.routes.draw do
   resources :camp_sites, only: :index do
     get 'show'
   end
-  resources :tweets, only: [:new, :create, :show, :edit, :update, :destroy] do
+  resources :tweets, except: :index do
     resources :comments, only: [:new, :create, :destroy]
     collection do
       get 'search'
@@ -27,7 +27,11 @@ Rails.application.routes.draw do
   resources :relationships, only: [:create, :destroy]
   get '/tweet/tag/:name', to: "tweets#tag"
 
-  resources :gears, only: [:index, :new, :create, :show]
+  resources :gears, only: [:index, :new, :create, :show] do
+    collection do
+      get 'search'
+    end
+  end
   get '/gears/genre_show/:id' => 'gears#genre_show', as: 'genre_show'
 
 end

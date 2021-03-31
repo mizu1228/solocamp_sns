@@ -27,6 +27,12 @@ class GearsController < ApplicationController
     @genre = GearGenre.find(params[:id])
   end
 
+  def search
+    return nil if params[:keyword] == ""
+    maker = Maker.where(['maker_name LIKE ?', "%#{params[:keyword]}%"] )
+    render json:{ keyword: maker }
+  end
+
   private
 
   def gear_params

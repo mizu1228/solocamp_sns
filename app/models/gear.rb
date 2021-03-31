@@ -7,6 +7,6 @@ class Gear < ApplicationRecord
   belongs_to :user
   belongs_to :tweet, optional: true
   has_one_attached :image
-  has_many :gear_maker_relations
-  has_many :makers, through: :gear_maker_relation
+  has_one :gear_maker_relation
+  has_one :maker, through: :gear_maker_relation
 end
