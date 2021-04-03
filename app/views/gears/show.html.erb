@@ -7,8 +7,10 @@
   </div>
 
   <div class="gear-genre-content">
-    <% if @gear.maker != nil %>
-      メーカー : <%= @gear.maker.maker_name %>
+    <% if @gear.makers.any? %>
+      <% @gear.makers.each do |maker| %>
+        メーカー : <%= maker.maker_name %>
+      <% end %>
     <% else %>
       メーカー : 登録なし
     <% end %>
@@ -28,6 +30,10 @@
 
   <div class="gear-explanation-content">
     <%= @gear.explanation %>
+  </div>
+
+  <div class="edit-btn">
+    <%= link_to "EDIT", edit_gear_path(@gear) %>
   </div>
 
   <div class="back-gear-index">
