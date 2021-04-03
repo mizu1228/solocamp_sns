@@ -1,0 +1,43 @@
+<%= render 'shared/header' %>
+
+<div class="gear-content">
+
+  <div class="gear-genre-content">
+    ジャンル : <%= @gear.gear_genre.name %>
+  </div>
+
+  <div class="gear-genre-content">
+    <% if @gear.makers.any? %>
+      <% @gear.makers.each do |maker| %>
+        メーカー : <%= maker.maker_name %>
+      <% end %>
+    <% else %>
+      メーカー : 登録なし
+    <% end %>
+  </div>
+
+  <div class="gear-name-content">
+    名前 : <%= @gear.gear_name %>
+  </div>
+
+  <div class="gear-image-content">
+    <% if @gear.image.attached?%>
+      <%= image_tag @gear.image.variant(gravity: :center, resize:"640x640^", crop:"640x640+0+0")%>
+    <% else %>
+      <%= image_tag 'default_tent.png' %>
+    <% end %>
+  </div>
+
+  <div class="gear-explanation-content">
+    <%= @gear.explanation %>
+  </div>
+
+  <div class="edit-btn">
+    <%= link_to "EDIT", edit_gear_path(@gear) %>
+  </div>
+
+  <div class="back-gear-index">
+    <%= link_to '<< Back to Own Gears', gears_path %>
+  </div>
+
+</div>

@@ -6,12 +6,19 @@ ja:
        phone_num: 電話番号
      comment:
        comment: コメント
+     gear:
+       gear_name: ギアの名前
+       gear_genre_id: ジャンル
  activemodel:
    attributes:
      tweets_tag:
        text: 本文
        image: 画像
        user_id: ユーザー
+     gears_maker:
+       gear_name: ギア名
+       maker_name: メーカー
+       gear_genre_id: ジャンル
  time:
    formats:
      default: "%Y年%m月%d日 %H:%M"

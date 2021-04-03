@@ -1,0 +1,45 @@
+<%= render 'shared/header' %>
+<%= render 'shared/error_messages', resource: @gear %>
+
+<h2 class="new-gear-form">Registration New Gear</h2>
+
+<div class="new-gear-box">
+  <%= form_with model: @gear, url: gears_path, method: :post, local: true do |f| %>
+
+    <div class="field">
+    <%= f.label 'ジャンル' %><br />
+    <%= f.collection_select(:gear_genre_id, GearGenre.all, :id, :name, {}, { class:"gear-genre-select"}) %>
+    </div>
+
+    <div class="field">
+    <%= f.label 'メーカー' %><br />
+    <%= f.text_field :maker_name, placeholder: 'メーカーを入力', id:"maker_name" %>
+    </div>
+    <div id="search_result"></div>
+
+    <div class="field" id="img-select">
+    <%= f.label '画像' %><br />
+    <%= f.file_field :image %>
+    </div>
+    <div id="img-prv"></div>
+
+    <div class="field">
+    <%= f.label 'ギア名' %><br />
+    <%= f.text_field :gear_name, placeholder: 'ギア名を入力' %>
+    </div>
+
+    <div class="field">
+    <%= f.label '説明' %><br />
+    <%= f.text_area :explanation, placeholder: '説明を入力' %>
+    </div>
+
+    <div class="send-btn">
+    <%= f.submit 'SEND' %>
+    </div>
+
+  <% end %>
+</div>
+
+<div class="back-btn">
+  <p><%= link_to "<< Back to Own Gear", gears_path %></p>
+</div>
