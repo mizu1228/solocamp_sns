@@ -13,7 +13,7 @@
 
     <div class="field">
     <%= f.label 'メーカー' %><br />
-    <%= f.text_field :maker_name, id:"maker_name" %>
+    <%= f.text_field :maker_name, placeholder: 'メーカーを入力', id:"maker_name" %>
     </div>
     <div id="search_result"></div>
 
@@ -25,12 +25,12 @@
 
     <div class="field">
     <%= f.label 'ギア名' %><br />
-    <%= f.text_field :gear_name %>
+    <%= f.text_field :gear_name, placeholder: 'ギア名を入力' %>
     </div>
 
     <div class="field">
     <%= f.label '説明' %><br />
-    <%= f.text_area :explanation %>
+    <%= f.text_area :explanation, placeholder: '説明を入力' %>
     </div>
 
     <div class="send-btn">
