@@ -22,7 +22,7 @@ class GearsMaker
     ActiveRecord::Base.transaction do
       @gear.update(gear_genre_id: gear_genre_id, gear_name: gear_name, explanation: explanation, image: image, user_id: user_id, tweet_id: tweet_id)
 
-      @gear.makers.each do |maker|
+      @gear.gear_maker_relations.each do |maker|
         maker.destroy
       end
 
