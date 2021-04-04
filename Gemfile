@@ -68,3 +68,4 @@ gem 'pry-rails'
 gem 'active_hash'
 gem 'ransack'
 gem 'jp_prefecture'
+gem 'aws-sdk-s3', require: false
