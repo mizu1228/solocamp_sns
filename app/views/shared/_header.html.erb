@@ -1,16 +1,26 @@
 <div class="header">
 
+  <div class="header-left-contents">
   <h1 id="main-title">
     <%= link_to "Solo-Camp SNS", root_path %>
   </h1>
+  </div>
 
-  <div class="header-right-contents">
-    <div class="current_user">
-      Hello,<%= link_to "#{current_user.name}", user_path(current_user) %>
+  <div class="header-right-contents">    
+    <div class="current-user-bar">
+      <%= link_to user_path(current_user) do %>
+        <% if current_user.image.attached? %>
+          <%= image_tag current_user.image, class:"user-header" %>
+        <% else %>
+          <%= image_tag 'default_tent.png', width:"20", height:"20" %>
+        <% end %>
+        <%= current_user.name %>
+      <% end %>
     </div>
 
     <div class="sign_out_btn">
       <%= link_to "Sign_out", destroy_user_session_path, method: :delete %>
     </div>
   </div>
+  
 </div>

@@ -1,6 +1,7 @@
 .header {
+  position: fixed;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   width: 100vw;
   background-color: chocolate;
@@ -9,20 +10,38 @@
 .header-right-contents {
   display: flex;
   justify-content: space-around;
-  width: 30% ;
+  padding: 0 20px;
+  width: 40% ;
   background-color: burlywood;
 }
 
-.current_user {
-  padding: 0 10px;
+.current-user-bar {
+  text-align: center;
+  padding: 10px;
   background-color: cadetblue; 
 }
 
+.user-header {
+  object-fit: contain;
+  height: 40px;
+  width: 40px;
+}
+
+
 .sign_out_btn {
   padding: 0 10px ;
+  align-items: center;
   background-color: cadetblue;
 }
 
+.header-left-contents {
+  /* background-color: aqua; */
+  padding: 0 20px;
+}
+
 #main-title {
-  /* display: none; */
+  /* background-color: antiquewhite; */
+  font-size: 20px;
+  font-family: 'Homemade Apple', cursive;
+  color: aliceblue;
 }
