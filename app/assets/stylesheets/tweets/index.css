@@ -1,7 +1,3 @@
-.main {
-  background-color: dimgray;
-}
-
 .tweet-list {
   background-color: darkgray;
   width: 100%;
@@ -19,13 +15,28 @@
   align-items: center;
 }
 
+.user-icon {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.user-icon-dummy {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: lightgrey;
+  object-fit: cover;
+}
+
 .tweet-user {
-  margin: 0 20px;
+  margin: 22px 20px 0 20px;
   padding: 0 20px;
   height: 100%;
   font-size: 24px;
-  font-weight: bold;
-  background-color: firebrick;
+  /* font-weight: bold; */
+  /* background-color: firebrick; */
 }
 
 .tweet-image-content {

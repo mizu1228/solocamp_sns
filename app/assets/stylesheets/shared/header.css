@@ -4,34 +4,49 @@
   justify-content: space-between;
   align-items: center;
   width: 100vw;
-  background-color: chocolate;
+  height: 60px;
+  /* background-color: chocolate; */
+  background-color: rgba(255, 255, 255, 0.950);
 }
 
 .header-right-contents {
   display: flex;
   justify-content: space-around;
+  align-items: center;
   padding: 0 20px;
   width: 40% ;
-  background-color: burlywood;
+  height: 100%;
+  /* background-color: burlywood; */
 }
 
 .current-user-bar {
-  text-align: center;
-  padding: 10px;
-  background-color: cadetblue; 
+  padding-top: 10px;
+  /* background-color: cadetblue;  */
 }
 
-.user-header {
-  object-fit: contain;
+.user-header-img {
+  border-radius: 50%;
+  object-fit: cover;
   height: 40px;
   width: 40px;
+  background-color: lightgrey;
 }
 
 
 .sign_out_btn {
-  padding: 0 10px ;
-  align-items: center;
-  background-color: cadetblue;
+  padding: 20px 10px ;
+  text-align: center;
+  /* background-color: cadetblue; */
+}
+
+.new-diary {
+  /* background-color: azure; */
+  padding-top: 5px;
+}
+
+.campsite-stamp {
+  /* background-color: azure; */
+  padding-top: 15px;
 }
 
 .header-left-contents {
@@ -39,9 +54,8 @@
   padding: 0 20px;
 }
 
-#main-title {
-  /* background-color: antiquewhite; */
+#main-title a{
   font-size: 20px;
   font-family: 'Homemade Apple', cursive;
-  color: aliceblue;
+  /* color: aliceblue; */
 }

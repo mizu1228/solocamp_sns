@@ -1,22 +1,4 @@
-<%= render '/shared/header'%>
-
 <div class="main">
-  <h1>
-    <%= link_to "Select-Campsite", camp_sites_path %>
-  </h1>
-
-  <h2>
-    <%= link_to 'Interested-Campsite', interes_path %>
-  </h2>
-
-  <h2>
-    <%= link_to 'New-Diary', new_tweet_path %>
-  </h2>
-
-  <h2>
-    <%= link_to 'My Gears', gears_path %>
-  </h2>
-
   <ul class="tweet-list">
     <% @tweets.each do |tweet| %>
       <li class="list" id="tweet_<%= tweet.id %>">

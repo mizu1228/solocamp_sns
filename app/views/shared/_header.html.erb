@@ -6,20 +6,32 @@
   </h1>
   </div>
 
-  <div class="header-right-contents">    
+  <div class="header-right-contents">
     <div class="current-user-bar">
       <%= link_to user_path(current_user) do %>
         <% if current_user.image.attached? %>
-          <%= image_tag current_user.image, class:"user-header" %>
+          <%= image_tag current_user.image, class:"user-header-img" %>
         <% else %>
           <%= image_tag 'default_tent.png', width:"20", height:"20" %>
         <% end %>
-        <%= current_user.name %>
+        <%# <%= current_user.name %>
       <% end %>
     </div>
 
-    <div class="sign_out_btn">
+    <%# <div class="sign_out_btn">
       <%= link_to "Sign_out", destroy_user_session_path, method: :delete %>
+    <%# </div> %>
+
+    <div class="new-diary">
+      <%=link_to new_tweet_path do %>
+        <%= image_tag 'wing-pen.png', width:'40', height:'40' %>
+      <% end %>
+    </div>
+
+    <div class="campsite-stamp">
+      <%= link_to camp_sites_path do %>
+        <%= image_tag 'tent-plus2.png', width:'40', height:'40' %>
+      <% end %>
     </div>
   </div>
   
