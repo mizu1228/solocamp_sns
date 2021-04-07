@@ -1,11 +1,11 @@
 .tweet-list {
-  background-color: darkgray;
+  /* background-color: darkgray; */
   width: 100%;
 }
 
 .list {
-  background-color: darkolivegreen;
-  margin: 10px 0;
+  /* background-color: darkolivegreen; */
+  margin: 20px 0;
   width: 100%;
 }
 
@@ -13,6 +13,10 @@
   display: flex;
   justify-content: flex-start;
   align-items: center;
+  width: 95vw;
+  height: 40px;
+  /* background-color: lightgrey; */
+  margin: 0 auto;
 }
 
 .user-icon {
@@ -20,33 +24,58 @@
   height: 100%;
   border-radius: 50%;
   object-fit: cover;
+  margin-left: 0;
 }
 
 .user-icon-dummy {
   width: 100%;
   height: 100%;
   border-radius: 50%;
-  background-color: lightgrey;
+  /* background-color: lightgrey; */
   object-fit: cover;
 }
 
 .tweet-user {
-  margin: 22px 20px 0 20px;
-  padding: 0 20px;
+  /* margin: 22px 20px 0 0; */
+  padding: 0 10px;
   height: 100%;
   font-size: 24px;
+  display: table-cell;
+  vertical-align: middle;
   /* font-weight: bold; */
   /* background-color: firebrick; */
 }
 
 .tweet-image-content {
-  background-color: darkslategray;
+  /* background-color: darkslategray; */
   width: 100%;
+  text-align: center;
 }
 
 .tweet-image {
   height: 50vh;
-  width: 70vw;
+  width: 95vw;
   min-height: 500px;
   object-fit: contain;
+  /* background-color: lightgrey; */
 }
+
+.tweet-text-content {
+  margin: 0 auto;
+  /* background-color: lightgrey; */
+  width: 95vw;
+}
+
+.tweet-camp-site-content {
+  /* background-color: lightgrey; */
+  width: 95vw;
+  height: 30px;
+  margin: 0 auto;
+}
+
+.tweet-camp-site {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+

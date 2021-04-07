@@ -15,10 +15,12 @@
   </div>
 </div>
 
-<div class="tweet-camp-site">
-  <% if tweet.camp_site_id != nil %>
-    <%= link_to tweet.camp_site.site, camp_site_show_path(tweet.camp_site_id) %>
-  <% end %>
+<div class="tweet-camp-site-content">
+  <div class="tweet-camp-site">
+    <% if tweet.camp_site_id != nil %>
+      <%= link_to tweet.camp_site.site, camp_site_show_path(tweet.camp_site_id), class:"tweet-site" %>
+    <% end %>
+  </div>
 </div>
 
 <div class="tweet-image-content">
@@ -31,7 +33,7 @@
   <% end %>
 </div>
 <div class="tweet-text-content">
-  <p>TEXT : 
+  <p class="tweet-text"> 
     <%= render_with_tags(tweet.text) %>
   </p>
 </div>
