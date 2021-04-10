@@ -148,3 +148,7 @@ main {
   padding-bottom: 60px;
   flex: 1;
 }
+
+textarea {
+  resize: none;
+}

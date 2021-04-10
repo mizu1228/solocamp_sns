@@ -1,6 +1,7 @@
-<%= render 'shared/error_messages', resource: @tweets_tag %>
-
 <div class="tweet-form">
+  <div class="error-messages">
+    <%= render 'shared/error_messages', resource: @tweets_tag %>
+  </div>
   <%= form_with model: @tweets_tag, url: tweets_path, local: true do |f| %>
 
   <div class="field" id="img-select">
@@ -11,19 +12,19 @@
 
   <div class="field">
     <%= f.label :text %><br>
-    <%= f.text_area :text, placeholder: '400字以内', maxlength: '400' %>
+    <%= f.text_area :text, placeholder: '400字以内', maxlength: '400', size:'59x20' %>
   </div>
 
   <div class="select-visit">
     <%= f.collection_select(:camp_site_id, CampSite.all, :id, :site, {include_blank: "サイトを選択"}, {class:"site-select"}) %>
   </div>
 
-  <div class="send-btn">
-    <%= f.submit "SEND" %>
+  <div class="send-btn-area">
+    <%= f.submit "SEND", class:"send-btn" %>
   </div>
   
   <% end %>
-</div>
-<div class="back-btn">
-  <%= link_to 'BACK', root_path %>
+  <div class="back-btn-area">
+    <%= link_to 'BACK', root_path, class:"back-btn" %>
+  </div>
 </div>

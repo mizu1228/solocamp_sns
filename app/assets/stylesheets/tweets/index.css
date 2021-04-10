@@ -78,4 +78,52 @@
   vertical-align: middle;
 }
 
+/* tweet-new */
+
+.tweet-form {
+  width: 100%;
+}
+
+.error-message {
+background-color: lightseagreen;
+width: 95vw;
+margin: 0 auto;
+}
+
+.field {
+  /* background-color: lightseagreen; */
+  width: 95vw;
+  margin: 0 auto;
+}
+
+.select-visit {
+  /* background-color: lightseagreen; */
+  width: 95vw;
+  margin: 0 auto;
+}
+
+.send-btn-area {
+  /* background-color: lightseagreen; */
+  width: 95vw;
+  margin: 10px auto;
+}
+
+.send-btn {
+  padding: 5px 5px;
+  border-radius: 10%;
+  cursor: pointer;
+}
+
+.back-btn-area {
+  /* background-color: lightseagreen; */
+  width: 95vw;
+  margin: 30px auto;
+}
+
+.back-btn {
+  background-color: lightslategray;
+  padding: 10px 5px;
+  border: solid black 1px;
+  border-radius: 10%;
+}
 

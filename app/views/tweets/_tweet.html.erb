@@ -18,8 +18,8 @@
 <div class="tweet-camp-site-content">
   <div class="tweet-camp-site">
     <% if tweet.camp_site_id != nil %>
-      <%= link_to tweet.camp_site.site, camp_site_show_path(tweet.camp_site_id), class:"tweet-site" %>
-    <% end %>
+    <%= link_to tweet.camp_site.site, camp_site_show_path(tweet.camp_site_id), class:"tweet-site" %>
+  <% end %>
   </div>
 </div>
 
@@ -34,7 +34,7 @@
 </div>
 <div class="tweet-text-content">
   <p class="tweet-text"> 
-    <%= render_with_tags(tweet.text) %>
+    <%= render_with_tags(safe_join(tweet.text.split("\n"), tag(:br))) %>
   </p>
 </div>
 

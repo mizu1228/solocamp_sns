@@ -1,7 +1,11 @@
 // $(function () {
-//   $(document).on("mouseover", "h1", function () {
+//   $(document).on("mouseover", "a", function () {
 //     $(this).css({ "color": "blue" });
-//   }).on("mouseout", "h1", function () {
+//   }).on("mouseout", "a", function () {
 //     $(this).css({"color": ""});
 //   })
 // });
+
+$(function () {
+  $('#solo-camp-sns').fadeIn(9000);
+});
