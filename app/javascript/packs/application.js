@@ -10,7 +10,7 @@ require("@rails/activestorage").start()
 require("channels")
 require('jquery')
 require("./preview")
-require("../tag")
+// require("../tag")
 require("../maker")
 require("../test")
 

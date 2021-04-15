@@ -13,9 +13,6 @@
 .user-icon-group {
   width: 40px;
   height: 100%;
-  /* margin-left: 20px; */
-  /* border-radius: 50%; */
-  /* background-color: mediumaquamarine; */
 }
 
 .user-name-group {
@@ -33,11 +30,6 @@
   background-color: lavenderblush;
   margin: 0 10px;
 }
-
-/* .tweet-text {
-  background-color: rgb(117, 147, 231);
-  margin: 10px 0 ;
-} */
 
 #tweet-comments {
   background-color: lightskyblue;

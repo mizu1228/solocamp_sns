@@ -1,0 +1,68 @@
+#img-prv img {
+  width: 95vw;
+  height: 50vh;
+  object-fit: contain;
+  background-color: rgba(245, 245, 245, 0.747);
+}
+
+#img-prv {
+  width: 95vw;
+  height: 50vh;
+  /* background-color: cyan; */
+  margin: 0 auto 15px;
+  border: solid 1px darkgray;
+  border-radius: 5px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  text-align: center;
+}
+
+.tweet-field {
+  width: 95vw;
+  margin: 0 auto;
+  margin-bottom: 15px;
+}
+
+.field-tweet-text {
+  box-sizing: border-box;
+  width: 95vw;
+  height: 50vh;
+  border: solid 1px darkgray;
+  border-radius: 5px;
+  padding: 1em;
+}
+
+.img-upload {
+  display: none;
+}
+
+.img-upload-btn {
+  position: absolute;
+  padding: 10px 40px;
+  height: 25px;
+  width: 20%;
+  margin: 0 auto;
+  border-radius: 5px;
+  color: #ffffff;
+  background-color: #38487877;
+  cursor: pointer;
+  top: calc( (50vh - 25px) / 2 ) ;
+  left: calc( (95vh - 20%) / 4 ) ;
+}
+
+.img-upload-btn-light {
+  position: absolute;
+  padding: 10px 40px;
+  height: 25px;
+  width: 20%;
+  margin: 0 auto;
+  border-radius: 5px;
+  color: #ffffff;
+  background-color: #384878;
+  cursor: pointer;
+  top: calc( (50vh - 25px) / 2 ) ;
+  left: calc( (95vh - 20%) / 4 ) ;
+}
+

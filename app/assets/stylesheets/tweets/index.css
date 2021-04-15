@@ -87,7 +87,7 @@
 .error-message {
 background-color: lightseagreen;
 width: 95vw;
-margin: 0 auto;
+margin: 0 auto 10px;
 }
 
 .field {
@@ -98,14 +98,16 @@ margin: 0 auto;
 
 .select-visit {
   /* background-color: lightseagreen; */
+  text-align: center;
   width: 95vw;
-  margin: 0 auto;
+  margin: 5px auto;
 }
 
 .send-btn-area {
   /* background-color: lightseagreen; */
+  text-align: center;
   width: 95vw;
-  margin: 10px auto;
+  margin: 30px auto;
 }
 
 .send-btn {
@@ -116,14 +118,30 @@ margin: 0 auto;
 
 .back-btn-area {
   /* background-color: lightseagreen; */
+  text-align: center;
   width: 95vw;
   margin: 30px auto;
 }
 
 .back-btn {
-  background-color: lightslategray;
+  background-color: lightgray;
   padding: 10px 5px;
   border: solid black 1px;
   border-radius: 10%;
+  cursor: pointer;
+}
+
+.delete-btn-area {
+  text-align: center;
+  width: 95vw;
+  margin: 30px auto;
+}
+
+.delete-btn {
+  background-color: lightgray;
+  padding: 10px 5px;
+  border: solid black 1px;
+  border-radius: 10%;
+  cursor: pointer;
 }
 
