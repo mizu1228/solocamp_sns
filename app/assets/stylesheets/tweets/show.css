@@ -15,12 +15,6 @@
   height: 100%;
 }
 
-.user-name-group {
-  background-color: honeydew;
-  display: flex;
-  margin: 0 20px;
-}
-
 .name-left {
   background-color: lavender;
   margin: 0 10px;
