@@ -1,6 +1,6 @@
 // 各投稿でのプレビューに使いまわしている
 
-if (document.URL.match( /new/ ) || document.URL.match( /edit/ )){
+if (location.pathname.includes( 'new' ) || location.pathname.includes( 'edit') && location.pathname.includes( 'tweet' )){
   document.addEventListener('DOMContentLoaded', function(){
     const ImagePrv = document.getElementById('img-prv');
 
@@ -41,3 +41,20 @@ if (document.URL.match( /new/ ) || document.URL.match( /edit/ )){
     });
   });
 }
+
+// user-editのpreview
+
+if ( location.pathname.includes( 'users' ) && location.pathname.includes( 'edit' )) {
+  document.addEventListener('DOMContentLoaded', function () {
+    const userPrv = document.querySelector('.u-e-prv')
+    userPrv.addEventListener('change', function(e) {
+      const uFile = userPrv.files[0];
+      const uReader = new FileReader();
+      uReader.readAsDataURL(uFile);
+      uReader.onload = function() {
+        const uImage = uReader.result;
+        document.querySelector('.u-img-prv').setAttribute('src', uImage);
+      }
+    });
+  });
+};

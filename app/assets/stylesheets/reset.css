@@ -114,7 +114,11 @@ select {
   font-weight:inherit;
 }
 /*to enable resizing for IE*/
-input,
+input {
+  *font-size:100%;
+  border: none;
+  background-color: transparent;
+}
 textarea,
 select {
   *font-size:100%;

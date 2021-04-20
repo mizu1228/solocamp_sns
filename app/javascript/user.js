@@ -1,4 +1,4 @@
-if (location.pathname.match ( "users" )) {
+if (location.pathname.includes( 'users' )) {
   window.addEventListener('load', function() {
 
     const followList = document.getElementById('follow')

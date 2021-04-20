@@ -71,6 +71,11 @@
   color: aliceblue;
 }
 
+.f-sign {
+  background-color: aliceblue;
+  border-radius: 5px;
+}
+
 .actions-sign {
   margin: 10px 0 ;
 }
