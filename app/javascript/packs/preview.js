@@ -1,6 +1,6 @@
 // 各投稿でのプレビューに使いまわしている
 
-if (location.pathname.includes( 'new' ) || location.pathname.includes( 'edit') && location.pathname.includes( 'tweet' )){
+if (document.URL.match( /new/ ) || document.URL.match( /edit/ ) && location.pathname.includes( 'tweets' )){
   document.addEventListener('DOMContentLoaded', function(){
     const ImagePrv = document.getElementById('img-prv');
 
@@ -42,6 +42,25 @@ if (location.pathname.includes( 'new' ) || location.pathname.includes( 'edit') &
   });
 }
 
+// tweet-editのpreview
+
+if ( location.pathname.includes( 'tweets' ) && location.pathname.includes( 'edit' )) {
+  document.addEventListener('DOMContentLoaded', function () {
+    const tweetPrv = document.querySelector('.img-upload')
+    tweetPrv.addEventListener('change', function(e) {
+      const tFile = tweetPrv.files[0];
+      const tReader = new FileReader();
+      tReader.readAsDataURL(tFile);
+      tReader.onload = function() {
+        const tImage = tReader.result;
+        document.querySelector('.t-img-prv').setAttribute('src', tImage);
+      }
+    });
+  });
+};
+
+
+
 // user-editのpreview
 
 if ( location.pathname.includes( 'users' ) && location.pathname.includes( 'edit' )) {
@@ -54,6 +73,23 @@ if ( location.pathname.includes( 'users' ) && location.pathname.includes( 'edit'
       uReader.onload = function() {
         const uImage = uReader.result;
         document.querySelector('.u-img-prv').setAttribute('src', uImage);
+      }
+    });
+  });
+};
+
+// gear-editのプリセットpreview
+
+if ( location.pathname.includes( 'gears' ) && location.pathname.includes( 'edit' )) {
+  document.addEventListener('DOMContentLoaded', function () {
+    const gearPrv = document.querySelector('.img-upload')
+    gearPrv.addEventListener('change', function(e) {
+      const gFile = gearPrv.files[0];
+      const gReader = new FileReader();
+      gReader.readAsDataURL(gFile);
+      gReader.onload = function() {
+        const gImage = gReader.result;
+        document.querySelector('.g-img-prv').setAttribute('src', gImage);
       }
     });
   });

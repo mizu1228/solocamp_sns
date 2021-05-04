@@ -1,0 +1,28 @@
+<ul class="tweet-comment">
+  <div class="comment-box">
+    <li class="comment-user">
+      <div class="t-c-u-img">
+        <%= link_to user_path(comment.user.id) do %>
+          <% if comment.user.image != nil %>
+            <%= image_tag comment.user.image, class:"t-comm-u-img" %>
+          <% else %>
+            <%= image_tag 'default_tent.png', class:"t-comm-u-img"%>
+          <% end %>
+        <% end %>
+      </div>
+      <div class="t-c-u-name">
+        <%= link_to user_path(comment.user.id) do %>
+          <%= comment.user.name %>
+        <% end %>
+      </div>
+    </li>
+    <li class="comment-text">
+      <%= comment.comment %>
+    </li>
+    <% if comment.user.id == current_user.id %>
+      <li class="comment-delete-btn">
+        <%= link_to "delete", tweet_comment_path(comment.tweet.id, comment.id), method: :delete, remote: :true, class:"t-comm-del-btn" %>
+      </li>
+    <% end %>
+  </div>
+</ul>

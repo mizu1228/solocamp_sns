@@ -1,44 +1,51 @@
-<%= render 'shared/error_messages', resource: @gear %>
-
-<h2 class="new-gear-form">Registration New Gear</h2>
-
 <div class="new-gear-box">
+
+  <%= render 'shared/error_messages', resource: @gear %>
+
+  <h2 class="new-gear-title">New Gear</h2>
+
   <%= form_with model: @gear, url: gears_path, method: :post, local: true do |f| %>
 
-    <div class="field">
-    <%= f.label 'ジャンル' %><br />
-    <%= f.collection_select(:gear_genre_id, GearGenre.all, :id, :name, {}, { class:"gear-genre-select"}) %>
+    <div class="new-gear-field">
+    <div id="img-prv">
+      <div id="img-select">
+        <%= f.label :image, class:"img-upload-btn" %>
+        <%= f.file_field :image, class:"img-upload" %>
+      </div>
+    </div>
+  </div>
+
+    <div class="g-field-form">
+      <%= f.text_field :gear_name, placeholder: '道具名を入力', class:"g-f-box" %>
     </div>
 
-    <div class="field">
-    <%= f.label 'メーカー' %><br />
-    <%= f.text_field :maker_name, placeholder: 'メーカーを入力', id:"maker_name" %>
+    <div class="g-field-form">
+      <div class="g-pull-title">
+        ジャンルを選択
+      </div>
+      <div class="g-f-pull">
+      <%= f.collection_select(:gear_genre_id, GearGenre.all, :id, :name, {}, { class:"gear-genre-select"}) %>
+      </div>
+    </div>
+
+    <div class="g-field-form">
+    <%= f.text_field :maker_name, placeholder: 'メーカーを入力', id:"maker_name", class:"g-f-box" %>
     </div>
     <div id="search_result"></div>
 
-    <div class="field" id="img-select">
-    <%= f.label '画像' %><br />
-    <%= f.file_field :image %>
-    </div>
-    <div id="img-prv"></div>
-
-    <div class="field">
-    <%= f.label 'ギア名' %><br />
-    <%= f.text_field :gear_name, placeholder: 'ギア名を入力' %>
+    <div class="g-field-form">
+    <%= f.text_area :explanation, placeholder: '説明を入力', class:"g-exp-box" %>
     </div>
 
-    <div class="field">
-    <%= f.label '説明' %><br />
-    <%= f.text_area :explanation, placeholder: '説明を入力' %>
-    </div>
-
-    <div class="send-btn">
-    <%= f.submit 'SEND' %>
+    <div class="u-btn-area">
+      <div class="u-back-btn">
+        <p><%= link_to "Cancel", gears_path, class:"u-back" %></p>
+      </div>
+      <div class="t-send-btn">
+        <%= f.submit 'SEND', class:"t-send" %>
+      </div>
     </div>
 
   <% end %>
-</div>
 
-<div class="back-btn">
-  <p><%= link_to "<< Back to Own Gear", gears_path %></p>
 </div>

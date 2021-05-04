@@ -1,18 +1,7 @@
 <div class="tweet-show">
 
-<div id="tweet-like">
-<%= render 'tweet', tweet: @tweet%>
-</div>
-  <div class="comment-form">
-    <%= form_with model: [@tweet, @comment] do |f|%>
-      <%= f.text_area :comment, class:"comment-area", placeholder: "140字まで" %>
-      <%= f.submit "SEND", class:"comment-btn" %>
-    <% end %>
+  <div id="tweet-like">
+    <%= render 'tweet', tweet: @tweet%>
   </div>
-
-  <% if current_user.id == @tweet.user.id %>
-  <div class="edit-group">
-    <%= link_to "EDIT", edit_tweet_path(@tweet.id), class:"edit-btn"%>
-  </div>
-  <% end %>
+  
 </div>

@@ -1,16 +1,25 @@
 <div class="user-bar">
-  <div class="user-icon-group">
-    <%= link_to user_path(tweet.user) do%>
-      <% if tweet.user.image.attached? %>
-        <%= image_tag tweet.user.image, class:'user-icon' %>
-      <% else %>
-        <%= image_tag 'default_tent.png', class:'user-icon-dummy' %>
+  <div class="u-bar-left">
+    <div class="user-icon-group">
+      <%= link_to user_path(tweet.user) do%>
+        <% if tweet.user.image.attached? %>
+          <%= image_tag tweet.user.image, class:'user-icon' %>
+        <% else %>
+          <%= image_tag 'default_tent.png', class:'user-icon-dummy' %>
+        <% end %>
       <% end %>
-    <% end %>
+    </div>
+    <div class="tweet-user">
+      <%= link_to user_path(tweet.user) do%>
+        <%= tweet.user.name %>
+      <% end %>
+    </div>
   </div>
-  <div class="tweet-user">
-    <%= link_to user_path(tweet.user) do%>
-      <%= tweet.user.name %>
+  <div class="u-bar-right">
+    <% if current_user == tweet.user && controller.action_name == "show" %>
+      <div class="t-edit-btn">
+        <%= link_to "Edit", edit_tweet_path(tweet.id), class:"t-edit" %>
+      </div>
     <% end %>
   </div>
 </div>

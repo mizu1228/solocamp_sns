@@ -159,6 +159,10 @@ textarea {
 
 .field_with_errors {
   display: inline;
-  background-color: rgba(255, 70, 70, 0.700);
+  /* background-color: rgba(255, 70, 70, 0.700); */
   border-radius: 5px;
+}
+
+::placeholder {
+  color: rgb(117, 117, 117);
 }

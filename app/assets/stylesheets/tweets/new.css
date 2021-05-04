@@ -19,6 +19,14 @@
   text-align: center;
 }
 
+.t-new-title {
+  /* background-color: azure; */
+  /* text-align: center; */
+  width: 95vw;
+  margin: 10px auto;
+  font-size: 20px;
+}
+
 .tweet-field {
   width: 95vw;
   margin: 0 auto;
@@ -42,27 +50,27 @@
   position: absolute;
   padding: 10px 40px;
   height: 25px;
-  width: 20%;
-  margin: 0 auto;
+  width: 80px;
+  /* margin: 0 auto; */
   border-radius: 5px;
   color: #ffffff;
   background-color: #38487877;
   cursor: pointer;
   top: calc( (50vh - 25px) / 2 ) ;
-  left: calc( (95vh - 20%) / 4 ) ;
+  /* transform: translate( -50% ); */
+  left: calc( 95vw / 2 - 80px);
 }
 
 .img-upload-btn-light {
   position: absolute;
   padding: 10px 40px;
   height: 25px;
-  width: 20%;
-  margin: 0 auto;
+  width: 80px;
+  /* margin: 0 auto; */
   border-radius: 5px;
   color: #ffffff;
   background-color: #384878;
   cursor: pointer;
   top: calc( (50vh - 25px) / 2 ) ;
-  left: calc( (95vh - 20%) / 4 ) ;
+  left: calc( 95vw / 2 - 80px);
 }
-

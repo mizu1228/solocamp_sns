@@ -10,6 +10,7 @@
     <div id="img-prv">
       <div id="img-select">
         <%= f.label :image, "画像を選択", class:"img-upload-btn" %>
+        <%= image_tag @tweets_tag.image, class:"t-img-prv"%>
         <%= f.file_field :image, class:"img-upload" %>
       </div>
     </div>
@@ -31,7 +32,7 @@
   <% end %>
 
 <div class="delete-btn-area">
-  <%= link_to "DELETE", tweet_path(@tweet.id), method: :delete, data: { confirm: "Are you sure delete?"}, class:"delete-btn" %>
+  <%= link_to "DELETE", tweet_path(@tweet.id), method: :delete, data: { confirm: "delete?"}, class:"delete-btn" %>
 </div>
 
 <div class="back-btn-area">

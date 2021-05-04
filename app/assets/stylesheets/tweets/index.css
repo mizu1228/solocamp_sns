@@ -11,12 +11,39 @@
 
 .user-bar {
   display: flex;
-  justify-content: flex-start;
-  align-items: center;
+  justify-content: space-between;
   width: 95vw;
   height: 40px;
   /* background-color: lightgrey; */
   margin: 0 auto;
+}
+
+.u-bar-left {
+  display: flex;
+  align-items: center;
+  height: 40px;
+}
+
+.u-bar-right {
+  display: flex;
+  text-align: center;
+  align-items: center;
+  /* background-color: bisque; */
+  margin: 0 10px;
+  border-radius: 5%;
+}
+
+.t-edit-btn {
+  background-color: #777777f3;
+  height: 30px;
+  width: 50px;
+  line-height: 30px;
+  margin: 0 auto;
+  border-radius: 5%;
+}
+
+.t-edit {
+  color: white;
 }
 
 .user-icon {
@@ -84,10 +111,15 @@
   width: 100%;
 }
 
+.error-alert {
+  text-align: center;
+}
+
 .error-message {
-background-color: lightseagreen;
+/* background-color: lightseagreen; */
 width: 95vw;
 margin: 0 auto 10px;
+color: rgba(255, 70, 70, 0.700);
 }
 
 .field {
@@ -98,16 +130,34 @@ margin: 0 auto 10px;
 
 .select-visit {
   /* background-color: lightseagreen; */
-  text-align: center;
+  /* text-align: center; */
   width: 95vw;
   margin: 5px auto;
+}
+
+.site-select {
+  width: 100%;
+}
+
+
+
+.t-btn-area {
+  display: flex;
 }
 
 .send-btn-area {
   /* background-color: lightseagreen; */
   text-align: center;
-  width: 95vw;
+  /* width: 95vw; */
   margin: 30px auto;
+}
+
+.t-send-btn {
+  background-color: #537dfdf3;
+  height: 40px;
+  width: 100px;
+  margin: 50px auto;
+  border-radius: 5%;
 }
 
 .send-btn {
@@ -116,19 +166,16 @@ margin: 0 auto 10px;
   cursor: pointer;
 }
 
+.t-send {
+  line-height: 40px;
+  color: white;
+}
+
 .back-btn-area {
   /* background-color: lightseagreen; */
   text-align: center;
-  width: 95vw;
+  /* width: 95vw; */
   margin: 30px auto;
-}
-
-.back-btn {
-  background-color: lightgray;
-  padding: 10px 5px;
-  border: solid black 1px;
-  border-radius: 10%;
-  cursor: pointer;
 }
 
 .delete-btn-area {

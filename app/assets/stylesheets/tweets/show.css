@@ -15,25 +15,77 @@
   height: 100%;
 }
 
-.name-left {
-  background-color: lavender;
-  margin: 0 10px;
+/* コメント */
+
+.tweet-comment-group {
+  width: 95vw;
+  margin: 10px auto;
 }
 
-.name-right {
-  background-color: lavenderblush;
-  margin: 0 10px;
+.tweet-comment {
+  /* background-color: lightgray; */
+  width: 95vw;
+  margin: 10px auto;
+  height: 30px;
 }
 
-#tweet-comments {
-  background-color: lightskyblue;
-  margin: 10px 0;
+.comment-box {
+  display: flex;
+  justify-content: space-between;
 }
 
-.tweet-tag-group {
-  background-color: cornsilk;
+.comment-user {
+  display: flex;
+  justify-content: space-between;
+  /* background-color: lightslategray; */
+  margin-right: 10px ;
+  width: 100px;
+  height: 30px;
+  text-align: center;
 }
 
-.edit-btn {
-  background-color: mediumaquamarine;
+.t-comm-u-img {
+  width: 30px;
+  height: 30px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: none;
 }
+
+.t-comm-u-name {
+  line-height: 30px;
+}
+
+.comment-form {
+  /* background-color: burlywood; */
+  margin: 10px auto;
+  text-align: center;
+}
+
+.comment-area {
+  box-sizing: border-box;
+  margin: 10px auto;
+  padding: 0 0.5em ;
+  /* background-color: blanchedalmond; */
+}
+
+.comment-text {
+  /* background-color: burlywood; */
+  box-sizing: border-box;
+  padding: 0 0.5em ;
+  line-height: 30px;
+  width: 200px;
+}
+
+.comment-delete-btn {
+  background-color: #777777f3;
+  border-radius: 5%;
+  line-height: 30px;
+}
+
+.t-comm-del-btn {
+  color: white;
+}
+
+
+/* コメント */
