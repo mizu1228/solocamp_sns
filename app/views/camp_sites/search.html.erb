@@ -1,7 +1,7 @@
 <% if @result != nil %>
-  <h2><%= @result.prefecture.name %></h2>
+  <h2 class="sites-pref-name"><%= @result.prefecture.name %></h2>
 <% else %>
-  <h2>This area has any campsite</h2>
+  <h2 class="sites-pref-name">キャンプ場未登録</h2>
 <% end %>
 
 <% if @results.length != 0 %>
@@ -11,11 +11,19 @@
     </li>
   <% end %>
   <li>
-    <%= link_to "<< Search another area", camp_sites_path %>
+    <div class="back-btn-area">
+      <div class="u-back-btn">
+        <%= link_to 'BACK', camp_sites_path, class:"u-back" %>
+      </div>
+    </div>
   </li>
 <% else %>
   <li>
-    <%= link_to "<< Search another area", camp_sites_path %>
+    <div class="back-btn-area">
+      <div class="u-back-btn">
+        <%= link_to 'BACK', camp_sites_path, class:"u-back" %>
+      </div>
+    </div>
   </li>
 <% end %>
 <br>

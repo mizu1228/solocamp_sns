@@ -36,11 +36,7 @@
     </div>
   </div>
 
-  <div class="user-introduce">
-    <% if @user.introduce != nil %>
-      <%= safe_join(@user.introduce.split("\n"), tag(:br)) %>
-    <% end %>
-  </div>
+  
   
   <div class="follower-group">
     <div class="follower-left">
@@ -94,6 +90,12 @@
         </div>
       <% end %>
     </div>
+  </div>
+
+  <div class="user-introduce">
+    <% if @user.introduce != nil %>
+      <%= safe_join(@user.introduce.split("\n"), tag(:br)) %>
+    <% end %>
   </div>
 
 

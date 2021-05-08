@@ -1,8 +1,245 @@
-
-
 // tablet
 @media (min-width: 600px) {
+  // メイン
 
+  .header {
+    position: fixed;
+    z-index: 9999;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+    width: 100vw;
+    // max-width: 599px;
+    margin: 0 auto;
+    height: 60px;
+    // background-color: chocolate;
+    background-color: rgb(255, 255, 255);
+  }
+
+  body {
+    background: url('bg-img.jpeg') no-repeat ;
+    background-position: center center;
+    background-size: cover;
+    background-attachment: fixed;
+  }
+
+  main {
+    padding-top: 60px;
+    padding-bottom: 60px;
+    margin: auto;
+    width: 599px;
+    // background-color: white;
+    flex: 1;
+    // box-shadow: 0 10px 25px 0 rgba(0, 0, 0, .5);
+  }
+
+
+
+
+  // tweet
+  .tweet-list {
+    // background-color: darkgray;
+    max-width: 599px;
+    margin: auto;
+  }
+  
+  .list {
+    background-color: white;
+    margin: 20px auto;
+    width: 579px;
+    border-radius: 5px;
+    box-shadow: 0 10px 25px 0 rgba(0, 0, 0, .5);
+  }
+  
+  .user-bar {
+    // box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    // width: 95vw;
+    max-width: 579px;
+    height: 40px;
+    /* background-color: lightgrey; */
+    margin: 0 auto;
+    padding: 10px 0 ;
+  }
+  
+  .u-bar-left {
+    display: flex;
+    align-items: center;
+    height: 40px;
+  }
+  
+  .u-bar-right {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    /* background-color: bisque; */
+    margin: 0 10px;
+    border-radius: 5%;
+  }
+  
+  .t-edit-btn {
+    background-color: #777777f3;
+    height: 30px;
+    width: 50px;
+    line-height: 30px;
+    margin: 0 auto;
+    border-radius: 5%;
+  }
+  
+  .t-edit {
+    color: white;
+  }
+  
+  .user-icon {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-left: 0;
+  }
+  
+  .user-icon-dummy {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    /* background-color: lightgrey; */
+    object-fit: cover;
+  }
+  
+  .tweet-user {
+    /* margin: 22px 20px 0 0; */
+    padding: 0 10px;
+    height: 100%;
+    font-size: 24px;
+    display: table-cell;
+    vertical-align: middle;
+    /* font-weight: bold; */
+    /* background-color: firebrick; */
+  }
+  
+  .tweet-image-content {
+    /* background-color: darkslategray; */
+    width: 100%;
+    text-align: center;
+  }
+  
+  .tweet-image {
+    height: 50vh;
+    // width: 95vw;
+    max-width: 579px;
+    min-height: 500px;
+    object-fit: contain;
+    // background-color: lightgrey;
+  }
+  
+  .tweet-text-content {
+    margin: 0 auto;
+    /* background-color: lightgrey; */
+    max-width: 579px;
+  }
+  
+  .tweet-camp-site-content {
+    /* background-color: lightgrey; */
+    max-width: 579px;
+    height: 30px;
+    margin: 0 auto;
+  }
+  
+  .tweet-camp-site {
+    display: inline-block;
+    vertical-align: middle;
+  }
+  
+  /* tweet-new */
+  
+  .tweet-form {
+    width: 100%;
+  }
+  
+  .error-alert {
+    text-align: center;
+  }
+  
+  .error-message {
+  /* background-color: lightseagreen; */
+  width: 95vw;
+  margin: 0 auto 10px;
+  color: rgba(255, 70, 70, 0.700);
+  }
+  
+  .field {
+    /* background-color: lightseagreen; */
+    width: 95vw;
+    margin: 0 auto;
+  }
+  
+  .select-visit {
+    /* background-color: lightseagreen; */
+    /* text-align: center; */
+    width: 95vw;
+    margin: 5px auto;
+  }
+  
+  .site-select {
+    width: 100%;
+  }
+  
+  
+  
+  .t-btn-area {
+    display: flex;
+  }
+  
+  .send-btn-area {
+    /* background-color: lightseagreen; */
+    text-align: center;
+    /* width: 95vw; */
+    margin: 30px auto;
+  }
+  
+  .t-send-btn {
+    background-color: #537dfdf3;
+    height: 40px;
+    width: 100px;
+    margin: 50px auto;
+    border-radius: 5%;
+  }
+  
+  .send-btn {
+    padding: 5px 5px;
+    border-radius: 10%;
+    cursor: pointer;
+  }
+  
+  .t-send {
+    line-height: 40px;
+    color: white;
+  }
+  
+  .back-btn-area {
+    /* background-color: lightseagreen; */
+    text-align: center;
+    /* width: 95vw; */
+    margin: 30px auto;
+  }
+  
+  .delete-btn-area {
+    text-align: center;
+    width: 95vw;
+    margin: 30px auto;
+  }
+  
+  .delete-btn {
+    background-color: lightgray;
+    padding: 10px 5px;
+    border: solid black 1px;
+    border-radius: 10%;
+    cursor: pointer;
+  }
+  
+  
 }
 
 // pc

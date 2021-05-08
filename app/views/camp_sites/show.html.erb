@@ -2,49 +2,56 @@
   <li>
 
     <div class="site-show-head">
-      <h2><%= @result.site %></h2>
-        <div id="intere-site">
-          <%= render 'intere', result: @result%>
-        </div>
+      <div id="intere-site">
+        <%= render 'intere', result: @result%>
+      </div>
+      <h2 class="site-name-show"><%= @result.site %></h2>
     </div>
-    <p>
+    <div class="site-show-content visit">
       <% @result.visited_sites.each do |visit| %>
         <% if current_user.id == visit.user_id%>
-          <%= l visit.created_at %> に訪れました。
+          初回訪問 <%= l visit.created_at %>
         <% end %>
       <% end %>
-    </p>
+    </div>
   </li>
   <li>
-    <h3><%= @result.prefecture.name %> <%= @result.address %></h3>
+    <div class="site-show-content add"><%= @result.prefecture.name %> <%= @result.address %></div>
   </li>
   <li>
-    <h3>電話 
+    <div class="site-show-content phone">電話 
     <% if @result.site_tell != nil %>
       <%= @result.site_tell %>
     <% else %>
       ----
     <% end %>
-    </h3>
+    </div>
   </li>
   <li>
-    <h3>サイトの種類 <%= @result.site_type.name %></h3>
+    <div class="site-show-content type">
+      サイトの種類 <%= @result.site_type.name %>
+    </div>
   </li>
 
-<div class="camp-site-tweet">
+<div class="site-show-content tweet">
+<h2 class="site-tweets-list">訪問日記</h2>
 <% @result.tweets.each do |tweet| %>
-  <% if tweet.user.id == current_user.id %>
-    <%= link_to tweet_path(tweet) do %>
-      <%= image_tag tweet.image, class:"tweet-image" %>
-      <li><%= l tweet.created_at %></li>
+  <div class="site-tweet">
+    <% if tweet.user.id == current_user.id %>
+      <%= link_to tweet_path(tweet) do %>
+        <li class="visit-time"><%= l tweet.created_at %></li>
+        <%= image_tag tweet.image, class:"site-tweet-image" %>
+      <% end %>
     <% end %>
-  <% end %>
+  </div>
 <% end %>
 </div>
 
   <li>
-    <div class="back">
-      <%= link_to "<< back to camp site list", :back %>
+    <div class="back-btn-area">
+      <div class="u-back-btn">
+        <%= link_to 'BACK', camp_sites_path, class:"u-back" %>
+      </div>
     </div>
   </li>
 </ul>

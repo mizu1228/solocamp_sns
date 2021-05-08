@@ -1,3 +1,102 @@
-// Place all the styles related to the camp_sites controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+// camp_site index
+
+.camp-site-title {
+  width: 95vw;
+  margin: 0 auto;
+  font-size: 20px;
+}
+
+.site-search-form {
+  width: 95vw;
+  margin: 20px auto;
+}
+
+
+// camp-site search
+
+.sites-pref-name {
+  width: 95vw;
+  margin: 20px auto;
+  font-size: 20px;
+}
+
+.camp-site {
+  display: flex;
+  // justify-content: center;
+  width: 95vw;
+  height: 40px;
+  line-height: 40px;
+  margin: 10px auto 20px auto;
+  border: 1px solid rgba(169, 169, 169, 0.5);
+  border-radius: 5px;
+}
+
+.vis-icon-box {
+  margin: 0 10px;
+  // background-color: khaki;
+}
+
+.site-visit-icon {
+  width: 20px;
+  height: 20px;
+  margin: 10px 0;
+  line-height: 40px ;
+  // background-color: darkgray;
+}
+
+// camp-site show
+
+.site-show-head {
+  display: flex;
+  width: 95vw;
+  margin: 0 auto;
+  height: 30px;
+  // background-color: yellowgreen;
+}
+
+.site-name-show {
+  margin-left: 10px;
+  font-size: 20px;
+}
+
+#intere-site {
+  line-height: 37px;
+}
+
+.site-show-content {
+  width: 95vw;
+  margin: 0 auto;
+}
+
+.visit {
+  color: #777777f3;
+}
+
+.site-tweets-list {
+  margin-top: 50px;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: solid 2px;
+}
+
+.site-tweet-image {
+  margin: 10px 0 ;
+  height: 30vh;
+  width: 100%;
+  // min-height: 500px;
+  object-fit: contain;
+  // background-color: lightgray;
+}
+
+.site-tweet {
+  margin: 10px 0;
+  width: 95vw;
+  background-color: rgb(241, 241, 241);
+  // border: 1px #77777775 solid;
+  border-radius: 5px;
+  // box-shadow: 0 10px 25px 0 rgba(0, 0, 0, .5);
+}
+
+.visit-time {
+  padding-top: 10px;
+}

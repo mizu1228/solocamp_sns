@@ -1,6 +1,7 @@
 footer {
   position: fixed;
   width: 100vw;
+  /* max-width: 599px; */
   height: 60px;
   margin-top: calc(100vh - 60px);
   /* background-color: chocolate; */
