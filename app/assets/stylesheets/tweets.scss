@@ -36,8 +36,23 @@
 
 
 
+  // Log/Sign_in Page
 
-  // tweet
+  #solo-camp-sns {
+    font-size: 100px;
+    font-family: 'Homemade Apple', cursive;
+    color: aliceblue;
+    /* background-color: darkgray; */
+    text-align: center;
+    // width: 400px;
+    margin: 0 auto;
+    display: none;
+  }
+
+
+
+
+  // tweet index
   .tweet-list {
     // background-color: darkgray;
     max-width: 599px;
@@ -151,6 +166,12 @@
     display: inline-block;
     vertical-align: middle;
   }
+
+  .like-container {
+    width: 95%;
+    margin: 0 auto;
+    border: none;
+  }
   
   /* tweet-new */
   
@@ -164,9 +185,9 @@
   
   .error-message {
   /* background-color: lightseagreen; */
-  width: 95vw;
-  margin: 0 auto 10px;
-  color: rgba(255, 70, 70, 0.700);
+    width: 95vw;
+    margin: 0 auto 10px;
+    color: rgba(255, 70, 70, 0.700);
   }
   
   .field {
@@ -238,7 +259,6 @@
     border-radius: 10%;
     cursor: pointer;
   }
-  
   
 }
 

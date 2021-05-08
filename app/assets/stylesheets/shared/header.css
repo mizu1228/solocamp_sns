@@ -60,3 +60,8 @@
   font-family: 'Homemade Apple', cursive;
   /* color: aliceblue; */
 }
+
+#main-title span {
+  font-size: 40px;
+  /* color: #537dfdf3; */
+}

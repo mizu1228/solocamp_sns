@@ -7,10 +7,10 @@
       <%= f.label :site_eq, 'キャンプ場' %>
       <%= f.collection_select :prefecture_id_eq, @prefectures, :id, :name, include_lank: '指定なし' %>
       <div class="send-btn-area">
-      <div class="t-send-btn">
-        <%= f.submit '検索', class:"t-send" %>
+        <div class="t-send-btn">
+          <%= f.submit '検索', class:"t-send" %>
+        </div>
       </div>
-    </div>
     <% end %>
   </div>
 </div>
