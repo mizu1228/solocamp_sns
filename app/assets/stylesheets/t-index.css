@@ -1,4 +1,8 @@
-.tweet-list {
+.side-bar {
+  display: none;
+}
+
+tweet-list {
   /* background-color: darkgray; */
   width: 100%;
 }

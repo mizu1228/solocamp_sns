@@ -1,37 +1,80 @@
-// tablet
-@media (min-width: 600px) {
+// PC ver.
+@media screen and (min-width: 600px) {
   // メイン
 
   .header {
-    position: fixed;
-    z-index: 9999;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    align-content: center;
-    width: 100vw;
-    // max-width: 599px;
-    margin: 0 auto;
-    height: 60px;
-    // background-color: chocolate;
-    background-color: rgb(255, 255, 255);
+    display: none;
+  }
+
+  footer {
+    display: none;
   }
 
   body {
-    background: url('bg-img.jpeg') no-repeat ;
+    // background: url('bg-img.jpeg') no-repeat ;
+    background: url('camp2-img.jpeg') no-repeat ;
+    background-color: rgba(255, 255, 255, 0.7);
+    background-blend-mode: lighten;
     background-position: center center;
     background-size: cover;
     background-attachment: fixed;
   }
 
   main {
-    padding-top: 60px;
-    padding-bottom: 60px;
+    padding: 0;
     margin: auto;
-    width: 599px;
+    width: 800px;
     // background-color: white;
+    background-color: rgba(169, 169, 169, 0.774);
     flex: 1;
-    // box-shadow: 0 10px 25px 0 rgba(0, 0, 0, .5);
+    box-shadow: 0 10px 25px 0 rgba(0, 0, 0, .5);
+  }
+
+  .main {
+    display: flex;
+
+    .side-bar {
+      display: block;
+      width: 201px;
+      // background-color: maroon;
+
+      .side-contents {
+        position: fixed;
+        width: 201px;
+        // background-color: mediumaquamarine;
+
+        #s-main-title {
+          margin-top: 20px;
+          // background-color: rgb(118, 118, 255);
+        }
+        #s-main-title a{
+          font-size: 30px;
+          margin-left: 10px;
+          font-family: 'Homemade Apple', cursive;
+          /* color: aliceblue; */
+        }
+        #s-main-title span {
+          font-size: 40px;
+          /* color: #537dfdf3; */
+        }
+
+        .side-user-bar {
+          display: flex;
+          margin: 50px auto 20px 10px;
+          .s-u-name {
+            font-size: 24px;
+            margin: 0 10px;
+          }
+        }
+
+        .side-content {
+          margin: 20px auto 20px 10px;
+        }
+
+      }
+
+    }
+
   }
 
 
@@ -54,8 +97,8 @@
 
   // tweet index
   .tweet-list {
-    // background-color: darkgray;
-    max-width: 599px;
+    background-color: darkgray;
+    width: 599px;
     margin: auto;
   }
   
@@ -174,90 +217,183 @@
   }
   
   /* tweet-new */
-  
-  .tweet-form {
-    width: 100%;
-  }
-  
-  .error-alert {
-    text-align: center;
-  }
-  
-  .error-message {
-  /* background-color: lightseagreen; */
-    width: 95vw;
-    margin: 0 auto 10px;
-    color: rgba(255, 70, 70, 0.700);
-  }
-  
-  .field {
-    /* background-color: lightseagreen; */
-    width: 95vw;
-    margin: 0 auto;
-  }
-  
-  .select-visit {
-    /* background-color: lightseagreen; */
-    /* text-align: center; */
-    width: 95vw;
-    margin: 5px auto;
-  }
-  
-  .site-select {
-    width: 100%;
-  }
-  
-  
-  
-  .t-btn-area {
+
+  .tweet-new {
     display: flex;
-  }
+    width: 800px;
   
-  .send-btn-area {
-    /* background-color: lightseagreen; */
-    text-align: center;
-    /* width: 95vw; */
-    margin: 30px auto;
-  }
-  
-  .t-send-btn {
-    background-color: #537dfdf3;
-    height: 40px;
-    width: 100px;
-    margin: 50px auto;
-    border-radius: 5%;
-  }
-  
-  .send-btn {
-    padding: 5px 5px;
-    border-radius: 10%;
-    cursor: pointer;
-  }
-  
-  .t-send {
-    line-height: 40px;
-    color: white;
-  }
-  
-  .back-btn-area {
-    /* background-color: lightseagreen; */
-    text-align: center;
-    /* width: 95vw; */
-    margin: 30px auto;
-  }
-  
-  .delete-btn-area {
-    text-align: center;
-    width: 95vw;
-    margin: 30px auto;
-  }
-  
-  .delete-btn {
-    background-color: lightgray;
-    padding: 10px 5px;
-    border: solid black 1px;
-    border-radius: 10%;
-    cursor: pointer;
+    .side-bar {
+      display: block;
+      width: 201px;
+      background-color: aliceblue;
+
+      .side-contents {
+        position: fixed;
+        width: 201px;
+        // background-color: mediumaquamarine;
+
+        #s-main-title {
+          margin-top: 20px;
+          // background-color: rgb(118, 118, 255);
+        }
+        #s-main-title a{
+          font-size: 30px;
+          margin-left: 10px;
+          font-family: 'Homemade Apple', cursive;
+          /* color: aliceblue; */
+        }
+        #s-main-title span {
+          font-size: 40px;
+          /* color: #537dfdf3; */
+        }
+
+        .side-user-bar {
+          display: flex;
+          margin: 50px auto 20px 10px;
+          .s-u-name {
+            font-size: 24px;
+            margin: 0 10px;
+          }
+        }
+
+        .side-content {
+          margin: 20px auto 20px 10px;
+        }
+
+      }
+    }
+
+    .tweet-form {
+      width: 599px;
+
+      .error-alert {
+        text-align: center;
+      }
+    
+      .error-message {
+      /* background-color: lightseagreen; */
+        width: 95%;
+        margin: 0 auto 10px;
+        color: rgba(255, 70, 70, 0.700);
+      }
+    
+      // .field {
+      //   /* background-color: lightseagreen; */
+      //   width: 95%;
+      //   margin: 0 auto;
+      // }
+
+      #img-prv {
+        width: 100%;
+        height: 50vh;
+        background-color: aliceblue;
+        margin: 0 auto 15px;
+        border: solid 1px darkgray;
+        border-radius: 5px;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        text-align: center;
+
+        .img-upload-btn {
+          position: absolute;
+          padding: 10px 40px;
+          height: 25px;
+          width: 80px;
+          // margin: 0 auto;
+          border-radius: 5px;
+          color: #ffffff;
+          background-color: #38487877;
+          cursor: pointer;
+          top: calc( (50vh - 25px) / 2 );
+          transform: translate( -50% );
+          left: calc( (599px - 40px) / 2 );
+        }
+
+        img {
+          width: 100%;
+          height: 50vh;
+          object-fit: contain;
+          background-color: rgba(245, 245, 245, 0.747);
+          border-radius: 5px;
+        }
+      }
+
+      .tweet-field {
+        width: 95%;
+
+        .field-tweet-text {
+          width: 100%;
+        }
+      }
+    
+      .select-visit {
+        /* background-color: lightseagreen; */
+        /* text-align: center; */
+        width: 95%;
+        margin: 5px auto;
+      }
+    
+      .site-select {
+        width: 100%;
+      }
+    
+    
+    
+      .t-btn-area {
+        display: flex;
+      }
+    
+      .send-btn-area {
+        /* background-color: lightseagreen; */
+        text-align: center;
+        /* width: 95vw; */
+        margin: 30px auto;
+      }
+    
+      .t-send-btn {
+        background-color: #537dfdf3;
+        height: 40px;
+        width: 100px;
+        margin: 50px auto;
+        border-radius: 5%;
+      }
+    
+      .send-btn {
+        padding: 5px 5px;
+        border-radius: 10%;
+        cursor: pointer;
+      }
+    
+      .t-send {
+        line-height: 40px;
+        color: white;
+      }
+    
+      .back-btn-area {
+        /* background-color: lightseagreen; */
+        text-align: center;
+        /* width: 95vw; */
+        margin: 30px auto;
+      }
+    
+      .delete-btn-area {
+        text-align: center;
+        width: 95%;
+        margin: 30px auto;
+      }
+    
+      .delete-btn {
+        background-color: lightgray;
+        padding: 10px 5px;
+        border: solid black 1px;
+        border-radius: 10%;
+        cursor: pointer;
+      }
+
+    }
+
   }
   
 }
