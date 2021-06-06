@@ -1,0 +1,43 @@
+<div class="side-bar">
+  <div class="side-contents">
+  <div id="s-main-title">
+    <%= link_to root_path do %>
+      Campary.
+    <% end %>
+  </div>
+  <%= link_to user_path(current_user) do %>
+    <div class="side-user-bar">
+      <div class="s-u-img">
+        <% if current_user.image.attached? %>
+          <%= image_tag current_user.image, class:"user-header-img" %>
+        <% else %>
+          <%= image_tag 'user-icon.png', width:"40", height:"40" %>
+        <% end %>
+      </div>
+      <div class="s-u-name">
+        <%= current_user.name %>
+      </div>
+    </div>
+  <% end %>
+  <div class="side-content diary">
+    <%=link_to new_tweet_path do %>
+      <%= image_tag 'wing-pen.png', width:'40', height:'40' %>
+    <% end %>
+  </div>
+  <div class="side-content stamp">
+    <%= link_to camp_sites_path do %>
+      <%= image_tag 'tent-plus2.png', width:'40', height:'40' %>
+    <% end %>
+  </div>
+  <div class="side-content intere">
+    <%= link_to interes_path do %>
+      <%= image_tag 'unlike-star.png', width:'40', height:'40' %>
+    <% end %>
+  </div>
+  <div class="side-content gear">
+    <%= link_to gears_path do %>
+      <%= image_tag 'bag.png', width:'40', height:'40' %>
+    <% end %>
+  </div>
+  </div>
+</div>

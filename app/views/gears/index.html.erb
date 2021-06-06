@@ -1,16 +1,23 @@
-<%= render 'shared/header' %>
+<div class="gears-index">
+  <div class="own-gear-page">
 
-<h2 class="gears-title">Own Gears</h2>
+    <h2 class="gears-title">Myキャンプ道具</h2>
 
-<p><%= link_to "Add Gear >>", new_gear_path %></p>
+    <div class="new-gear-btn-group">
+      <%= link_to "道具を登録", new_gear_path, class:"new-gear-btn" %>
+    </div>
 
-<% @genres.each do |genre| %>
-  <div class="genre">
-    <%= link_to genre.name, genre_show_path(genre) %>
+    <ul class="gear-index-box">
+      <% @genres.each do |genre| %>
+        <li class="genre<%= genre.id %>">
+          <%= link_to genre_show_path(genre) do %>
+            <%= render 'genre_list', genre: genre %>
+          <% end %>
+        </li>
+
+      <% end %>
+    </ul>
+
   </div>
-  <% @gears.each do |gear| %>
-    <% if gear.user_id == current_user.id && gear.gear_genre_id == genre.id %>
-      <%= render 'display', gear: gear %>
-    <% end %>
-  <% end %>
-<% end %>
+    <%= render 'shared/sidebar' %>
+</div>

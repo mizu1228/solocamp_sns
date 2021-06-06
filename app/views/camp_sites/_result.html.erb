@@ -1,18 +1,17 @@
-<%= link_to camp_site_show_path(result) do %>
-  <%= result.site %>
-
   <% if current_user.visited_by?(result.id) %>
-    <%= link_to  destroy_visited_site_path(result), method: :delete, remote: true, data: { confirm: "#{result.site} を未訪問にしますか？"},id:'visited' do %>
-      visited <%= image_tag 'checked-tent.png', width:'20', height:'20'%>
-    <% end %>
-    <% result.visited_sites.each do |visit| %>
-      <% if current_user.id == visit.user_id%>
-        (at : <%= l visit.created_at %>)
+    <div class="vis-icon-box">
+      <%= link_to  destroy_visited_site_path(result), method: :delete, remote: true, data: { confirm: "#{result.site} を未訪問にしますか？"},id:'visited' do %>
+        <%= image_tag 'checked-tent.png', class:"site-visit-icon"%>
       <% end %>
-    <% end %>
+    </div>
   <% else %>
-    <%= link_to create_visited_site_path(result), method: :post, remote: true, id:'visit' do %>
-      novisit <%= image_tag 'default_tent.png', width:'20', height:'20'%>
-    <% end %>
+    <div class="vis-icon-box">
+      <%= link_to create_visited_site_path(result), method: :post, remote: true, id:'visit' do %>
+        <%= image_tag 'default_tent.png',  class:"site-visit-icon" %>
+      <% end %>
+    </div>
   <% end %>
-<% end %>
+
+  <%= link_to camp_site_show_path(result) do %>
+    <%= result.site %>
+  <% end %>

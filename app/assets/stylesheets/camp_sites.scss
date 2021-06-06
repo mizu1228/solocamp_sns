@@ -1,3 +1,205 @@
-// Place all the styles related to the camp_sites controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+// camp_site index
+
+.camp-site-title {
+  width: 95vw;
+  margin: 0 auto;
+  font-size: 20px;
+}
+
+.site-search-form {
+  width: 95vw;
+  margin: 20px auto;
+}
+
+
+// camp-site search
+
+.sites-pref-name {
+  width: 95vw;
+  margin: 20px auto;
+  font-size: 20px;
+}
+
+.camp-site {
+  display: flex;
+  width: 95vw;
+  height: 40px;
+  line-height: 40px;
+  margin: 10px auto 20px auto;
+  border: 1px solid rgba(169, 169, 169, 0.5);
+  border-radius: 5px;
+}
+
+.vis-icon-box {
+  margin: 0 10px;
+  // background-color: khaki;
+}
+
+.site-visit-icon {
+  width: 20px;
+  height: 20px;
+  margin: 10px 0;
+  line-height: 40px ;
+  // background-color: darkgray;
+}
+
+// camp-site show
+
+.c-site-box {
+  width: 95vw;
+  margin: 10px auto;
+  border: rgba(169, 169, 169, 0.5) solid 1px;
+  border-radius: 5px;
+}
+
+.s-show-head-box {
+  // background-color: #8ca9fff3;
+  // background: linear-gradient( #a4bbfff3, #fffffff3);
+  background: linear-gradient( #c2c2c2f3, #fffffff3);
+  padding: 10px 0;
+  border-radius: 5px 5px 0 0;
+}
+
+.site-show-head {
+  display: flex;
+  width: 95%;
+  margin: 10px auto 10px auto;
+  height: 30px;
+  // background-color: yellowgreen;
+}
+
+.site-show-sub {
+  margin-bottom: 20px;
+  // background-color: coral;
+}
+
+.site-name-show {
+  margin-left: 10px;
+  font-size: 20px;
+  // background-color: chocolate;
+}
+
+#intere-site {
+  line-height: 37px;
+  // background-color: cornflowerblue;
+}
+
+.site-show-content {
+  width: 95%;
+  margin: 3px auto;
+  // background-color: crimson;
+}
+
+.visit {
+  color: #777777f3;
+  width: calc( 95% - 60px );
+}
+
+.pref {
+  width: calc( 95% - 60px );
+}
+
+.add {
+  width: calc( 95% - 90px );
+}
+
+.phone {
+  margin-bottom: 10px;
+  width: calc( 95% - 90px );
+}
+
+.type {
+  margin-top: 20px;
+  width: calc( 95% - 60px );
+}
+
+.tweets-list-box {
+  margin-top: 50px;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: solid 2px;
+}
+
+.site-tweets-list {
+  width: 95%;
+  margin: 0 auto;
+}
+
+.s-tw-img-box {
+  width: 100%;
+  // background-color: aquamarine;
+  text-align: center;
+}
+
+.site-tweet-image {
+  margin: 0 auto ;
+  text-align: center;
+  height: 30vh;
+  width: 95%;
+  // min-height: 500px;
+  object-fit: cover;
+  // background-color: lightgray;
+}
+
+.site-tweet {
+  margin: 10px 0;
+  width: 95vw;
+  height: 40vh;
+  // background: linear-gradient( #c2c2c2f3, #fffffff3);
+  border: 1px #77777775 solid;
+  border-radius: 5px;
+  // box-shadow: 0 10px 25px 0 rgba(0, 0, 0, .5);
+}
+
+.visit-time {
+  height: 40px;
+  width: 95%;
+  margin: 0 auto;
+  // background-color: bisque;
+}
+
+.tw-created {
+  line-height: 40px;
+}
+
+
+
+
+// camp_site interes
+
+.int-title-box {
+  width: 95vw;
+  height: 50px;
+  margin: 10px auto 30px auto;
+  display: flex;
+  align-items: center;
+  // background-color: cadetblue;
+}
+
+.int-sites-title {
+  width: 95vw;
+  margin: 20px auto;
+  font-size: 20px;
+  // background-color: chartreuse;
+}
+
+.int-title-star {
+  width: 30px;
+  height: 30px;
+  margin: 10px 10px 10px 0;
+  // background-color: chocolate;
+}
+
+.int-camp-site {
+  display: flex;
+  width: 95vw;
+  height: 40px;
+  line-height: 40px;
+  margin: 20px auto 20px auto;
+  border: 1px solid rgba(169, 169, 169, 0.5);
+  border-radius: 5px;
+}
+
+.int-site-content {
+  margin: 0 10px;
+}

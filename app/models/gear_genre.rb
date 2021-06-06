@@ -28,6 +28,6 @@ class GearGenre < ActiveHash::Base
   ]
 
   include ActiveHash::Associations
-   has_many :gears
+    has_many :gears
 
 end

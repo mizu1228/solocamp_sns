@@ -1,52 +1,69 @@
-<%= render 'shared/header' %>
+<div class="camp-site-show">
 
-<ul>
-  <li>
-
-    <div class="site-show-head">
-      <h2><%= @result.site %></h2>
+<div class="c-site-content">
+  <div class="c-site-box">
+    <div class="s-show-head-box">
+      <div class="site-show-head">
         <div id="intere-site">
           <%= render 'intere', result: @result%>
         </div>
+        <h2 class="site-name-show"><%= @result.site %></h2>
+      </div>
     </div>
-    <p>
-      <% @result.visited_sites.each do |visit| %>
-        <% if current_user.id == visit.user_id%>
-          <%= l visit.created_at %> に訪れました。
+    <div class="site-show-sub">
+      <div class="site-show-content pref">
+        <%= @result.prefecture.name %>
+      </div>
+      <div class="site-show-content add">
+        <%= @result.address %>
+      </div>
+      <div class="site-show-content phone">電話 
+        <% if @result.site_tell != nil %>
+          <%= @result.site_tell %>
+        <% else %>
+          ----
         <% end %>
-      <% end %>
-    </p>
-  </li>
-  <li>
-    <h3><%= @result.prefecture.name %> <%= @result.address %></h3>
-  </li>
-  <li>
-    <h3>電話 
-    <% if @result.site_tell != nil %>
-      <%= @result.site_tell %>
-    <% else %>
-      ----
-    <% end %>
-    </h3>
-  </li>
-  <li>
-    <h3>サイトの種類 <%= @result.site_type.name %></h3>
-  </li>
-
-<div class="camp-site-tweet">
-<% @result.tweets.each do |tweet| %>
-  <% if tweet.user.id == current_user.id %>
-    <%= link_to tweet_path(tweet) do %>
-      <%= image_tag tweet.image, class:"tweet-image" %>
-      <li><%= l tweet.created_at %></li>
-    <% end %>
-  <% end %>
-<% end %>
-</div>
-
-  <li>
-    <div class="back">
-      <%= link_to "<< back to camp site list", :back %>
+      </div>
+      <div class="site-show-content type">
+        タイプ <%= @result.site_type.name %>
+      </div>
+      <div class="site-show-content visit">
+        <% @result.visited_sites.each do |visit| %>
+          <% if current_user.id == visit.user_id%>
+            初回訪問 <%= visit.created_at.strftime("%Y年%m月%d日") %>
+          <% end %>
+        <% end %>
+      </div>
     </div>
-  </li>
-</ul>
+  </div>
+
+  <div class="site-show-content tweet">
+    <div class="tweets-list-box">
+      <h2 class="site-tweets-list">訪問日記</h2>
+    </div>
+    <% @result.tweets.each do |tweet| %>
+      <% if tweet.user.id == current_user.id %>
+        <div class="site-tweet">
+          <%= link_to tweet_path(tweet) do %>
+            <div class="visit-time">
+              <p class="tw-created">
+                <%= tweet.created_at.strftime("%Y年%m月%d日") %>
+              </p>
+            </div>
+            <div class="s-tw-img-box">
+              <%= image_tag tweet.image, class:"site-tweet-image" %>
+            </div>
+          <% end %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+
+    <div class="back-btn-area">
+      <div class="u-back-btn">
+        <%= link_to 'BACK', camp_sites_path, class:"u-back" %>
+      </div>
+    </div>
+</div>
+  <%= render 'shared/sidebar' %>
+</div>

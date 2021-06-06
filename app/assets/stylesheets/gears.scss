@@ -1,3 +1,187 @@
-// Place all the styles related to the gears controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.own-gear-page {
+  margin: 0 20px;
+  // background-color: antiquewhite;
+}
+
+.gears-title {
+  font-size: 20px;
+  text-align: center;
+  margin: 20px auto;
+}
+
+.new-gear-btn-group {
+  background-color: #537dfdf3;
+  height: 40px;
+  width: 100px;
+  margin: 30px auto 40px auto;
+  text-align: center;
+  border-radius: 5%;
+}
+
+.new-gear-btn {
+  line-height: 40px;
+  color: white;
+}
+
+.gear-index-box {
+  // border-top: solid 1px darkgray;
+  flex-wrap: wrap;
+  text-align: center;
+  column-count: 3;
+  column-fill: initial;
+  margin: 10px auto;
+}
+
+.g-tent-img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+}
+
+
+
+// Gear New
+
+.new-gear-title {
+  margin: 10px auto;
+  font-size: 20px;
+  // background-color: darkgray;
+  width: 95vw;
+}
+
+.g-field-form {
+  width: 95vw;
+  margin: 10px auto;
+  padding: 5px 0;
+  border-bottom: solid 1px #777777f3;
+}
+
+.g-f-box {
+  outline: none;
+}
+
+.g-pull-title {
+  color: rgb(117, 117, 117);
+}
+
+.g-f-pull {
+  width: 95vw;
+  margin: 10px auto;
+}
+
+.gear-genre-select {
+  width: 100%;
+}
+
+.g-exp-box {
+  box-sizing: border-box;
+  width: 100%;
+  border: none;
+  outline: none;
+}
+
+
+// Gear Show
+
+
+.gear-image {
+  height: 50vh;
+  width: 95vw;
+  min-height: 500px;
+  object-fit: contain;
+}
+
+.gear-content {
+  width: 95vw;
+  margin: 10px auto;
+}
+
+.g-b-btn {
+  color: white;
+  line-height: 40px;
+}
+
+.g-genre {
+  margin-bottom: 20px;
+}
+
+.gear-name-box {
+  display: flex;
+  justify-content: flex-start;
+  width: 95vw;
+  margin: 0 auto;
+}
+
+.g-maker {
+  margin-right: 20px;
+}
+
+// Gear Genre_show
+
+.genre-content {
+  width: 95vw;
+  margin: auto;
+}
+
+.gear-genre-name {
+  margin: 10px auto;
+  width: 300px;
+  font-size: 20px;
+}
+
+.gear-box {
+  width: 300px;
+  // background-color: cadetblue;
+  margin: 30px auto;
+}
+
+.gear-image-content {
+  text-align: center;
+}
+
+.gear-name-content {
+  text-align: left;
+}
+
+.gear-back-btn {
+  width: 300px;
+  margin: auto;
+  // background-color: cadetblue;
+}
+
+.g-back-btn {
+  background-color: #777777f3;
+  height: 40px;
+  width: 100px;
+  text-align: center;
+  margin: 0 auto 50px auto;
+  border-radius: 5%;
+}
+
+.g-b-btn {
+  color: white;
+  line-height: 40px;
+}
+
+
+
+
+// Gear Edit
+
+.g-edit-header {
+  display: flex;
+  width: 95vw;
+  // background-color: cadetblue;
+  margin: 30px auto 10px auto;
+}
+
+.edit-gear-title {
+  font-size: 20px;
+  width: 95vw;
+}
+
+.g-del-btn {
+  width: 30px;
+  height: 30px;
+  text-align: center;
+}

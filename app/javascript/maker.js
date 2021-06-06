@@ -1,5 +1,5 @@
 if (location.pathname.match( "gears" )){
-if (document.URL.match(　/new/　)){
+if (document.URL.match( /new/ )){
   document.addEventListener("DOMContentLoaded", () => {
     const inputElement = document.getElementById("maker_name");
     inputElement.addEventListener("keyup", () => {

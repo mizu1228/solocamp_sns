@@ -5,18 +5,24 @@ class CommentsController < ApplicationController
   end
 
   def create
-    # tweet = Tweet.find(params[:tweet_id])
-    @comment = Comment.new(comment_params) #(comment: params[:comment][:comment])
+    @tweet = Tweet.find(params[:tweet_id])
+    @comment = Comment.new(comment_params)
     # binding.pry
     if @comment.save
-      ActionCable.server.broadcast 'comment_channel', content: @comment
+      # binding.pry
+      ActionCable.server.broadcast 'comment_channel', comment: @comment, user: @comment.user, image: url_for(@comment.user.image), tweet: @tweet
+      # binding.pry
     end
   end
 
   def destroy
-    comment = Comment.find_by(id: params[:id], tweet_id: params[:tweet_id])
-    comment.destroy
-    redirect_to tweet_path(params[:tweet_id])
+    @comment = Comment.find(params[:id])
+    # @comments = Comment.all
+    # @comment = Comment.find_by(id: params[:id], tweet_id: params[:tweet_id])
+    # if @comment.destroy
+    # redirect_to tweet_path(params[:tweet_id])
+    # end
+    Comment.find_by(id: params[:id], tweet_id: params[:tweet_id]).destroy
   end
 
 private

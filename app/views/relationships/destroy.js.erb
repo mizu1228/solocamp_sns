@@ -1,2 +1,2 @@
 document.getElementById('follow_form').innerHTML = '<%= j(render("users/follow")) %>'
-document.getElementById('follower').innerHTML = '<h5 >フォロワー<%= @user.followers.count %>人</h5>'
+document.getElementById('follower').innerHTML = '<h5 id="follower-pulldown">Follower<br> <%= @user.followers.count %></h5>'

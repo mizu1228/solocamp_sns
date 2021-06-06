@@ -10,7 +10,8 @@
 */
 html{
   color:#000;
-  background:#FFF;
+  /* background:#FFF; */
+  background-color: rgba(255, 255, 255, 0.950);
 }
 /*
   TODO remove settings on BODY since we can't namespace it.
@@ -113,7 +114,11 @@ select {
   font-weight:inherit;
 }
 /*to enable resizing for IE*/
-input,
+input {
+  *font-size:100%;
+  border: none;
+  background-color: transparent;
+}
 textarea,
 select {
   *font-size:100%;
@@ -136,5 +141,28 @@ li {
 
 body {
   margin: 0;
-  background-color: rgba(61, 60, 73, 0.952);
+  display: flex;
+  flex-flow: column;
+  min-height: 100vh;
+  /* background-color: rgba(61, 60, 73, 0.952); */
+}
+
+main {
+  padding-top: 60px;
+  padding-bottom: 60px;
+  flex: 1;
+}
+
+textarea {
+  resize: none;
+}
+
+.field_with_errors {
+  display: inline;
+  /* background-color: rgba(255, 70, 70, 0.700); */
+  border-radius: 5px;
+}
+
+::placeholder {
+  color: rgb(117, 117, 117);
 }

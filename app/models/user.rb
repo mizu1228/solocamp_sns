@@ -54,7 +54,7 @@ class User < ApplicationRecord
     validates :password_confirmation
   end
 
-  validates :introduce, length: { maximum: 400 }
+  validates :introduce, length: { maximum: 200 }
 
   has_many :tweets
   has_many :comments

@@ -1,37 +1,42 @@
-<%= render 'shared/header' %>
+<div class="genre-show">
+  <div class="genre-content">
 
-<div class="gear-content">
+    <div class="gear-genre-name">
+      <%= @genre.name %>
+    </div>
 
-  <div class="gear-genre-content">
-    ジャンル : <%= @genre.name %>
-  </div>
 
-  <% if @genre.gears.any?  %>
-    <% @genre.gears.each do |gear| %>
-      <% if gear.user_id == current_user.id %>
+    <% if @genre.gears.any?  %>
+      <% @genre.gears.each do |gear| %>
+        <div class="gear-box">
+          <% if gear.user_id == current_user.id %>
+            <%= link_to gear_path(gear) do %>
+              <div class="gear-name-content">
+                <%= gear.gear_name %>
+              </div>
+              <div class="gear-image-content">
+                <% if gear.image.attached?%>
+                  <%= image_tag gear.image.variant(gravity: :center, resize:"300x300^", crop:"300x300+0+0")%>
+                <% else %>
+                  <%= image_tag 'default_tent.png', width:'300', heigth:'300' %>
+                <% end %>
+              </div>
+            <% end %>
 
-        <div class="gear-name-content">
-          <%= gear.gear_name %>
-        </div>
-
-        <div class="gear-image-content">
-          <% if gear.image.attached?%>
-            <%= image_tag gear.image.variant(gravity: :center, resize:"300x300^", crop:"300x300+0+0")%>
-          <% else %>
-            <%= image_tag 'default_tent.png', width:'300', heigth:'300' %>
           <% end %>
         </div>
-
       <% end %>
+    <% else %>
+      <div class="gear-box">
+        <p>登録なし</p>
+      </div>
     <% end %>
-  <% else %>
-    <div>
-      <p>登録なし</p>
-    </div>
-  <% end %>
 
-  <div class="back-gear-index">
-    <%= link_to '<< Back to Own Gears', gears_path %>
+    <div class="gear-back-btn">
+      <div class="g-back-btn">
+        <%= link_to 'Back', gears_path, class:"g-b-btn" %>
+      </div>
+    </div>
   </div>
-  
+  <%= render 'shared/sidebar' %>
 </div>

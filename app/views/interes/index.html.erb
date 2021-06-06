@@ -1,17 +1,38 @@
-<%= render 'shared/header' %>
+<div class="interes">
+<div class="intere-content">
+  <div class="int-title-box">
+    <div class="int-star-icon">
+      <%= image_tag 'unlike-star.png', class:"int-title-star"%>
+    </div>
+    <h2 class="int-sites-title">お気に入りキャンプ場</h2>
+  </div>
 
-<h2>お気に入りのキャンプ場</h2>
-
-<% @interes.each do |intere| %>
-  <% if current_user.id == intere.user_id %>
-  <li id="site<%= intere.id %>">
-    <%= intere.camp_site.prefecture.name %>  
-    <%= link_to intere.camp_site.site, camp_site_show_path(intere.camp_site) %>  
-    <%= link_to 'リストから外す', destroy_intere_path(intere.camp_site), method: :delete %>
-  </li>
+  <% @interes.each do |intere| %>
+    <% if current_user.id == intere.user_id %>
+    <li id="site<%= intere.id %>" class="int-camp-site">
+      <p class="int-site-content">
+        <%= intere.camp_site.prefecture.name %>
+      </p>
+      <p class="int-site-content">
+        <%= link_to intere.camp_site.site, camp_site_show_path(intere.camp_site) %>
+      </p>
+    </li>
+    <% end %>
   <% end %>
-<% end %>
 
-<li><%= link_to 'キャンプ場を探す >>', camp_sites_path %></li>
 
-<li><%= link_to '<< 戻る', root_path %></li>
+  <div class="t-btn-area">
+    <div class="back-btn-area">
+      <div class="u-back-btn">
+        <%= link_to 'BACK', camp_sites_path, class:"u-back" %>
+      </div>
+    </div>
+    <div class="send-btn-area">
+      <div class="t-send-btn">
+        <%= link_to '検索', camp_sites_path, class:"t-send" %>
+      </div>
+    </div>
+  </div>
+</div>
+  <%= render 'shared/sidebar'%>
+</div>

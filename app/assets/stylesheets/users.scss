@@ -1,4 +1,238 @@
-// Place all the styles related to the users controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+@media screen and (min-width: 600px) {
 
+
+  // user show
+
+  .user-page {
+    display: flex;
+    width: 800px;
+
+    .user-page-content {
+      width: 599px;
+
+      .follower-lists-bar {
+        width: calc( ( 100% - 40px ) / 2 );
+        position: absolute;
+        top: 140px;
+        left: 0;
+        background-color: #fff;
+      }
+      
+      .follow-lists-bar {
+        width: calc( ( 100% - 40px ) / 2 );
+        position: absolute;
+        top: 140px;
+        left: calc( ( 100% - 40px ) / 2 );
+        background-color: #fff;
+      }
+
+      .user-name-group {
+        margin-top: 20px;
+      }
+
+    }
+
+    .side-bar {
+      display: block;
+      width: 201px;
+      // background-color: maroon;
+
+      .side-contents {
+        position: fixed;
+        width: 201px;
+        // background-color: mediumaquamarine;
+
+        #s-main-title {
+          margin-top: 20px;
+          // background-color: rgb(118, 118, 255);
+        }
+        #s-main-title a{
+          font-size: 30px;
+          margin-left: 10px;
+          font-family: 'Homemade Apple', cursive;
+          /* color: aliceblue; */
+        }
+        #s-main-title span {
+          font-size: 40px;
+          /* color: #537dfdf3; */
+        }
+
+        .side-user-bar {
+          display: flex;
+          margin: 50px auto 20px 10px;
+          .s-u-name {
+            font-size: 24px;
+            margin: 0 10px;
+          }
+        }
+
+        .side-content {
+          margin: 20px auto 20px 10px;
+        }
+      }
+    }
+  }
+
+
+
+  // user edit
+
+  .user-edit {
+    display: flex;
+    width: 800px;
+
+    .u-edit-form{
+      width: 599px;
+
+      .u-btn-area {
+        /* background-color: cornsilk; */
+        display: flex;
+        justify-content: space-between;
+        text-align: center;
+      }
+      
+      .u-upd-btn {
+        background-color: #537dfdf3;
+        height: 40px;
+        width: 100px;
+        margin: 50px auto;
+        border-radius: 5%;
+      }
+      
+      .u-back-btn {
+        background-color: #777777f3;
+        height: 40px;
+        width: 100px;
+        margin: 50px auto;
+        border-radius: 5%;
+      }
+      
+      .u-back {
+        color: white;
+        line-height: 40px;
+      }
+      
+      .u-upd {
+        color: white;
+        line-height: 40px;
+      }
+      
+      .u-f-delete {
+        /* background-color: darkcyan; */
+        text-align: center;
+        width: 95%;
+        margin: 200px auto 20px auto;
+      }
+      
+      .u-f-pull {
+        width: 95%;
+        margin: 10px auto;
+        /* border-bottom: solid 1px #777777f3; */
+      }
+      
+      .u-field {
+        border: none;
+        outline: none;
+        width: calc( 100% - 140px );
+      }
+
+      
+      .u-intr-text {
+        box-sizing: border-box;
+        width: calc( 100% - 140px);
+        height: 20vh;
+        background-color: transparent;
+        border: none;
+        outline: none;
+        
+      }
+      
+      .u-field-name {
+        /* background-color: cadetblue; */
+        display: block;
+        float: left;
+        width: 140px;
+      }
+
+
+      .u-intr {
+        display: block;
+        float: left;
+        width: 140px;
+      }
+
+      .u-field-form {
+        width: 95%;
+      }
+      
+      .u-field-form-img {
+        box-sizing: border-box;
+        width: 95%;
+        height: 90px;
+        margin: 10px auto;
+        position: relative;
+        padding: 5px 0;
+        // border-bottom: solid 1px #777777f3;
+        border: none;
+      }
+      
+      .u-img-prv {
+        width: 80px;
+        height: 80px;
+        position: absolute;
+        background-color: rgb(182, 182, 182);
+        border-radius: 50%;
+        object-fit: cover;
+      }
+      
+      .u-img-cam {
+        position: absolute;
+        top: calc( 50% - 15px );
+        left: 25px;
+        width: 30px;
+        height: 30px;
+      }
+    }
+
+    .side-bar {
+      display: block;
+      width: 201px;
+      // background-color: maroon;
+
+      .side-contents {
+        position: fixed;
+        width: 201px;
+        // background-color: mediumaquamarine;
+
+        #s-main-title {
+          margin-top: 20px;
+          // background-color: rgb(118, 118, 255);
+        }
+        #s-main-title a{
+          font-size: 30px;
+          margin-left: 10px;
+          font-family: 'Homemade Apple', cursive;
+          /* color: aliceblue; */
+        }
+        #s-main-title span {
+          font-size: 40px;
+          /* color: #537dfdf3; */
+        }
+
+        .side-user-bar {
+          display: flex;
+          margin: 50px auto 20px 10px;
+          .s-u-name {
+            font-size: 24px;
+            margin: 0 10px;
+          }
+        }
+
+        .side-content {
+          margin: 20px auto 20px 10px;
+        }
+
+      }
+    }
+  }
+}
