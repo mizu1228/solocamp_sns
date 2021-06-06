@@ -1,29 +1,23 @@
-<div class="own-gear-page">
+<div class="gears-index">
+  <div class="own-gear-page">
 
-  <h2 class="gears-title">Myキャンプ道具</h2>
+    <h2 class="gears-title">Myキャンプ道具</h2>
 
-  <div class="new-gear-btn-group">
-    <%= link_to "道具を登録", new_gear_path, class:"new-gear-btn" %>
+    <div class="new-gear-btn-group">
+      <%= link_to "道具を登録", new_gear_path, class:"new-gear-btn" %>
+    </div>
+
+    <ul class="gear-index-box">
+      <% @genres.each do |genre| %>
+        <li class="genre<%= genre.id %>">
+          <%= link_to genre_show_path(genre) do %>
+            <%= render 'genre_list', genre: genre %>
+          <% end %>
+        </li>
+
+      <% end %>
+    </ul>
+
   </div>
-
-  <ul class="gear-index-box">
-    <% @genres.each do |genre| %>
-      <li class="genre<%= genre.id %>">
-        <%= link_to genre_show_path(genre) do %>
-          <%= render 'genre_list', genre: genre %>
-        <% end %>
-      </li>
-
-      <%# <div class="user-gears"> %>
-        <%# <% @gears.each do |gear| %> 
-          <%# <div class="user-gear"> %>
-            <%# <% if gear.user_id == current_user.id && gear.gear_genre_id == genre.id %> 
-              <%# <%= render 'display', gear: gear %> 
-            <%# <% end %> 
-          <%# </div> %>
-        <%# <% end %> 
-      <%# </div> %>
-    <% end %>
-  </ul>
-
+    <%= render 'shared/sidebar' %>
 </div>

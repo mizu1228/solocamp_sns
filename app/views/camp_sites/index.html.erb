@@ -1,16 +1,19 @@
-<div classs="search-camp-sites">
-  <h2 class="camp-site-title">
-  Search Campsite
-  </h2>
-  <div class="site-search-form">
-    <%= search_form_for @p, url: camp_sites_search_path do |f| %>
-      <%= f.label :site_eq, 'キャンプ場' %>
-      <%= f.collection_select :prefecture_id_eq, @prefectures, :id, :name, include_lank: '指定なし' %>
-      <div class="send-btn-area">
-        <div class="t-send-btn">
-          <%= f.submit '検索', class:"t-send" %>
+<div class="search-camp-sites">
+  <div class="s-c-sites-content">
+    <h2 class="camp-site-title">
+    キャンプ場を検索
+    </h2>
+    <div class="site-search-form">
+      <%= search_form_for @p, url: camp_sites_search_path do |f| %>
+        <%= f.label :site_eq, 'キャンプ場' %>
+        <%= f.collection_select :prefecture_id_eq, @prefectures, :id, :name, include_lank: '指定なし' %>
+        <div class="send-btn-area">
+          <div class="t-send-btn">
+            <%= f.submit '検索', class:"t-send" %>
+          </div>
         </div>
-      </div>
-    <% end %>
+      <% end %>
+    </div>
   </div>
+  <%= render 'shared/sidebar' %>
 </div>

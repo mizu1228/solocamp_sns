@@ -1,77 +1,79 @@
-<div class="u-edit-form">
+<div class="user-edit">
+  <div class="u-edit-form">
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+      <%= render "devise/shared/error_messages", resource: resource %>
 
-  <div class="u-field-form-img" >
-    <%= f.label :image do %>
-      <%= image_tag resource.image, class:"u-img-prv" %>
-      <%= image_tag 'camera_icon.png', class:"u-img-cam" %>
-      <%= f.file_field :image, style: "display:none", class:"u-e-prv" %>
+      <div class="u-field-form-img" >
+        <%= f.label :image do %>
+          <%= image_tag resource.image, class:"u-img-prv" %>
+          <%= image_tag 'camera_icon.png', class:"u-img-cam" %>
+          <%= f.file_field :image, style: "display:none", class:"u-e-prv" %>
+        <% end %>
+      </div>
+
+      <div class="u-field-form">
+        <%= f.label :name, class:"u-field-name" %>
+        <%= f.text_field :name, autofocus: true, autocomplete: "name", class:"u-field" %>
+      </div>
+
+      <div class="u-field-form">
+        <%= f.label :introduce, class:"u-intr" %>
+        <%= f.text_area :introduce, placeholder: '200字以内で入力', maxlength:'200', class:"u-intr-text" %>
+      </div>
+
+      <div class="u-field-form">
+        <%= f.label :email, class:"u-field-name" %>
+        <%= f.email_field :email, autocomplete: "email", class:"u-field" %>
+      </div>
+
+      <div class="u-field-form">
+        <div class="u-min-title">
+          キャンパー情報
+        </div>
+        <div class="u-f-pull">
+          <%= f.label :スタイル, class:"u-field-name" %>
+          <%= f.collection_select(:camp_style_id, CampStyle.all, :id, :name, {}, {class:"u-field-select"}) %>
+        </div>
+
+        <div class="u-f-pull">
+          <%= f.label :移動手段, class:"u-field-name" %>
+          <%= f.collection_select(:trans_style_id, TransStyle.all, :id, :name, {}, {class:"u-field-select"}) %>
+        </div>
+
+        <div class="u-f-pull">
+          <%= f.label :活動時期, class:"u-field-name" %>
+          <%= f.collection_select(:season_id, Season.all, :id, :name, {}, {class:"u-field-select"}) %>
+        </div>
+
+        <div class="u-f-pull">
+          <%= f.label :活動地域, class:"u-field-name" %>
+          <%= f.collection_select(:prefecture_id, Prefecture.all, :id, :name, {}, {class:"u-field-select"}) %>
+        </div>
+      </div>
+
+      <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+        <div>
+          Currently waiting confirmation for: <%= resource.unconfirmed_email %>
+        </div>
+      <% end %>
+
+      <div class="u-btn-area">
+        <div class="u-back-btn">
+          <%= link_to "Cancel", :back, class:"u-back" %>
+        </div>
+        <div class="u-upd-btn">
+          <%= f.submit "Update", class:"u-upd" %>
+        </div>
+      </div>
+
     <% end %>
-  </div>
-  
-  <div class="u-field-form">
-    <%= f.label :name, class:"u-field-name" %>
-    <%= f.text_field :name, autofocus: true, autocomplete: "name", class:"u-field" %>
-  </div>
 
-  <div class="u-field-form">
-    <%= f.label :introduce, class:"u-intr" %>
-    <%= f.text_area :introduce, placeholder: '200字以内で入力', maxlength:'200', class:"u-intr-text" %>
-  </div>
-
-  <div class="u-field-form">
-    <%= f.label :email, class:"u-field-name" %>
-    <%= f.email_field :email, autocomplete: "email", class:"u-field" %>
-  </div>
-
-  <div class="u-field-form">
-    <div class="u-min-title">
-      キャンパー情報
-    </div>
-    <div class="u-f-pull">
-      <%= f.label :スタイル, class:"u-field-name" %>
-      <%= f.collection_select(:camp_style_id, CampStyle.all, :id, :name, {}, {class:"u-field-select"}) %>
-    </div>
-
-    <div class="u-f-pull">
-      <%= f.label :移動手段, class:"u-field-name" %>
-      <%= f.collection_select(:trans_style_id, TransStyle.all, :id, :name, {}, {class:"u-field-select"}) %>
-    </div>
-
-    <div class="u-f-pull">
-      <%= f.label :活動時期, class:"u-field-name" %>
-      <%= f.collection_select(:season_id, Season.all, :id, :name, {}, {class:"u-field-select"}) %>
-    </div>
-
-    <div class="u-f-pull">
-      <%= f.label :活動地域, class:"u-field-name" %>
-      <%= f.collection_select(:prefecture_id, Prefecture.all, :id, :name, {}, {class:"u-field-select"}) %>
+    <div class="u-f-delete">
+      <%= button_to "Delete account", registration_path(resource_name), data: { confirm: "Account Delete?" }, method: :delete %>
     </div>
   </div>
 
-  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
-  <% end %>
-
-  
-
-  <div class="u-btn-area">
-    <div class="u-back-btn">
-      <%= link_to "Cancel", :back, class:"u-back" %>
-    </div>
-    <div class="u-upd-btn">
-      <%= f.submit "Update", class:"u-upd" %>
-    </div>
-  </div>
-
-  
-
-<% end %>
-
-  <div class="u-f-delete">
-    <%= button_to "Delete account", registration_path(resource_name), data: { confirm: "Account Delete?" }, method: :delete %>
-  </div>
+  <%= render 'shared/sidebar' %>
 
 </div>

@@ -1,7 +1,11 @@
 <div class="tweet-show">
 
-  <div id="tweet-like">
-    <%= render 'tweet', tweet: @tweet%>
+  <div class="tweet-show-content" id="tweet-like">
+    <div class="tweet-show-main">
+      <%= render 'tweet', tweet: @tweet%>
+    </div>
   </div>
+
+  <%= render 'shared/sidebar' %>
   
 </div>

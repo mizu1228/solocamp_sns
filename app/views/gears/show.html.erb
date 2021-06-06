@@ -1,44 +1,45 @@
-<div class="gear-content-box">
+<div class="gear-show">
+  <div class="gear-content-box">
+    <div class="gear-content g-genre">
+      <%= @gear.gear_genre.name %>
+    </div>
 
-  <div class="gear-content g-genre">
-    <%= @gear.gear_genre.name %>
-  </div>
-
-  <div class="gear-name-box">
-    <div class="g-maker">
-      <% if @gear.makers.any? %>
-        <% @gear.makers.each do |maker| %>
-          <%= maker.maker_name %>
+    <div class="gear-name-box">
+      <div class="g-maker">
+        <% if @gear.makers.any? %>
+          <% @gear.makers.each do |maker| %>
+            <%= maker.maker_name %>
+          <% end %>
+        <% else %>
+          メーカー未登録
         <% end %>
+      </div>
+
+      <div class="g-name">
+        <%= @gear.gear_name %>
+      </div>
+    </div>
+
+    <div class="gear-content">
+      <% if @gear.image.attached?%>
+        <%= image_tag @gear.image, class:"gear-image"%>
       <% else %>
-        メーカー未登録
+        <%= image_tag 'default_tent.png' %>
       <% end %>
     </div>
 
-    <div class="g-name">
-      <%= @gear.gear_name %>
+    <div class="gear-content">
+      <%= @gear.explanation%>
+    </div>
+
+    <div class="u-btn-area">
+      <div class="u-back-btn">
+        <%= link_to 'Back', gears_path, class:"g-b-btn" %>
+      </div>
+      <div class="u-upd-btn">
+        <%= link_to "EDIT", edit_gear_path(@gear), class:"u-upd" %>
+      </div>
     </div>
   </div>
-
-  <div class="gear-content">
-    <% if @gear.image.attached?%>
-      <%= image_tag @gear.image, class:"gear-image"%>
-    <% else %>
-      <%= image_tag 'default_tent.png' %>
-    <% end %>
-  </div>
-
-  <div class="gear-content">
-    <%= @gear.explanation%>
-  </div>
-
-  <div class="u-btn-area">
-    <div class="u-back-btn">
-      <%= link_to 'Back', gears_path, class:"g-b-btn" %>
-    </div>
-    <div class="u-upd-btn">
-      <%= link_to "EDIT", edit_gear_path(@gear), class:"u-upd" %>
-    </div>
-  </div>
-
+  <%= render 'shared/sidebar' %>
 </div>

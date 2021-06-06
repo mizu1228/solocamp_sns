@@ -1,168 +1,173 @@
 <div class="user-page">
 
-  <div class="user-name-group">
-    <div class="left">
-      <% if @user.image.attached? %>
-        <div class="user-img-content">
-          <%= image_tag @user.image, class:"user-img" %>
-        </div>
-      <% else %>
-        <div class="default-img">
-          <%= image_tag 'default_tent.png', class:"user-img" %>
-        </div>
-      <% end %>
+  <div class="user-page-content">
 
-      <div class="user-name-follower">
-        <div class="user-page-name">
-          <%= @user.name %>
-        </div>
+    <div class="user-name-group">
+      <div class="left">
+        <% if @user.image.attached? %>
+          <div class="user-img-content">
+            <%= image_tag @user.image, class:"user-img" %>
+          </div>
+        <% else %>
+          <div class="default-img">
+            <%= image_tag 'default_tent.png', class:"user-img" %>
+          </div>
+        <% end %>
+
+        <div class="user-name-follower">
+          <div class="user-page-name">
+            <%= @user.name %>
+          </div>
 
         
-      </div>
-    </div>
-
-    <div class="right">
-      <% if current_user != @user %>
-        <div class="follow-form-group">
-          <%= render "follow_form" %>
         </div>
-      <% else %>
-        <div class="edit-u-form-group">
-          <div class="edit-u-btn">
-            <%= link_to "Edit", edit_user_registration_path(current_user) %>
+      </div>
+
+      <div class="right">
+        <% if current_user != @user %>
+          <div class="follow-form-group">
+            <%= render "follow_form" %>
           </div>
-        </div>
-      <% end %>
-    </div>
-  </div>
-
-  
-  
-  <div class="follower-group">
-    <div class="follower-left">
-      <div id="follower">
-        <h5 id="follower-pulldown">Follower<br> <%= @user.followers.count %></h5>
-        <ul class="follower-lists-bar hidden">
-          <li class="fw-pull-list">
-            <span class="follow-span">フォロワー</span>
-            <%= image_tag 'close.png', id:"close-btn"%>
-          </li>
-          <% @user.followers.each do |follower| %>
-            <li class="fw-pull-list">
-              <%= link_to user_path(follower) do %>
-                <% if follower.image.attached? %>
-                  <%= image_tag follower.image, class:'f-user-icon' %>
-                <% else %>
-                  <%= image_tag 'default_tent.png', class:'f-user-icon' %>
-                <% end %>
-              <% end %>
-              <%= link_to follower.name, user_path(follower)%>
-            </li>
-          <% end %>
-        </ul>
-      </div>
-      <div id="follow">
-        <h5 id="follow-pulldown">Follow<br> <%= @user.followings.count %></h5>
-        <ul class="follow-lists-bar hidden">
-          <li class="f-pull-list">
-            <span class="follow-span">フォロー中</span>
-            <%= image_tag 'close.png', id:"close-btn"%>
-          </li>
-          <% @user.followings.each do |follow| %>
-            <li class="f-pull-list">
-              <%= link_to user_path(follow) do %>
-                <% if follow.image.attached? %>
-                  <%= image_tag follow.image, class:'f-user-icon' %>
-                <% else %>
-                  <%= image_tag 'default_tent.png', class:'f-user-icon' %>
-                <% end %>
-              <% end %>
-              <%= link_to follow.name, user_path(follow)%>
-            </li>
-          <% end %>
-        </ul>
+        <% else %>
+          <div class="edit-u-form-group">
+            <div class="edit-u-btn">
+              <%= link_to "Edit", edit_user_registration_path(current_user) %>
+            </div>
+          </div>
+        <% end %>
       </div>
     </div>
-    <div class="follower-right">
-      <% if current_user == @user %>
-        <div class="sign-out-btn">
-          <%= link_to "LogOut", destroy_user_session_path, method: :delete, data: { confirm: "SignOut?" } %>
-        </div>
-      <% end %>
-    </div>
-  </div>
-
-  <div class="user-introduce">
-    <% if @user.introduce != nil %>
-      <%= safe_join(@user.introduce.split("\n"), tag(:br)) %>
-    <% end %>
-  </div>
 
 
-  <div class="style-lists">
-    <h2 class="style-header"><span><%= @user.name %></span> のキャンパー情報</h2>
-    <ul class="camp-style">
-      <li class="style-title">スタイル
-      </li>
-      <li class="style-name">
-        <% if @user.camp_style != nil %>
-          <%= @user.camp_style.name %>
-        <% else %>
-          --
-        <% end %>
-      </li>
-    </ul>
-    <ul class="camp-style">
-      <li class="style-title">移動手段
-      </li>
-      <li class="style-name">
-        <% if @user.trans_style != nil %>
-          <%= @user.trans_style.name %>
-        <% else %>
-          --
-        <% end %>
-      </li>
-    </ul>
-    <ul class="camp-style">
-      <li class="style-title">活動時期
-      </li>
-      <li class="style-name">
-        <% if @user.season != nil %>
-          <%= @user.season.name %>
-        <% else %>
-          --
-        <% end %>
-      </li>
-    </ul>
-    <ul class="camp-style">
-      <li class="style-title">活動場所
-      </li>
-      <li class="style-name">
-        <% if @user.prefecture != nil %>
-          <%= @user.prefecture.name %>
-        <% else %>
-          --
-        <% end %>
-      </li>
-    </ul>
-  </div>
-
-  <div class="user-tweet-list">
-    <div class="u-tweet-li-title">
-      <%= @user.name %>'s Camp Diary
-    </div>
-    <ul class="u-tw-li">
-      <% @user.tweets.each do |tweet| %>
-        <li>
-          <% if tweet.image.attached? %>
-            <%= link_to tweet_path(tweet.id) do %>
-              <%= image_tag tweet.image, class:"u-tw-pic" %>
+    <div class="follower-group">
+      <div class="follower-left">
+        <div id="follower">
+          <h5 id="follower-pulldown">Follower<br> <%= @user.followers.count %></h5>
+            <ul class="follower-lists-bar hidden">
+              <li class="fw-pull-list">
+                <span class="follow-span">フォロワー</span>
+              <%= image_tag 'close.png', id:"close-btn"%>
+              </li>
+              <% @user.followers.each do |follower| %>
+              <li class="fw-pull-list">
+                <%= link_to user_path(follower) do %>
+                  <% if follower.image.attached? %>
+                    <%= image_tag follower.image, class:'f-user-icon' %>
+                  <% else %>
+                    <%= image_tag 'default_tent.png', class:'f-user-icon' %>
+                  <% end %>
+                <% end %>
+                <%= link_to follower.name, user_path(follower)%>
+              </li>
             <% end %>
+          </ul>
+        </div>
+        <div id="follow">
+          <h5 id="follow-pulldown">Follow<br> <%= @user.followings.count %></h5>
+          <ul class="follow-lists-bar hidden">
+            <li class="f-pull-list">
+              <span class="follow-span">フォロー中</span>
+              <%= image_tag 'close.png', id:"close-btn"%>
+            </li>
+            <% @user.followings.each do |follow| %>
+              <li class="f-pull-list">
+                <%= link_to user_path(follow) do %>
+                  <% if follow.image.attached? %>
+                    <%= image_tag follow.image, class:'f-user-icon' %>
+                  <% else %>
+                    <%= image_tag 'default_tent.png', class:'f-user-icon' %>
+                  <% end %>
+                <% end %>
+                <%= link_to follow.name, user_path(follow)%>
+              </li>
+            <% end %>
+          </ul>
+        </div>
+      </div>
+      <div class="follower-right">
+        <% if current_user == @user %>
+          <div class="sign-out-btn">
+            <%= link_to "LogOut", destroy_user_session_path, method: :delete, data: { confirm: "SignOut?" } %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="user-introduce">
+      <% if @user.introduce != nil %>
+        <%= safe_join(@user.introduce.split("\n"), tag(:br)) %>
+      <% end %>
+    </div>
+
+
+    <div class="style-lists">
+      <h2 class="style-header"><span><%= @user.name %></span> のキャンパー情報</h2>
+      <ul class="camp-style">
+        <li class="style-title">スタイル
+        </li>
+        <li class="style-name">
+          <% if @user.camp_style != nil %>
+            <%= @user.camp_style.name %>
+          <% else %>
+            --
           <% end %>
         </li>
-      <% end %>
-    </ul>
+      </ul>
+      <ul class="camp-style">
+        <li class="style-title">移動手段
+        </li>
+        <li class="style-name">
+          <% if @user.trans_style != nil %>
+            <%= @user.trans_style.name %>
+          <% else %>
+            --
+          <% end %>
+        </li>
+      </ul>
+      <ul class="camp-style">
+        <li class="style-title">活動時期
+        </li>
+        <li class="style-name">
+          <% if @user.season != nil %>
+            <%= @user.season.name %>
+          <% else %>
+            --
+          <% end %>
+        </li>
+      </ul>
+      <ul class="camp-style">
+        <li class="style-title">活動場所
+        </li>
+        <li class="style-name">
+          <% if @user.prefecture != nil %>
+            <%= @user.prefecture.name %>
+          <% else %>
+            --
+          <% end %>
+        </li>
+      </ul>
+    </div>
+
+    <div class="user-tweet-list">
+      <div class="u-tweet-li-title">
+        <%= @user.name %>'s Camp Diary
+      </div>
+      <ul class="u-tw-li">
+        <% @user.tweets.each do |tweet| %>
+          <li>
+            <% if tweet.image.attached? %>
+              <%= link_to tweet_path(tweet.id) do %>
+                <%= image_tag tweet.image, class:"u-tw-pic" %>
+              <% end %>
+            <% end %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
   </div>
+
+  <%= render 'shared/sidebar' %>
+
 </div>
 
 <%# .variant(gravity: :center, resize:"300x300^", crop:"300x300+0+0") %>

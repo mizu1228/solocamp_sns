@@ -1,62 +1,67 @@
-<div class="edit-gear-box">
+<div class="gear-edit">
+  <div class="edit-gear-box">
 
-  <%= render 'shared/error_messages', resource: @gear %>
+    <%= render 'shared/error_messages', resource: @gear %>
 
-  <div class="g-edit-header">
-    <h2 class="edit-gear-title">Edit Gear</h2>
-    <%= link_to gear_path, method: :delete, data: { confirm: "Delete?"}, class:"g-delete" do %>
-      <%= image_tag 'dustbox.png', class:"g-del-btn" %>
+    <div class="g-edit-header">
+      <h2 class="edit-gear-title">Edit Gear</h2>
+      <%= link_to gear_path, method: :delete, data: { confirm: "Delete?"}, class:"g-delete" do %>
+        <%= image_tag 'dustbox.png', class:"g-del-btn" %>
+      <% end %>
+    </div>
+
+    <%= form_with model: @gears_maker, url: gear_path, local: true do |f| %>
+
+      <div class="new-gear-field">
+      <div id="img-prv">
+        <div id="img-select">
+          <%= f.label :image, class:"img-upload-btn" %>
+            <% if @gears_maker.image.attached? %>
+              <%= image_tag @gears_maker.image, class:"g-img-prv" %>
+            <% else %>
+              <%= image_tag 'default_tent.png', class:"g-img-prv" %>
+            <% end %>
+          <%= f.file_field :image, class:"img-upload" %>
+
+        </div>
+      </div>
+    </div>
+
+      <div class="g-field-form">
+        <%= f.text_field :gear_name, placeholder: '道具名を入力', class:"g-f-box" %>
+      </div>
+
+      <div class="g-field-form">
+        <div class="g-pull-title">
+          ジャンルを選択
+        </div>
+        <div class="g-f-pull">
+          <%= f.collection_select(:gear_genre_id, GearGenre.all, :id, :name, {}, { class:"gear-genre-select"}) %>
+        </div>
+      </div>
+
+      <div class="g-field-form">
+        <%= f.text_field :maker_name, placeholder: 'メーカーを入力', id:"maker_name", class:"g-f-box" %>
+      </div>
+      <div id="search_result"></div>
+
+      <div class="g-field-form">
+        <%= f.text_area :explanation, placeholder: '一言を入力', class:"g-exp-box" %>
+      </div>
+
+      <div class="u-btn-area">
+        <div class="u-back-btn">
+          <p>
+            <%= link_to "Cancel", gears_path, class:"u-back" %>
+          </p>
+        </div>
+        <div class="t-send-btn">
+          <%= f.submit 'SEND', class:"t-send" %>
+        </div>
+      </div>
+
     <% end %>
+
   </div>
-
-  <%= form_with model: @gears_maker, url: gear_path, local: true do |f| %>
-
-    <div class="new-gear-field">
-    <div id="img-prv">
-      <div id="img-select">
-        <%= f.label :image, class:"img-upload-btn" %>
-          <% if @gears_maker.image.attached? %>
-            <%= image_tag @gears_maker.image, class:"g-img-prv" %>
-          <% else %>
-            <%= image_tag 'default_tent.png', class:"g-img-prv" %>
-          <% end %>
-        <%= f.file_field :image, class:"img-upload" %>
-
-      </div>
-    </div>
-  </div>
-
-    <div class="g-field-form">
-      <%= f.text_field :gear_name, placeholder: '道具名を入力', class:"g-f-box" %>
-    </div>
-
-    <div class="g-field-form">
-      <div class="g-pull-title">
-        ジャンルを選択
-      </div>
-      <div class="g-f-pull">
-      <%= f.collection_select(:gear_genre_id, GearGenre.all, :id, :name, {}, { class:"gear-genre-select"}) %>
-      </div>
-    </div>
-
-    <div class="g-field-form">
-    <%= f.text_field :maker_name, placeholder: 'メーカーを入力', id:"maker_name", class:"g-f-box" %>
-    </div>
-    <div id="search_result"></div>
-
-    <div class="g-field-form">
-    <%= f.text_area :explanation, placeholder: '一言を入力', class:"g-exp-box" %>
-    </div>
-
-    <div class="u-btn-area">
-      <div class="u-back-btn">
-        <p><%= link_to "Cancel", gears_path, class:"u-back" %></p>
-      </div>
-      <div class="t-send-btn">
-        <%= f.submit 'SEND', class:"t-send" %>
-      </div>
-    </div>
-
-  <% end %>
-
+  <%= render 'shared/sidebar'%>
 </div>

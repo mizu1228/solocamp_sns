@@ -30,6 +30,13 @@
     box-shadow: 0 10px 25px 0 rgba(0, 0, 0, .5);
   }
 
+  .error-message {
+    /* background-color: lightseagreen; */
+    width: 95%;
+    margin: 20px auto 10px;
+    color: rgba(255, 70, 70, 0.700);
+    }
+
   .main {
     display: flex;
 
@@ -126,6 +133,7 @@
     display: flex;
     align-items: center;
     height: 40px;
+    margin-left: 10px;
   }
   
   .u-bar-right {
@@ -135,6 +143,10 @@
     /* background-color: bisque; */
     margin: 0 10px;
     border-radius: 5%;
+  }
+
+  .tweet-text {
+    margin-left: 10px;
   }
   
   .t-edit-btn {
@@ -185,11 +197,17 @@
   
   .tweet-image {
     height: 50vh;
-    // width: 95vw;
     max-width: 579px;
     min-height: 500px;
     object-fit: contain;
     // background-color: lightgrey;
+  }
+
+  .tweet-comment {
+    /* background-color: lightgray; */
+    width: 95%;
+    margin: 10px auto;
+    height: 30px;
   }
   
   .tweet-text-content {
@@ -215,17 +233,110 @@
     margin: 0 auto;
     border: none;
   }
-  
-  /* tweet-new */
 
-  .tweet-new {
+
+
+
+  // tweet-show
+
+  .tweet-show {
     display: flex;
     width: 800px;
+    // background-color: aliceblue;
+
+    .tweet-show-content {
+      width: 599px;
+      // background-color: antiquewhite;
+      .tweet-show-main {
+          background-color: white;
+          margin: 20px auto;
+          width: 579px;
+          border-radius: 5px;
+          // box-shadow: 0 10px 25px 0 rgb(0 0 0 / 50%);
+      }
+
+      .tweet-comment-group {
+        width: 95%;
+        margin: 10px auto;
+      }
+    }
+
+    .side-bar {
+      display: block;
+      width: 201px;
+      // background-color: maroon;
+
+      .side-contents {
+        position: fixed;
+        width: 201px;
+        // background-color: mediumaquamarine;
+
+        #s-main-title {
+          margin-top: 20px;
+          // background-color: rgb(118, 118, 255);
+        }
+        #s-main-title a{
+          font-size: 30px;
+          margin-left: 10px;
+          font-family: 'Homemade Apple', cursive;
+          /* color: aliceblue; */
+        }
+        #s-main-title span {
+          font-size: 40px;
+          /* color: #537dfdf3; */
+        }
+
+        .side-user-bar {
+          display: flex;
+          margin: 50px auto 20px 10px;
+          .s-u-name {
+            font-size: 24px;
+            margin: 0 10px;
+          }
+        }
+
+        .side-content {
+          margin: 20px auto 20px 10px;
+        }
+      }
+    }
+
+    .tweet-img-group {
+      width: 100vw;
+      background-color: rgb(194, 194, 182);
+    }
+    
+    .tweet-img {
+      width: 500px;
+      height: 500px;
+      background-color: rgb(206, 206, 206);
+      object-fit: contain;
+    }
+    
+    .user-icon-group {
+      width: 40px;
+      height: 100%;
+    }
+  }
+
+
+
+
+  /* tweet-new */
+
+  .tweet-content {
+    display: flex;
+    width: 800px;
+
+    .t-new-title {
+      width: 100%;
+      margin-left: 10px;
+    }
   
     .side-bar {
       display: block;
       width: 201px;
-      background-color: aliceblue;
+      // background-color: aliceblue;
 
       .side-contents {
         position: fixed;
@@ -276,17 +387,11 @@
         margin: 0 auto 10px;
         color: rgba(255, 70, 70, 0.700);
       }
-    
-      // .field {
-      //   /* background-color: lightseagreen; */
-      //   width: 95%;
-      //   margin: 0 auto;
-      // }
 
       #img-prv {
         width: 100%;
         height: 50vh;
-        background-color: aliceblue;
+        background-color: rgb(255, 255, 255);
         margin: 0 auto 15px;
         border: solid 1px darkgray;
         border-radius: 5px;
@@ -391,11 +496,801 @@
         border-radius: 10%;
         cursor: pointer;
       }
-
     }
 
   }
   
+
+
+
+  // キャンプ場検索
+
+  .search-camp-sites {
+    display: flex;
+    width: 800px;
+
+    .s-c-sites-content {
+      width: 599px;
+
+      .camp-site-title {
+        width: 100%;
+      }
+
+      .site-search-form {
+        width: 100%;
+      }
+    }
+
+    .side-bar {
+      display: block;
+      width: 201px;
+      // background-color: aliceblue;
+
+      .side-contents {
+        position: fixed;
+        width: 201px;
+        // background-color: mediumaquamarine;
+
+        #s-main-title {
+          margin-top: 20px;
+          // background-color: rgb(118, 118, 255);
+        }
+        #s-main-title a{
+          font-size: 30px;
+          margin-left: 10px;
+          font-family: 'Homemade Apple', cursive;
+          /* color: aliceblue; */
+        }
+        #s-main-title span {
+          font-size: 40px;
+          /* color: #537dfdf3; */
+        }
+
+        .side-user-bar {
+          display: flex;
+          margin: 50px auto 20px 10px;
+          .s-u-name {
+            font-size: 24px;
+            margin: 0 10px;
+          }
+        }
+
+        .side-content {
+          margin: 20px auto 20px 10px;
+        }
+
+      }
+    }
+  }
+
+
+
+  // キャンプ場検索結果
+  
+  .camp-sites-search {
+    display: flex;
+    width: 800px;
+
+    .search-content {
+      width: 599px;
+
+      .sites-pref-name {
+        width: 95%;
+        margin: 20px auto;
+        font-size: 20px;
+      }
+      
+      .camp-site {
+        display: flex;
+        width: 95%;
+        height: 40px;
+        line-height: 40px;
+        margin: 10px auto 20px auto;
+        border: none;
+      }
+      
+      .vis-icon-box {
+        margin: 0 10px;
+        // background-color: khaki;
+      }
+      
+      .site-visit-icon {
+        width: 20px;
+        height: 20px;
+        margin: 10px 0;
+        line-height: 40px ;
+        // background-color: darkgray;
+      }
+    }
+
+    .side-bar {
+      display: block;
+      width: 201px;
+      // background-color: aliceblue;
+
+      .side-contents {
+        position: fixed;
+        width: 201px;
+        // background-color: mediumaquamarine;
+
+        #s-main-title {
+          margin-top: 20px;
+          // background-color: rgb(118, 118, 255);
+        }
+        #s-main-title a{
+          font-size: 30px;
+          margin-left: 10px;
+          font-family: 'Homemade Apple', cursive;
+          /* color: aliceblue; */
+        }
+        #s-main-title span {
+          font-size: 40px;
+          /* color: #537dfdf3; */
+        }
+
+        .side-user-bar {
+          display: flex;
+          margin: 50px auto 20px 10px;
+          .s-u-name {
+            font-size: 24px;
+            margin: 0 10px;
+          }
+        }
+
+        .side-content {
+          margin: 20px auto 20px 10px;
+        }
+
+      }
+    }
+  }
+
+
+
+  // キャンプ場詳細 camp_site show
+
+  .camp-site-show {
+    display: flex;
+    width: 800px;
+
+    .c-site-content {
+      width: 599px;
+
+      .c-site-box {
+        width: 95%;
+        margin: 10px auto;
+        border: rgba(169, 169, 169, 0.5) solid 1px;
+        border-radius: 5px;
+      }
+      
+      .s-show-head-box {
+        // background-color: #8ca9fff3;
+        // background: linear-gradient( #a4bbfff3, #fffffff3);
+        background: linear-gradient( #c2c2c2f3, #fffffff3);
+        padding: 10px 0;
+        border-radius: 5px 5px 0 0;
+      }
+      
+      .site-show-head {
+        display: flex;
+        width: 95%;
+        margin: 10px auto 10px auto;
+        height: 30px;
+        // background-color: yellowgreen;
+      }
+      
+      .site-show-sub {
+        margin-bottom: 20px;
+        // background-color: coral;
+      }
+      
+      .site-name-show {
+        margin-left: 10px;
+        font-size: 20px;
+        // background-color: chocolate;
+      }
+      
+      #intere-site {
+        line-height: 37px;
+        // background-color: cornflowerblue;
+      }
+      
+      .site-show-content {
+        width: 95%;
+        margin: 3px auto;
+        // background-color: crimson;
+      }
+      
+      .visit {
+        color: #777777f3;
+        width: calc( 95% - 60px );
+      }
+      
+      .pref {
+        width: calc( 95% - 60px );
+      }
+      
+      .add {
+        width: calc( 95% - 90px );
+      }
+      
+      .phone {
+        margin-bottom: 10px;
+        width: calc( 95% - 90px );
+      }
+      
+      .type {
+        margin-top: 20px;
+        width: calc( 95% - 60px );
+      }
+      
+      .tweets-list-box {
+        margin-top: 50px;
+        margin-bottom: 20px;
+        padding-bottom: 10px;
+        border-bottom: solid 2px;
+      }
+      
+      .site-tweets-list {
+        width: 95%;
+        margin: 0 auto;
+      }
+      
+      .s-tw-img-box {
+        width: 100%;
+        // background-color: aquamarine;
+        text-align: center;
+      }
+      
+      .site-tweet-image {
+        margin: 0 auto ;
+        text-align: center;
+        height: 30vh;
+        width: 95%;
+        // min-height: 500px;
+        object-fit: cover;
+        // background-color: lightgray;
+      }
+      
+      .site-tweet {
+        margin: 10px 0;
+        width: 100%;
+        height: 40vh;
+        // background: linear-gradient( #c2c2c2f3, #fffffff3);
+        border: 1px #77777775 solid;
+        border-radius: 5px;
+        // box-shadow: 0 10px 25px 0 rgba(0, 0, 0, .5);
+      }
+      
+      .visit-time {
+        height: 40px;
+        width: 95%;
+        margin: 0 auto;
+        // background-color: bisque;
+      }
+      
+      .tw-created {
+        line-height: 40px;
+      }
+    }
+
+    .side-bar {
+      display: block;
+      width: 201px;
+      // background-color: aliceblue;
+
+      .side-contents {
+        position: fixed;
+        width: 201px;
+        // background-color: mediumaquamarine;
+
+        #s-main-title {
+          margin-top: 20px;
+          // background-color: rgb(118, 118, 255);
+        }
+        #s-main-title a{
+          font-size: 30px;
+          margin-left: 10px;
+          font-family: 'Homemade Apple', cursive;
+          /* color: aliceblue; */
+        }
+        #s-main-title span {
+          font-size: 40px;
+          /* color: #537dfdf3; */
+        }
+
+        .side-user-bar {
+          display: flex;
+          margin: 50px auto 20px 10px;
+          .s-u-name {
+            font-size: 24px;
+            margin: 0 10px;
+          }
+        }
+
+        .side-content {
+          margin: 20px auto 20px 10px;
+        }
+
+      }
+    }
+  }
+
+
+
+  // お気に入りキャンプ場 interes
+
+  .interes {
+    display: flex;
+    width: 800px;
+
+    .side-bar {
+      display: block;
+      width: 201px;
+      // background-color: aliceblue;
+
+      .side-contents {
+        position: fixed;
+        width: 201px;
+        // background-color: mediumaquamarine;
+
+        #s-main-title {
+          margin-top: 20px;
+          // background-color: rgb(118, 118, 255);
+        }
+        #s-main-title a{
+          font-size: 30px;
+          margin-left: 10px;
+          font-family: 'Homemade Apple', cursive;
+          /* color: aliceblue; */
+        }
+        #s-main-title span {
+          font-size: 40px;
+          /* color: #537dfdf3; */
+        }
+
+        .side-user-bar {
+          display: flex;
+          margin: 50px auto 20px 10px;
+          .s-u-name {
+            font-size: 24px;
+            margin: 0 10px;
+          }
+        }
+
+        .side-content {
+          margin: 20px auto 20px 10px;
+        }
+
+      }
+    }
+
+    .intere-content {
+      width: 599px;
+
+      .int-title-box {
+        width: 95%;
+        height: 50px;
+        margin: 10px auto 30px auto;
+        display: flex;
+        align-items: center;
+        // background-color: cadetblue;
+      }
+      
+      .int-sites-title {
+        width: 95%;
+        margin: 20px auto;
+        font-size: 20px;
+        // background-color: chartreuse;
+      }
+      
+      .int-title-star {
+        width: 30px;
+        height: 30px;
+        margin: 10px 10px 10px 0;
+        // background-color: chocolate;
+      }
+      
+      .int-camp-site {
+        display: flex;
+        width: 95%;
+        height: 40px;
+        line-height: 40px;
+        margin: 20px auto 20px auto;
+        border: none;
+      }
+      
+      .int-site-content {
+        margin: 0 10px;
+      }
+    }
+  }
+
+
+
+  // gears-index マイキャンプギア
+
+  .gears-index {
+    display: flex;
+    width: 800px;
+
+    .own-gear-page {
+      width: 599px;
+    }
+
+    .side-bar {
+      display: block;
+      width: 201px;
+      // background-color: aliceblue;
+
+      .side-contents {
+        position: fixed;
+        width: 201px;
+        // background-color: mediumaquamarine;
+
+        #s-main-title {
+          margin-top: 20px;
+          // background-color: rgb(118, 118, 255);
+        }
+        #s-main-title a{
+          font-size: 30px;
+          margin-left: 10px;
+          font-family: 'Homemade Apple', cursive;
+          /* color: aliceblue; */
+        }
+        #s-main-title span {
+          font-size: 40px;
+          /* color: #537dfdf3; */
+        }
+
+        .side-user-bar {
+          display: flex;
+          margin: 50px auto 20px 10px;
+          .s-u-name {
+            font-size: 24px;
+            margin: 0 10px;
+          }
+        }
+
+        .side-content {
+          margin: 20px auto 20px 10px;
+        }
+
+      }
+    }
+  }
+
+
+  // gears new ギア登録
+
+  .gear-new {
+    display: flex;
+    width: 800px;
+
+    .new-gear-box {
+      width: 599px;
+
+      .new-gear-title {
+        margin: 10px auto;
+        font-size: 20px;
+        // background-color: darkgray;
+        width: 95%;
+      }
+      
+      .g-field-form {
+        width: 95%;
+        margin: 10px auto;
+        padding: 5px 0;
+        border-bottom: solid 1px #777777f3;
+      }
+      
+      .g-f-box {
+        outline: none;
+      }
+      
+      .g-pull-title {
+        color: rgb(117, 117, 117);
+      }
+      
+      .g-f-pull {
+        width: 95%;
+        margin: 10px auto;
+      }
+      
+      .gear-genre-select {
+        width: 100%;
+      }
+      
+      .g-exp-box {
+        box-sizing: border-box;
+        width: 100%;
+        border: none;
+        outline: none;
+      }
+
+      #img-prv {
+        width: 95%;
+        background-color: white;
+      }
+
+      .img-upload-btn {
+        left: calc( (100% / 2) - 80px);
+      }
+    }
+
+    .side-bar {
+      display: block;
+      width: 201px;
+      // background-color: aliceblue;
+
+      .side-contents {
+        position: fixed;
+        width: 201px;
+        // background-color: mediumaquamarine;
+
+        #s-main-title {
+          margin-top: 20px;
+          // background-color: rgb(118, 118, 255);
+        }
+        #s-main-title a{
+          font-size: 30px;
+          margin-left: 10px;
+          font-family: 'Homemade Apple', cursive;
+          /* color: aliceblue; */
+        }
+        #s-main-title span {
+          font-size: 40px;
+          /* color: #537dfdf3; */
+        }
+
+        .side-user-bar {
+          display: flex;
+          margin: 50px auto 20px 10px;
+          .s-u-name {
+            font-size: 24px;
+            margin: 0 10px;
+          }
+        }
+
+        .side-content {
+          margin: 20px auto 20px 10px;
+        }
+
+      }
+    }
+  }
+
+
+  // genre show
+
+  .genre-show {
+    display: flex;
+    width: 800px;
+
+    .genre-content {
+      width: 599px;
+    }
+
+    .side-bar {
+      display: block;
+      width: 201px;
+      // background-color: aliceblue;
+
+      .side-contents {
+        position: fixed;
+        width: 201px;
+        // background-color: mediumaquamarine;
+
+        #s-main-title {
+          margin-top: 20px;
+          // background-color: rgb(118, 118, 255);
+        }
+        #s-main-title a{
+          font-size: 30px;
+          margin-left: 10px;
+          font-family: 'Homemade Apple', cursive;
+          /* color: aliceblue; */
+        }
+        #s-main-title span {
+          font-size: 40px;
+          /* color: #537dfdf3; */
+        }
+
+        .side-user-bar {
+          display: flex;
+          margin: 50px auto 20px 10px;
+          .s-u-name {
+            font-size: 24px;
+            margin: 0 10px;
+          }
+        }
+
+        .side-content {
+          margin: 20px auto 20px 10px;
+        }
+      }
+    }
+  }
+
+
+
+  // gear-show
+
+  .gear-show {
+    display: flex;
+    width: 800px;
+
+    .gear-content-box {
+      width: 599px;
+
+      .gear-image {
+        height: 50vh;
+        width: 95%;
+        min-height: 500px;
+        object-fit: contain;
+      }
+      
+      .gear-content {
+        width: 95%;
+        margin: 10px auto;
+      }
+      
+      .g-b-btn {
+        color: white;
+        line-height: 40px;
+      }
+      
+      .g-genre {
+        margin-bottom: 20px;
+      }
+      
+      .gear-name-box {
+        display: flex;
+        justify-content: flex-start;
+        width: 95%;
+        margin: 0 auto;
+      }
+      
+      .g-maker {
+        margin-right: 20px;
+      }
+    }
+
+    .side-bar {
+      display: block;
+      width: 201px;
+      // background-color: aliceblue;
+
+      .side-contents {
+        position: fixed;
+        width: 201px;
+        // background-color: mediumaquamarine;
+
+        #s-main-title {
+          margin-top: 20px;
+          // background-color: rgb(118, 118, 255);
+        }
+        #s-main-title a{
+          font-size: 30px;
+          margin-left: 10px;
+          font-family: 'Homemade Apple', cursive;
+          /* color: aliceblue; */
+        }
+        #s-main-title span {
+          font-size: 40px;
+          /* color: #537dfdf3; */
+        }
+
+        .side-user-bar {
+          display: flex;
+          margin: 50px auto 20px 10px;
+          .s-u-name {
+            font-size: 24px;
+            margin: 0 10px;
+          }
+        }
+
+        .side-content {
+          margin: 20px auto 20px 10px;
+        }
+      }
+    }
+  }
+
+
+  // gear-edit
+
+  .gear-edit {
+    display: flex;
+    width: 800px;
+
+    .edit-gear-box {
+      width: 599px;
+
+      .g-edit-header {
+        display: flex;
+        width: 95%;
+        // background-color: cadetblue;
+        margin: 30px auto 10px auto;
+      }
+      
+      .edit-gear-title {
+        font-size: 20px;
+        width: 95%;
+      }
+      
+      .g-del-btn {
+        width: 30px;
+        height: 30px;
+        text-align: center;
+      }
+
+      #img-prv {
+        width: 95%;
+        background-color: white;
+      }
+
+      #img-prv img {
+        width: 95%;
+      }
+
+      .g-field-form {
+        width: 95%;
+      }
+
+      .g-f-pull {
+        width: 95%;
+      }
+
+      .img-upload-btn {
+        left: calc( 100% / 2 - 80px);
+      }
+    }
+
+    .side-bar {
+      display: block;
+      width: 201px;
+      // background-color: aliceblue;
+
+      .side-contents {
+        position: fixed;
+        width: 201px;
+        // background-color: mediumaquamarine;
+
+        #s-main-title {
+          margin-top: 20px;
+          // background-color: rgb(118, 118, 255);
+        }
+        #s-main-title a{
+          font-size: 30px;
+          margin-left: 10px;
+          font-family: 'Homemade Apple', cursive;
+          /* color: aliceblue; */
+        }
+        #s-main-title span {
+          font-size: 40px;
+          /* color: #537dfdf3; */
+        }
+
+        .side-user-bar {
+          display: flex;
+          margin: 50px auto 20px 10px;
+          .s-u-name {
+            font-size: 24px;
+            margin: 0 10px;
+          }
+        }
+
+        .side-content {
+          margin: 20px auto 20px 10px;
+        }
+      }
+    }
+  }
+
+
+  
+
 }
 
 // pc

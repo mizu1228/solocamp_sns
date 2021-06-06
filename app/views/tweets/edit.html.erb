@@ -1,42 +1,46 @@
-<div class="tweet-form">
-  <div class="error-messages">
-    <%= render 'shared/error_messages', resource: @tweets_tag %>
-  </div>
+<div class="tweet-content">
+  <div class="tweet-form">
+    <div class="error-messages">
+      <%= render 'shared/error_messages', resource: @tweets_tag %>
+    </div>
 
-  <%= form_with model: @tweets_tag, url: tweet_path, local: true do |f| %>
+    <%= form_with model: @tweets_tag, url: tweet_path, local: true do |f| %>
 
-  <div class="tweet-field" id="img-select">
-    <%= f.label :image %>
-    <div id="img-prv">
-      <div id="img-select">
-        <%= f.label :image, "画像を選択", class:"img-upload-btn" %>
-        <%= image_tag @tweets_tag.image, class:"t-img-prv"%>
-        <%= f.file_field :image, class:"img-upload" %>
+  <h2 class="t-new-title">
+    Edit Diary
+  </h2>
+
+    <div class="tweet-field" id="img-select">
+      <div id="img-prv">
+        <div id="img-select">
+          <%= f.label :image, "画像を選択", class:"img-upload-btn" %>
+          <%= image_tag @tweets_tag.image, class:"t-img-prv"%>
+          <%= f.file_field :image, class:"img-upload" %>
+        </div>
       </div>
     </div>
-  </div>
 
-  <div class="tweet-field">
-    <%= f.label :text %><br>
-    <%= f.text_area :text, placeholder: '400字以内', maxlength: '400', class:"field-tweet-text" %>
-  </div>
+    <div class="tweet-field">
+      <%= f.text_area :text, placeholder: '400字以内', maxlength: '400', class:"field-tweet-text" %>
+    </div>
 
-  <div class="select-visit">
-    <%= f.collection_select(:camp_site_id, CampSite.all, :id, :site, {include_blank: "サイトを選択"}, {class:"site-select"}) %>
-  </div>
+    <div class="select-visit">
+      <%= f.collection_select(:camp_site_id, CampSite.all, :id, :site, {include_blank: "サイトを選択"}, {class:"site-select"}) %>
+    </div>
 
-  <div class="send-btn-area">
-    <%= f.submit "SEND", class:"send-btn"%>
-  </div>
+      <div class="send-btn-area">
+        <%= f.submit "SEND", class:"send-btn"%>
+      </div>
   
-  <% end %>
+    <% end %>
 
-<div class="delete-btn-area">
-  <%= link_to "DELETE", tweet_path(@tweet.id), method: :delete, data: { confirm: "delete?"}, class:"delete-btn" %>
-</div>
+    <div class="delete-btn-area">
+      <%= link_to "DELETE", tweet_path(@tweet.id), method: :delete, data: { confirm: "delete?"}, class:"delete-btn" %>
+    </div>
 
-<div class="back-btn-area">
-  <%= link_to 'BACK', root_path, class:"back-btn" %>
-</div>
-
+    <div class="back-btn-area">
+      <%= link_to 'BACK', root_path, class:"back-btn" %>
+    </div>
+  </div>
+  <%= render 'shared/sidebar' %>
 </div>
