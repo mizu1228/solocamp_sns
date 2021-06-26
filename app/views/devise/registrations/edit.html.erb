@@ -6,7 +6,7 @@
 
       <div class="u-field-form-img" >
         <%= f.label :image do %>
-          <% if resource.image != nil %>
+          <% if resource.image.attached? %>
             <%= image_tag resource.image, class:"u-img-prv" %>
           <% else %>
             <%= image_tag 'default_tent.png', width:'80', heigth:'80' %>
