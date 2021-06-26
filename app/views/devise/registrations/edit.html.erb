@@ -9,7 +9,7 @@
           <% if resource.image.attached? %>
             <%= image_tag resource.image, class:"u-img-prv" %>
           <% else %>
-            <%= image_tag 'default_tent.png', width:'80', heigth:'80' %>
+            <%= image_tag 'default_tent.png', class:"u-img-prv", width:'80', heigth:'80' %>
           <% end %>
           <%= image_tag 'camera_icon.png', class:"u-img-cam" %>
           <%= f.file_field :image, style: "display:none", class:"u-e-prv" %>
