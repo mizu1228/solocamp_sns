@@ -5,6 +5,10 @@ before_action :search_camp_site, only: [:index, :search, :show]
     @prefectures = Prefecture.all
   end
 
+  def new
+    @camp_site = CampSite.new
+  end
+
   def search
     @results = @p.result
     @results.each do |result|
@@ -20,6 +24,10 @@ before_action :search_camp_site, only: [:index, :search, :show]
 
   def search_camp_site
     @p = CampSite.ransack(params[:q])
+  end
+
+  def camp_site_params
+    params.require(:camp_site).permit(:site, :address, :site_tell, :prefecture_id, :site_type_id)
   end
 
 end
