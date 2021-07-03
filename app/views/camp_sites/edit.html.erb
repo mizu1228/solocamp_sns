@@ -1,0 +1,46 @@
+<div class="new-campsite">
+  <h2 class="explain">This page is AdminUsers page</h2>
+  <h2 class="new-site-title">EDIT campsite</h2>
+
+  <div class="new-site-form">
+    <%= form_with model: @camp_site, local: true do |f|%>
+      <div class="field">
+        <%= f.label :site %></br>
+        <%= f.text_field :site, class:"site_name_field", placeholder:"サイト名を入力" %>
+      </div>
+
+      <div class="field">
+        <%= f.label :address %></br>
+        <%= f.text_field :address, placeholder: "住所を入力", class:"site_address" %>
+      </div>
+
+      <div class="field">
+        <%= f.label :Phone %></br>
+        <%= f.text_field :site_tell, placeholder: "電話番号を入力", class:"site_phone" %>
+      </div>
+
+      <div class="select">
+        <%= f.label :Prefecture %></br>
+        <%= f.collection_select(:prefecture_id, Prefecture.all, :id, :name, {include_blank: "都道府県を選択"}, {class:"site-select"}) %>
+      </div>
+
+      <div class="select">
+        <%= f.label :SiteType %></br>
+        <%= f.collection_select(:site_type_id, SiteType.all, :id, :name, {include_blank: "サイトのタイプを選択"}, {class:"site_type_select"}) %>
+      </div>
+
+      <div class="admin-btn-area">
+        <%= f.submit "SEND", class:"admin-send" %>
+      </div>
+
+    <% end %>
+  </div>
+
+  <div class="site-del">
+    <%= link_to 'delete', camp_site_path, method: :delete, data: { confirm: 'delete?' }, class: 'site-del-btn' %>
+  </div>
+
+  <div class="visit-main-page">
+    <%= link_to "ROOT-PAGE", root_path, class:"visit-root-page"%>
+  </div>
+</div>

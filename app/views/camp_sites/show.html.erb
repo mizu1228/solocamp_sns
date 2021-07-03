@@ -8,6 +8,7 @@
           <%= render 'intere', result: @result%>
         </div>
         <h2 class="site-name-show"><%= @result.site %></h2>
+        <%= link_to 'EDIT', edit_camp_site_path(@result) %>
       </div>
     </div>
     <div class="site-show-sub">
