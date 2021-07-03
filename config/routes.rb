@@ -15,7 +15,7 @@ Rails.application.routes.draw do
 
   resources :users, only: [:show]
   get 'camp_sites/search'
-  resources :camp_sites, only: [:index, :new] do
+  resources :camp_sites, except: :show do
     get 'show'
   end
   resources :tweets, except: :index do

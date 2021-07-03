@@ -1,6 +1,6 @@
 <div class="new-campsite">
   <h2 class="explain">This page is AdminUsers page</h2>
-  <h2 class="new-site-title">new campsite</h2>
+  <h2 class="new-site-title">EDIT campsite</h2>
 
   <div class="new-site-form">
     <%= form_with model: @camp_site, local: true do |f|%>
@@ -34,6 +34,10 @@
       </div>
 
     <% end %>
+  </div>
+
+  <div class="site-del">
+    <%= link_to 'delete', camp_site_path, method: :delete, data: { confirm: 'delete?' }, class: 'site-del-btn' %>
   </div>
 
   <div class="visit-main-page">

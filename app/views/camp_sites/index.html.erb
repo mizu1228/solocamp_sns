@@ -1,11 +1,18 @@
 <div class="search-camp-sites">
   <div class="s-c-sites-content">
+
     <h2 class="camp-site-title">
     キャンプ場を検索
     </h2>
+
+    <% if current_user.admin? %>
+      <h2 class="admin-gate">
+        <%= link_to "NewSite", new_camp_site_path, class:"admin-gate-btn"%>
+      </h2>
+    <% end %>
     <div class="site-search-form">
       <%= search_form_for @p, url: camp_sites_search_path do |f| %>
-        <%= f.label :site_eq, 'キャンプ場' %>
+        <%= f.label :site_eq, '都道府県' %>
         <%= f.collection_select :prefecture_id_eq, @prefectures, :id, :name, include_lank: '指定なし' %>
         <div class="send-btn-area">
           <div class="t-send-btn">
