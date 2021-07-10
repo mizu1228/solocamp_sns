@@ -8,7 +8,9 @@
           <%= render 'intere', result: @result%>
         </div>
         <h2 class="site-name-show"><%= @result.site %></h2>
-        <%= link_to 'EDIT', edit_camp_site_path(@result) %>
+        <% if current_user.admin? %>
+          <%= link_to 'EDIT', edit_camp_site_path(@result) %>
+        <% end %>
       </div>
     </div>
     <div class="site-show-sub">
