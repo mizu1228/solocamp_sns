@@ -514,10 +514,19 @@
 
       .camp-site-title {
         width: 100%;
+        text-align: center;
+        margin: 20px auto;
+        font-size: 30px;
+        // background-color: antiquewhite;
+      }
+
+      .admin-gate {
+        width: 100%;
       }
 
       .site-search-form {
         width: 100%;
+        text-align: center;
       }
     }
 
