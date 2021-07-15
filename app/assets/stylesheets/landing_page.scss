@@ -8,11 +8,11 @@
 }
 
 .main-title {
-  width: 50vw;
+  width: 100%;
   text-align: center;
   position: absolute;
   top: 40px;
-  left: calc(100vw - 75%);
+  left: auto;
 }
 
 #solo-camp-sns {
@@ -21,7 +21,7 @@
   color: aliceblue;
   /* background-color: darkgray; */
   text-align: center;
-  /* width: 400px; */
+  width: 100%;
   margin: 0 auto;
   display: none;
 }
@@ -86,7 +86,7 @@
 
 .sign-btn {
   background-color: #fff;
-  border-radius: 12%;
+  border-radius: 7%;
   padding: 1px 1px;
   margin-bottom: 5px;
 }
