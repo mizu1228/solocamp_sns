@@ -1,5 +1,5 @@
 $(function () {
-  $('#solo-camp-sns').fadeIn(9000);
+    $('#solo-camp-sns').fadeIn(9000);
 });
 
 $(document).on("click", '.login-door-icon', function(){
