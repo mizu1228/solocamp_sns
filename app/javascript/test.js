@@ -2,10 +2,10 @@ $(function () {
     $('#solo-camp-sns').fadeIn(9000);
 });
 
-$(document).on("click", '.login-door-icon', function(){
-    $('.welcome-message').remove();
-    $('#sign-container').fadeIn(1000);
-});
+// $(document).on("click", '.login-door-icon', function(){
+//     $('.welcome-message').remove();
+//     $('#sign-container').fadeIn(1000);
+// });
 
 
 // map's code
