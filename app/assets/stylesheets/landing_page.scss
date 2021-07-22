@@ -15,42 +15,42 @@
   left: auto;
 }
 
-// .welcome-message{
-//   height: 430px;
-//   // background-color: aquamarine;
-//   text-align: center;
-//   margin-top: calc((100vh - 430px) /2 );
+.welcome-message{
+  height: 430px;
+  // background-color: aquamarine;
+  text-align: center;
+  margin-top: calc((100vh - 430px) /2 );
 
   
-//   .message-1 {
-//       font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-//       color: rgba(240, 248, 255, 0.76);
-//       font-size: 80px;
-//       // background-color: burlywood;
-//       height: 215px;
-//       line-height: 215px;
-//   }
-//     .site-messages {
-//       display: flex;
-//       justify-content: center;
+  .message-1 {
+      font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+      color: rgba(240, 248, 255, 0.76);
+      font-size: 80px;
+      // background-color: burlywood;
+      height: 215px;
+      line-height: 215px;
+  }
+    .site-messages {
+      display: flex;
+      justify-content: center;
 
-//       .message-2 {
-//         font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-//         color: rgba(240, 248, 255, 0.76);
-//         font-size: 60px;
-//         line-height: 215px;
-//       }
+      .message-2 {
+        font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        color: rgba(240, 248, 255, 0.76);
+        font-size: 60px;
+        line-height: 215px;
+      }
 
-//       .login-door-icon {
-//         // background-color: chocolate;
-//         width: 80px;
-//         height: 80px;
-//         margin-left: 30px;
-//         margin-top: calc((215px - 50px) /2 );
-//         cursor: pointer;
-//       }
-//     }
-// }
+      .login-door-icon {
+        // background-color: chocolate;
+        width: 80px;
+        height: 80px;
+        margin-left: 30px;
+        margin-top: calc((215px - 50px) /2 );
+        cursor: pointer;
+      }
+    }
+}
 
 #solo-camp-sns {
   font-size: 50px;
@@ -60,7 +60,7 @@
   text-align: center;
   width: 100%;
   margin: 0 auto;
-  // display: none;
+  display: none;
 }
 
 #sign-container {
