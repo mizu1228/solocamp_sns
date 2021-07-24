@@ -1,5 +1,7 @@
 # Campary.
 
+[![Image from Gyazo](https://i.gyazo.com/cb85eed26dc35dad399e89792507b5f2.png)](https://gyazo.com/cb85eed26dc35dad399e89792507b5f2)
+
 ## アプリケーション概要
 
   キャンプ好きが日記のように使える。  
@@ -30,6 +32,7 @@
   - 記事を投稿できます。
   - 記事にはハッシュタグをつけることができます。
   [![Image from Gyazo](https://i.gyazo.com/b35a8564497aafa21c018132e7eaa1f7.gif)](https://gyazo.com/b35a8564497aafa21c018132e7eaa1f7)
+  
   [![Image from Gyazo](https://i.gyazo.com/28f7b36ce4a5ad330407ebc8ea84edd2.gif)](https://gyazo.com/28f7b36ce4a5ad330407ebc8ea84edd2)
 
 ### キャンプ場を選ぶ
