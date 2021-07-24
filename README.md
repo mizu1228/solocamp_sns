@@ -1,6 +1,54 @@
-# テーブル設計
+# Campary.
 
-## usersテーブル
+## アプリケーション概要
+
+  キャンプ好きが日記のように使える。
+  そんなSNSアプリを作成しました。
+  どこのキャンプ場にいつ行ったかを記録できます。
+  自分の持っている道具を登録することができます。
+
+## アプリケーションURL
+
+  http://35.74.215.158/
+
+## テスト用アカウント
+
+|   Username    | e-mail     | password |
+| ------------- | ---------- | -------- |
+| user1         | email@mail | 1234abcd |
+| user2         | qmail@mail | 1234abcd |
+
+
+## 利用方法
+
+  - まずは必要事項を入力してログインします。
+  - 記事を投稿します。
+  - いいねやフォローができます。
+  - 道具が登録できます。
+  - キャンプ場を探すことができます。
+  - 訪れたことのあるキャンプ場をチェックできます。
+  - お気に入り登録ができます。
+
+
+## このアプリのペルソナ
+
+  ペルソナはキャンプ好きの20~30代男性です。
+  一人や少数でキャンプを楽しむ大人のためのSNSを目指しています。
+  キャンプの記録を残したい、同じ趣味を持つ友人と繋がりたい。
+  そんなキャンプ好きのために開発をしました。
+
+
+## 今後実装予定の機能
+
+  - 他SNS（Twitter、Facebook等）への投稿機能
+  - 投稿記事への道具紐付け機能
+
+
+
+
+## テーブル設計
+
+### usersテーブル
 
 | Column             | Type    | Option                      |
 | ------------------ | ------- | --------------------------- |
@@ -14,9 +62,9 @@
 | season_id          | integer |                             |
 | prefecture_id      | integer |                             |
 
-### imageをActiveStorageで管理(null: false)
+#### imageをActiveStorageで管理(null: false)
 
-### Association
+#### Association
 
 - has_many :tweets
 - has_many :tags
@@ -37,20 +85,20 @@
 - has_many :followers, through: :reverse_of_relationships, source: :user
 
 
-## relationshipsテーブル(follow機能用)
+### relationshipsテーブル(follow機能用)
 
 | Column             | Type       | Option                                        |
 | ------------------ | ---------- | --------------------------------------------- |
 | user               | references | foreign_key: true, null: false                |
 | follow             | references | foreign_key: { to_table: users }, null: false |
 
-### Association
+#### Association
 
 - belongs_to :user
 - belongs_to :follow, class_name: 'User'
 
 
-## tweetsテーブル
+### tweetsテーブル
 
 | Column             | Type       | Option                         |
 | ------------------ | ---------- | ------------------------------ |
@@ -58,9 +106,9 @@
 | user               | references | foreign_key: true, null: false |
 | camp_site          | references | foreign_key: true              |
 
-### has_manyでimageをActiveStorage管理(null: false)
+#### has_manyでimageをActiveStorage管理(null: false)
 
-### Association
+#### Association
 
 - belongs_to :user
 - belongs_to :camp_site
@@ -71,46 +119,46 @@
 - has_one    :item
 
 
-## tagsテーブル
+### tagsテーブル
 
 | Column             | Type       | Option                         |
 | ------------------ | ---------- | ------------------------------ |
 | tag_name           | string     | uniqueness: true               |
 | user               | references | foreign_key: true, null: false |
 
-### Association
+#### Association
 
 - belongs_to :user
 - has_many   :tweets, through: :tag_tweet_relations
 - has_many   :tag_tweet_relations
 
 
-## tag_tweet_relationsテーブル(中間テーブル)
+### tag_tweet_relationsテーブル(中間テーブル)
 
 | Column            | Type        | Option                          |
 | ----------------- | ----------- | ------------------------------- |
 | tweet             | references  | foreign_key: true, null: false  |
 | tag               | references  | foreign_key: true, null: false  |
 
-### Association
+#### Association
 
 - belongs_to :tweet
 - belongs_to :tag
 
 
-## likesテーブル
+### likesテーブル
 
 | Column             | Type       | Option                         |
 | ------------------ | ---------- | ------------------------------ |
 | user               | references | foreign_key: true, null: false |
 | tweet              | references | foreign_key: true, null: false |
 
-### Association
+#### Association
 
 - belongs_to :user
 - belongs_to :tweet
 
-## commentsテーブル
+### commentsテーブル
 
 | Column            | Type        | Option                          |
 | ----------------- | ----------- | ------------------------------- |
@@ -118,13 +166,13 @@
 | user              | references  | foreign_key: true, null: false  |
 | tweet             | references  | foreign_key: true, null: false  |
 
-### Association
+#### Association
 
 - belongs_to :user
 - belongs_to :tweet
 
 
-## gearsテーブル(各道具はジャンルごとに作成する)
+### gearsテーブル
 
 | Column            | Type        | Option                            |
 | ----------------- | ----------- | --------------------------------- |
@@ -136,7 +184,7 @@
 | image             |             | ActiveStorageで管理                |
 
 
-### Association
+#### Association
 
 - belongs_to :user
 - belongs_to :tweet, optional: true
@@ -144,7 +192,7 @@
 
 
 
-## camp_sitesテーブル
+### camp_sitesテーブル
 
 | Column            | Type        | Option                          |
 | ----------------- | ----------- | ------------------------------- |
@@ -154,7 +202,7 @@
 | site_tel          | string      | null: false                     |
 | site_type_id      | integer     | null: false                     |
 
-### Association
+#### Association
 
 - has_many   :visited_sites
 - has_many   :tweets
@@ -162,27 +210,27 @@
 - belongs_to :prefecture
 
 
-## visited_sitesテーブル
+### visited_sitesテーブル
 
 | Column            | Type        | Option                          |
 | ----------------- | ----------- | ------------------------------- |
 | camp_site         | references  | foreign_key: true, null: false  |
 | user              | references  | foreign_key: true, null: false  |
 
-### Association
+#### Association
 
 - belongs_to :user
 - belongs_to :camp_site
 
 
-## intereテーブル
+### intereテーブル
 
 | Column             | Type       | Option                         |
 | ------------------ | ---------- | ------------------------------ |
 | user               | references | foreign_key: true, null: false |
 | camp_site          | references | foreign_key: true, null: false |
 
-### Association
+#### Association
 
 - belongs_to :user
 - belongs_to :camp_site
