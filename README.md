@@ -57,6 +57,23 @@
   そんなキャンプ好きのために開発をしました。
 
 
+## 使用技術
+  - Ruby 2.6.5
+  - Ruby on Rails 6.0.4
+  - MySQL 5.6.50
+  - Nginx
+  - AWS
+  - Capistrano3
+
+  ### 使用したgem
+  - devise
+  - mini_magic
+  - kakurenbo-puti
+  - active_hash
+  - ransack
+  - jp_prefecture
+
+
 ## 今後実装予定の機能
 
   - 他SNS（Twitter、Facebook等）への投稿機能

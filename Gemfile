@@ -74,3 +74,8 @@ gem 'active_hash'
 gem 'ransack'
 gem 'jp_prefecture'
 gem 'aws-sdk-s3', require: false
+gem "dockerfile-rails", ">= 1.2", :group => :development
+
+# gem "pg", "~> 1.4"
+
+gem "redis", "~> 5.0"
